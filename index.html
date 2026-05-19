@@ -96,12 +96,6 @@
             color: #FF8C00;
             background-color: #FFF5E6;
         }
-
-        /* Tùy chỉnh đường viền ảnh nhỏ khi được chọn */
-        .thumb-img.active {
-            border-color: #FF8C00;
-            transform: scale(1.05);
-        }
     </style>
 </head>
 <body>
@@ -242,7 +236,7 @@
     </div>
 
     <script>
-        // DATA SẢN PHẨM HOÀN CHỈNH KÈM 4 ẢNH TƯƠNG TÁC CHO TẤT CẢ DANH MỤC
+        // MẢNG DỮ LIỆU HOÀN CHỈNH: ĐÃ TÁCH BIỆT THÀNH 6 SẢN PHẨM BAO TAY LEN RIÊNG BIỆT TRÊN GIAO DIỆN
         const products = [
             { 
                 id: 1, 
@@ -258,24 +252,75 @@
                 material: "Sợi len dệt cotton pha Poly cao cấp, thấm hút mồ hôi tốt",
                 usage: "Bốc xếp hàng hóa công nghiệp, xây dựng công trình, sản xuất cơ khí nhẹ, nông nghiệp.",
                 description: "Sản phẩm găng tay dệt máy chính xác, bo cổ tay co giãn chắc chắn giúp chống trầy xước, giảm lực tác động trực tiếp và chống trơn trượt tối đa trong quá trình làm việc nặng nhọc.",
-                detailedDescription: "Bao tay len bảo hộ lao động Thùy Dương được ứng dụng công nghệ dệt kim tự động hóa hiện đại. Sản phẩm có độ bền cơ học cao, đường chỉ may viền cổ tay chắc chắn, không bị xơ xổ sợi chỉ trong thời gian dài sử dụng. Sợi len thoáng khí tối đa giúp công nhân không bị bí bách mồ hôi tay khi làm việc liên tục. Đặc biệt thích hợp cho đại lý phân phối số lượng lớn phục vụ khu công nghiệp.",
-                subTypes: [
-                    "Bao tay xám kim 7",
-                    "Bao tay xám kim 10",
-                    "Bao tay kem",
-                    "Bao tay muối tiêu",
-                    "[Sản phẩm len trống 1]",
-                    "[Sản phẩm len trống 2]",
-                    "[Sản phẩm len trống 3]",
-                    "[Sản phẩm len trống 4]"
-                ],
-                images: [
-                    "https://placehold.co/500x500/555555/white?text=Xam+Kim+7",
-                    "https://placehold.co/500x500/777777/white?text=Xam+Kim+10",
-                    "https://placehold.co/500x500/F5F5DC/333333?text=Bao+Tay+Kem",
-                    "https://placehold.co/500x500/808080/white?text=Muoi+Tieu",
-                ]
+                detailedDescription: "Bao tay len bảo hộ lao động Thùy Dương được ứng dụng công nghệ dệt kim tự động hóa hiện đại. Sản phẩm có độ bền cơ học cao, đường chỉ may viền cổ tay chắc chắn, không bị xơ xổ sợi chỉ trong thời gian dài sử dụng. Sợi len thoáng khí tối đa giúp công nhân không bị bí bách mồ hôi tay khi làm việc liên tục. Đặc biệt thích hợp cho đại lý phân phối số lượng lớn phục vụ khu công nghiệp."
             },
+            { 
+                id: 2, 
+                name: "Bao tay len Xám kim 7 bảo hộ lao động", 
+                price: null, 
+                category: "len", 
+                stock: 4500, 
+                rating: 4.8, 
+                image: "https://placehold.co/500x500/555555/white?text=Xam+Kim+7", 
+                featured: true,
+                brand: "Thùy Dương",
+                standard: "TCVN tiêu chuẩn nhà xưởng",
+                material: "Sợi len cotton dày dặn dệt máy kim 7 công nghiệp nhẹ",
+                usage: "Sử dụng cho công nhân cơ khí, khuân vác tấm sắt, bốc xếp hàng có cạnh ma sát lớn.",
+                description: "Thiết kế mật độ dệt kim 7 mang lại độ dày tối ưu, chống sờn rách cực tốt bảo vệ bàn tay.",
+                detailedDescription: "Mẫu găng tay len xám kim 7 dệt dày dặn, hạn chế tối đa bụi bẩn bám dính trong môi trường nhiều dầu mỡ bẩn, phù hợp cho công việc cơ khí, sửa chữa nặng nhọc."
+            },
+            { 
+                id: 3, 
+                name: "Bao tay len Xám kim 10 dệt máy chính xác", 
+                price: null, 
+                category: "len", 
+                stock: 4200, 
+                rating: 4.9, 
+                image: "https://placehold.co/500x500/777777/white?text=Xam+Kim+10", 
+                featured: true,
+                brand: "Thùy Dương",
+                standard: "TCVN bảo hộ an toàn lao động",
+                material: "Sợi cotton pha dệt máy kim 10 mật độ cao, khít và mịn hơn",
+                usage: "Cầm nắm dụng cụ kỹ thuật, lắp ráp linh kiện, bốc xếp nhẹ nhàng thật tay.",
+                description: "Mật độ dệt khít tinh xảo giúp đôi tay cử động linh hoạt, dễ dàng thao tác kỹ thuật chuẩn xác.",
+                detailedDescription: "Bao tay len dệt máy kim 10 cho cảm giác đeo ôm sát, mềm mịn và thông thoáng khí tuyệt đối, vừa chống xước vừa đảm bảo cảm giác thật tay cao."
+            },
+            { 
+                id: 4, 
+                name: "Bao tay len Kem dệt máy chất lượng cao", 
+                price: null, 
+                category: "len", 
+                stock: 4800, 
+                rating: 5.0, 
+                image: "https://placehold.co/500x500/F5F5DC/333333?text=Bao+Tay+Kem", 
+                featured: true,
+                brand: "Thùy Dương / Xuân Chương",
+                standard: "Tiêu chuẩn an toàn công nghiệp sạch",
+                material: "Sợi cotton len màu kem sáng sạch sẽ, chất sợi tuyển chọn mịn màng",
+                usage: "Công nghiệp đóng gói, vận chuyển, nông nghiệp công nghệ cao, môi trường kho bãi sạch.",
+                description: "Sản phẩm dệt màu kem trắng sáng sạch sẽ, bo cổ tay ôm sát chống bụi bẩn lọt vào lòng bàn tay.",
+                detailedDescription: "Mặt hàng bao tay len màu kem dệt tự động đồng đều, sợi cotton cao cấp mang lại tính thẩm mỹ cao, độ bền kéo dãn tốt và tái sử dụng được nhiều lần sau khi giặt."
+            },
+            { 
+                id: 5, 
+                name: "Bao tay len Muối tiêu bền bỉ sỉ công trình", 
+                price: null, 
+                category: "len", 
+                stock: 3900, 
+                rating: 4.7, 
+                image: "https://placehold.co/500x500/808080/white?text=Muoi+Tieu", 
+                featured: true,
+                brand: "Thùy Dương",
+                standard: "Tiêu chuẩn xây dựng công trình Việt Nam",
+                material: "Sợi len sợi phối màu muối tiêu đặc trưng, chống lộ bẩn bám dính tốt",
+                usage: "Phục vụ bốc dỡ gạch đá, sắt thép công trình xây dựng, kho vận logistic.",
+                description: "Màu sắc muối tiêu thông minh giúp sản phẩm trông sạch sẽ bền bỉ lâu hơn trong môi trường bùn đất đại công trình.",
+                detailedDescription: "Được gia công dệt máy chắc chắn, mật độ len phân bố đều mang lại độ bám dính tuyệt vời khi khuân vác bê tông gạch đá, là sự lựa chọn số 1 của các nhà thầu công trình."
+            },
+            { id: 6, name: "[Sản phẩm bao tay len trống 1]", price: null, category: "len", stock: 0, rating: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+1", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Sản phẩm trống chờ bổ sung dữ liệu sau.", detailedDescription: "Nội dung chi tiết sản phẩm trống chờ bổ sung sau." },
+            
+            // DANH MỤC CHỐNG CẮT VÀ 4 SẢN PHẨM TRỐNG
             { 
                 id: 8, 
                 name: "Bao tay chống cắt cấp 5 Deltaplus Venicut52", 
@@ -290,19 +335,14 @@
                 material: "Cấu tạo từ sợi tổng hợp TAEKI hiệu năng chống cắt cao kết hợp lớp phủ lòng bàn tay bằng cao su latex nhám dày dặn.",
                 usage: "Chống cắt cấp độ cao, chống mài mòn ma sát mạnh, chuyên bốc xếp kính tấm lớn, tấm thép, tôn mạ sắc nhọn.",
                 description: "Găng tay bảo hộ chống cắt thương hiệu quốc tế, bảo vệ an toàn tuyệt đối trước các góc cạnh sắc bén cắt cứa.",
-                detailedDescription: "Deltaplus Venicut52 sở hữu công nghệ sợi độc quyền TAEKI mang lại khả năng kháng cắt cấp độ 5 tối đa theo tiêu chuẩn cơ học Châu Âu. Lớp phủ cao su tự nhiên Latex tạo độ bám dính vượt trội ngay cả trong môi trường có dầu mỡ hoặc ẩm ướt.",
-                images: [
-                    "https://placehold.co/500x500/b71c1c/white?text=Chong+Cat+Anh+1",
-                    "https://placehold.co/500x500/990000/white?text=Chong+Cat+Anh+2",
-                    "https://placehold.co/500x500/660000/white?text=Chong+Cat+Anh+3",
-                    "https://placehold.co/500x500/440000/white?text=Chong+Cat+Anh+4"
-                ]
+                detailedDescription: "Deltaplus Venicut52 sở hữu công nghệ sợi độc quyền TAEKI mang lại khả năng kháng cắt cấp độ 5 tối đa theo tiêu chuẩn cơ học Châu Âu. Lớp phủ cao su tự nhiên Latex tạo độ bám dính vượt trội ngay cả trong môi trường có dầu mỡ hoặc ẩm ướt."
             },
-            { id: 81, name: "[Sản phẩm chống cắt trống 1]", price: null, category: "chong-cat", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Chong+Cat+Trong+1", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Sản phẩm trống chờ bổ sung dữ liệu sau.", detailedDescription: "Nội dung chi tiết sản phẩm trống chờ bổ sung sau.", images: ["https://placehold.co/500x500/ccc/white?text=Trong+1", "https://placehold.co/500x500/bbb/white?text=Trong+2", "https://placehold.co/500x500/aaa/white?text=Trong+3", "https://placehold.co/500x500/999/white?text=Trong+4"] },
-            { id: 82, name: "[Sản phẩm chống cắt trống 2]", price: null, category: "chong-cat", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Chong+Cat+Trong+2", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Sản phẩm trống chờ bổ sung dữ liệu sau.", detailedDescription: "Nội dung chi tiết sản phẩm trống chờ bổ sung sau.", images: ["https://placehold.co/500x500/ccc/white?text=Trong+1", "https://placehold.co/500x500/bbb/white?text=Trong+2", "https://placehold.co/500x500/aaa/white?text=Trong+3", "https://placehold.co/500x500/999/white?text=Trong+4"] },
-            { id: 83, name: "[Sản phẩm chống cắt trống 3]", price: null, category: "chong-cat", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Chong+Cat+Trong+3", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Sản phẩm trống chờ bổ sung dữ liệu sau.", detailedDescription: "Nội dung chi tiết sản phẩm trống chờ bổ sung sau.", images: ["https://placehold.co/500x500/ccc/white?text=Trong+1", "https://placehold.co/500x500/bbb/white?text=Trong+2", "https://placehold.co/500x500/aaa/white?text=Trong+3", "https://placehold.co/500x500/999/white?text=Trong+4"] },
-            { id: 84, name: "[Sản phẩm chống cắt trống 4]", price: null, category: "chong-cat", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Chong+Cat+Trong+4", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Sản phẩm trống chờ bổ sung dữ liệu sau.", detailedDescription: "Nội dung chi tiết sản phẩm trống chờ bổ sung sau.", images: ["https://placehold.co/500x500/ccc/white?text=Trong+1", "https://placehold.co/500x500/bbb/white?text=Trong+2", "https://placehold.co/500x500/aaa/white?text=Trong+3", "https://placehold.co/500x500/999/white?text=Trong+4"] },
+            { id: 81, name: "[Sản phẩm chống cắt trống 1]", price: null, category: "chong-cat", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Chong+Cat+Trong+1", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Sản phẩm trống chờ bổ sung dữ liệu sau.", detailedDescription: "Nội dung chi tiết sản phẩm trống chờ bổ sung sau." },
+            { id: 82, name: "[Sản phẩm chống cắt trống 2]", price: null, category: "chong-cat", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Chong+Cat+Trong+2", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Sản phẩm trống chờ bổ sung dữ liệu sau.", detailedDescription: "Nội dung chi tiết sản phẩm trống chờ bổ sung sau." },
+            { id: 83, name: "[Sản phẩm chống cắt trống 3]", price: null, category: "chong-cat", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Chong+Cat+Trong+3", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Sản phẩm trống chờ bổ sung dữ liệu sau.", detailedDescription: "Nội dung chi tiết sản phẩm trống chờ bổ sung sau." },
+            { id: 84, name: "[Sản phẩm chống cắt trống 4]", price: null, category: "chong-cat", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Chong+Cat+Trong+4", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Sản phẩm trống chờ bổ sung dữ liệu sau.", detailedDescription: "Nội dung chi tiết sản phẩm trống chờ bổ sung sau." },
             
+            // DANH MỤC CHỐNG GIẬT VÀ 4 SẢN PHẨM TRỐNG
             { 
                 id: 9, 
                 name: "Bao tay chống giật hạ thế cách điện an toàn", 
@@ -315,15 +355,9 @@
                 brand: "Thùy Dương / Nhập khẩu",
                 standard: "Tiêu chuẩn kỹ thuật điện IEC 60903, an toàn hạ thế",
                 material: "Cao su thiên nhiên cách điện cao cấp, siêu dẻo",
-                usage: "Bảo hộ công nhân kỹ thuật ngành điện lực, lắp đặt bảo trì trạm điện hạ thế, lưới điện gia dụng.",
+                usage: "Bảo hộ công nhân kỹ thuật ngành điện lực, lưới điện gia dụng.",
                 description: "Bao tay cách điện linh hoạt, bảo vệ tính mạng công nhân kỹ thuật trước rủi ro rò rỉ điện lưới.",
-                detailedDescription: "Sản phẩm được kiểm định nghiêm ngặt về độ bền điện áp và khả năng đâm xuyên, cấu tạo bề mặt nhẵn nhụi.",
-                images: [
-                    "https://placehold.co/500x500/F57C00/white?text=Cach+Dien+1",
-                    "https://placehold.co/500x500/E65100/white?text=Cach+Dien+2",
-                    "https://placehold.co/500x500/FFB74D/white?text=Cach+Dien+3",
-                    "https://placehold.co/500x500/FFA726/white?text=Cach+Dien+4"
-                ]
+                detailedDescription: "Sản phẩm được kiểm định nghiêm ngặt về độ bền điện áp và khả năng đâm xuyên, cấu tạo bề mặt nhẵn nhụi."
             },
             { 
                 id: 10, 
@@ -339,19 +373,14 @@
                 material: "Cao su cách điện độ dày kết cấu cao, chịu lực tốt",
                 usage: "Thao tác trực tiếp trên đường dây trung thế, sửa chữa thiết bị trạm biến áp.",
                 description: "Sản phẩm cách điện trung thế chuyên dụng với độ dày an toàn đạt chuẩn kiểm định khắt khe.",
-                detailedDescription: "Bao tay có chiều dài bảo vệ vượt trội lên tới khuỷu tay, kết cấu phân lớp giúp tăng cường khả năng chịu điện áp tải cao.",
-                images: [
-                    "https://placehold.co/500x500/EF6C00/white?text=Trung+The+1",
-                    "https://placehold.co/500x500/D84315/white?text=Trung+The+2",
-                    "https://placehold.co/500x500/FF7043/white?text=Trung+The+3",
-                    "https://placehold.co/500x500/FF8A65/white?text=Trung+The+4"
-                ]
+                detailedDescription: "Bao tay có chiều dài bảo vệ vượt trội lên tới khuỷu tay, kết cấu phân lớp giúp tăng cường khả năng chịu điện áp tải cao."
             },
-            { id: 91, name: "[Sản phẩm chống giật trống 1]", price: null, category: "chong-giat", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Chong+Giat+Trong+1", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Mô tả trống.", detailedDescription: "Chi tiết trống.", images: ["https://placehold.co/500x500/ccc/white?text=Trong+1", "https://placehold.co/500x500/bbb/white?text=Trong+2", "https://placehold.co/500x500/aaa/white?text=Trong+3", "https://placehold.co/500x500/999/white?text=Trong+4"] },
-            { id: 92, name: "[Sản phẩm chống giật trống 2]", price: null, category: "chong-giat", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Chong+Giat+Trong+2", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Mô tả trống.", detailedDescription: "Chi tiết trống.", images: ["https://placehold.co/500x500/ccc/white?text=Trong+1", "https://placehold.co/500x500/bbb/white?text=Trong+2", "https://placehold.co/500x500/aaa/white?text=Trong+3", "https://placehold.co/500x500/999/white?text=Trong+4"] },
-            { id: 93, name: "[Sản phẩm chống giật trống 3]", price: null, category: "chong-giat", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Chong+Giat+Trong+3", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Mô tả trống.", detailedDescription: "Chi tiết trống.", images: ["https://placehold.co/500x500/ccc/white?text=Trong+1", "https://placehold.co/500x500/bbb/white?text=Trong+2", "https://placehold.co/500x500/aaa/white?text=Trong+3", "https://placehold.co/500x500/999/white?text=Trong+4"] },
-            { id: 94, name: "[Sản phẩm chống giật trống 4]", price: null, category: "chong-giat", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Chong+Giat+Trong+4", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Mô tả trống.", detailedDescription: "Chi tiết trống.", images: ["https://placehold.co/500x500/ccc/white?text=Trong+1", "https://placehold.co/500x500/bbb/white?text=Trong+2", "https://placehold.co/500x500/aaa/white?text=Trong+3", "https://placehold.co/500x500/999/white?text=Trong+4"] },
+            { id: 91, name: "[Sản phẩm chống giật trống 1]", price: null, category: "chong-giat", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Chong+Giat+Trong+1", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Mô tả trống.", detailedDescription: "Chi tiết trống." },
+            { id: 92, name: "[Sản phẩm chống giật trống 2]", price: null, category: "chong-giat", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Chong+Giat+Trong+2", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Mô tả trống.", detailedDescription: "Chi tiết trống." },
+            { id: 93, name: "[Sản phẩm chống giật trống 3]", price: null, category: "chong-giat", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Chong+Giat+Trong+3", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Mô tả trống.", detailedDescription: "Chi tiết trống." },
+            { id: 94, name: "[Sản phẩm chống giật trống 4]", price: null, category: "chong-giat", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Chong+Giat+Trong+4", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Mô tả trống.", detailedDescription: "Chi tiết trống." },
 
+            // DANH MỤC PHỦ SƠN VÀ 4 SẢN PHẨM TRỐNG
             { 
                 id: 11, 
                 name: "Bao tay dệt kim phủ PU trắng phòng sạch", 
@@ -366,13 +395,7 @@
                 material: "Sợi dệt vải Polyester mỏng mịn, phủ lớp nhựa Polyurethane màu trắng",
                 usage: "Dùng trong dây chuyền lắp ráp linh kiện điện tử, vi mạch, màn hình, phòng sạch.",
                 description: "Sản phẩm ôm khít lòng bàn tay, không tạo bụi bẩn sợi vải, cách tĩnh điện hiệu quả.",
-                detailedDescription: "Lớp phủ nhựa PU trắng có độ bám dính tốt giúp bảo vệ đầu ngón tay tối đa khỏi sự ma sát.",
-                images: [
-                    "https://placehold.co/500x500/2E7D32/white?text=PU+Trang+1",
-                    "https://placehold.co/500x500/1B5E20/white?text=PU+Trang+2",
-                    "https://placehold.co/500x500/81C784/white?text=PU+Trang+3",
-                    "https://placehold.co/500x500/A5D6A7/white?text=PU+Trang+4"
-                ]
+                detailedDescription: "Lớp phủ nhựa PU trắng có độ bám dính tốt giúp bảo vệ đầu ngón tay tối đa khỏi sự ma sát."
             },
             { 
                 id: 12, 
@@ -388,18 +411,12 @@
                 material: "Sợi dệt poly đen bền bỉ, nhúng phủ lớp PU đen lòng bàn tay",
                 usage: "Sửa chữa bảo dưỡng ô tô, xe máy, gia công phụ tùng cơ khí.",
                 description: "Màu đen sạch sẽ lâu bám bẩn bẩn, tăng cường khả năng bám dính khi thao tác.",
-                detailedDescription: "Sản phẩm chịu mài mòn cao, dễ giặt sạch tái sử dụng nhiều lần. Lớp phủ nhựa PU đen dẻo dai.",
-                images: [
-                    "https://placehold.co/500x500/1B5E20/white?text=PU+Den+1",
-                    "https://placehold.co/500x500/003300/white?text=PU+Den+2",
-                    "https://placehold.co/500x500/4caf50/white?text=PU+Den+3",
-                    "https://placehold.co/500x500/2e7d32/white?text=PU+Den+4"
-                ]
+                detailedDescription: "Sản phẩm chịu mài mòn cao, dễ giặt sạch tái sử dụng nhiều lần. Lớp phủ nhựa PU đen dẻo dai."
             },
-            { id: 71, name: "[Sản phẩm phủ sơn trống 1]", price: null, category: "phu-son", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Phu+Son+Trong+1", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống.", detailedDescription: "Trống.", images: ["https://placehold.co/500x500/ccc/white?text=Trong+1", "https://placehold.co/500x500/bbb/white?text=Trong+2", "https://placehold.co/500x500/aaa/white?text=Trong+3", "https://placehold.co/500x500/999/white?text=Trong+4"] },
-            { id: 72, name: "[Sản phẩm phủ sơn trống 2]", price: null, category: "phu-son", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Phu+Son+Trong+2", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống.", detailedDescription: "Trống.", images: ["https://placehold.co/500x500/ccc/white?text=Trong+1", "https://placehold.co/500x500/bbb/white?text=Trong+2", "https://placehold.co/500x500/aaa/white?text=Trong+3", "https://placehold.co/500x500/999/white?text=Trong+4"] },
-            { id: 73, name: "[Sản phẩm phủ sơn trống 3]", price: null, category: "phu-son", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Phu+Son+Trong+3", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống.", detailedDescription: "Trống.", images: ["https://placehold.co/500x500/ccc/white?text=Trong+1", "https://placehold.co/500x500/bbb/white?text=Trong+2", "https://placehold.co/500x500/aaa/white?text=Trong+3", "https://placehold.co/500x500/999/white?text=Trong+4"] },
-            { id: 74, name: "[Sản phẩm phủ sơn trống 4]", price: null, category: "phu-son", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Phu+Son+Trong+4", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống.", detailedDescription: "Trống.", images: ["https://placehold.co/500x500/ccc/white?text=Trong+1", "https://placehold.co/500x500/bbb/white?text=Trong+2", "https://placehold.co/500x500/aaa/white?text=Trong+3", "https://placehold.co/500x500/999/white?text=Trong+4"] }
+            { id: 71, name: "[Sản phẩm phủ sơn trống 1]", price: null, category: "phu-son", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Phu+Son+Trong+1", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống.", detailedDescription: "Trống." },
+            { id: 72, name: "[Sản phẩm phủ sơn trống 2]", price: null, category: "phu-son", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Phu+Son+Trong+2", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống.", detailedDescription: "Trống." },
+            { id: 73, name: "[Sản phẩm phủ sơn trống 3]", price: null, category: "phu-son", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Phu+Son+Trong+3", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống.", detailedDescription: "Trống." },
+            { id: 74, name: "[Sản phẩm phủ sơn trống 4]", price: null, category: "phu-son", stock: 0, rating: 0, image: "https://placehold.co/400x400/cccccc/white?text=Phu+Son+Trong+4", featured: false, brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống.", detailedDescription: "Trống." }
         ];
 
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -426,12 +443,7 @@
             cart.forEach((item) => {
                 const prod = products.find(p => p.id === item.id);
                 if(!prod) return;
-                let detailsStr = '';
-                if (item.subType) {
-                    detailsStr = `<p class="text-xs text-[#FF8C00] font-semibold">${item.subType} (${item.weight})</p>`;
-                } else if (item.weight) {
-                    detailsStr = `<p class="text-xs text-[#0F4C81] font-semibold">Trọng lượng: ${item.weight}</p>`;
-                }
+                let detailsStr = item.weight ? `<p class="text-xs text-[#FF8C00] font-semibold">Trọng lượng: ${item.weight}</p>` : '';
                 html += `<div class="flex gap-3 border-b pb-3 items-center">
                             <img src="${prod.image}" class="w-14 h-14 object-cover rounded">
                             <div class="flex-1">
@@ -464,15 +476,13 @@
             }
         }
 
-        function addToCartSpecial(id, subType = null, weight = null, qty = 1) {
-            let uniqueId = id + 
-                           (subType ? '-' + subType.replace(/\s+/g, '') : '') + 
-                           (weight ? '-' + weight : '');
+        function addToCartSpecial(id, weight = null, qty = 1) {
+            let uniqueId = id + (weight ? '-' + weight : '');
             let existing = cart.find(i => i.uniqueId === uniqueId);
             if(existing) {
                 existing.quantity += qty;
             } else {
-                cart.push({ uniqueId, id, subType, weight, quantity: qty });
+                cart.push({ uniqueId, id, weight, quantity: qty });
             }
             saveCart();
             showToast("✅ Đã thêm vào danh sách yêu cầu báo giá!");
@@ -541,7 +551,7 @@
             <section class="py-16 bg-white">
                 <div class="container mx-auto px-4">
                     <div class="flex justify-between items-center mb-8"><h2 class="text-3xl font-bold text-[#0F4C81]">Sản phẩm nổi bật</h2><a href="#" data-page="products" class="nav-link text-[#FF8C00] text-lg">Xem tất cả →</a></div>
-                    <div class="swiper featuredSwiper overflow-hidden"><div class="swiper-wrapper">${featured.map(p => `<div class="swiper-slide"><div class="bg-gray-50 p-5 rounded-xl shadow text-center flex flex-col justify-between h-80"><img src="${p.image}" class="h-36 mx-auto object-cover rounded-lg"><h3 class="font-bold text-sm mt-3 line-clamp-1 text-gray-800">${p.name}</h3><p class="text-red-600 font-bold text-xs mt-1">${displayPrice(p.price)}</p><button class="view-detail-btn bg-[#0F4C81] text-white px-4 py-2 rounded-full mt-3 w-full text-xs hover:bg-opacity-90" data-id="${p.id}">Chi tiết / Báo giá</button></div></div>`).join('')}</div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                    <div class="swiper featuredSwiper overflow-hidden"><div class="swiper-wrapper">${featured.map(p => `<div class="swiper-slide"><div class="bg-gray-50 p-5 rounded-xl shadow text-center flex flex-col justify-between h-72"><img src="${p.image}" class="h-36 mx-auto object-cover rounded-lg"><h3 class="font-bold text-sm mt-3 line-clamp-1 text-gray-800">${p.name}</h3><p class="text-red-600 font-bold text-xs mt-1">${displayPrice(p.price)}</p><button class="view-detail-btn bg-[#0F4C81] text-white px-4 py-2 rounded-full mt-3 w-full text-xs hover:bg-opacity-90" data-id="${p.id}">Chi tiết / Báo giá</button></div></div>`).join('')}</div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
                 </div>
             </section>
 
@@ -599,7 +609,7 @@
             return `<div class="container mx-auto px-4 py-20 text-center"><h2 class="text-3xl font-bold text-[#0F4C81]">${title}</h2><p class="text-lg mt-4 text-gray-600">${content}</p><div class="mt-6"><a href="#" data-page="home" class="nav-link btn-cta text-white px-6 py-3 rounded-lg inline-block">Về trang chủ</a></div></div>`;
         }
 
-        // NÂNG CẤP HIỂN THỊ TRANG DANH SÁCH: THÊM HÀNG 4 ẢNH NHỎ NGAY TRÊN TỪNG THẺ SẢN PHẨM (CARD)
+        // LOẠI BỎ HOÀN TOÀN CÁC Ô HÌNH ẢNH NHỎ Ở KHUNG THẺ SẢN PHẨM BÊN NGOÀI
         function renderProductList(filterCategory = "all", searchQuery = "") {
             let filtered = products.filter(p => (filterCategory === "all" || p.category === filterCategory) && p.name.toLowerCase().includes(searchQuery.toLowerCase()));
             const container = document.getElementById('productGridContainer');
@@ -609,22 +619,10 @@
                 return;
             }
             
-            container.innerHTML = filtered.map(p => {
-                // Tạo sẵn hàng 4 ảnh nhỏ cho thẻ sản phẩm dựa vào dữ liệu có sẵn
-                let thumbsImages = p.images || [p.image, p.image, p.image, p.image];
-                let thumbsGridHtml = thumbsImages.map((imgUrl, idx) => `
-                    <img src="${imgUrl}" class="card-thumb-trigger w-full h-8 md:h-10 object-cover rounded border border-gray-200 cursor-pointer hover:border-[#FF8C00] transition ${idx === 0 ? 'border-[#FF8C00]' : ''}" data-target-img="${imgUrl}" data-idx="${idx}">
-                `).join('');
-
-                return `
-                <div class="product-card bg-white rounded-xl shadow-md p-4 flex flex-col justify-between" data-id="${p.id}">
+            container.innerHTML = filtered.map(p => `
+                <div class="product-card bg-white rounded-xl shadow-md p-4 flex flex-col justify-between h-76" data-id="${p.id}">
                     <div>
-                        <img src="${thumbsImages[0]}" class="card-main-img w-full h-40 object-cover rounded-lg mb-2">
-                        
-                        <div class="grid grid-cols-4 gap-1.5 mb-3">
-                            ${thumbsGridHtml}
-                        </div>
-
+                        <img src="${p.image}" class="card-main-img w-full h-44 object-cover rounded-lg mb-3">
                         <h3 class="font-bold text-sm line-clamp-2 min-h-[2.5rem] text-gray-800 leading-tight">${p.name}</h3>
                         <p class="text-red-600 font-bold text-xs mt-1">${displayPrice(p.price)}</p>
                     </div>
@@ -633,35 +631,21 @@
                             <i class="fas fa-layer-group mr-1"></i> Xem chi tiết & Tùy chọn
                         </button>
                     </div>
-                </div>`;
-            }).join('');
+                </div>`).join('');
 
             attachProductEvents();
         }
 
         function attachProductEvents(){
-            // Sự kiện click xem chi tiết sản phẩm
             document.querySelectorAll('.product-card').forEach(card => {
                 let id = parseInt(card.dataset.id);
-                
-                // Gắn tương tác chuyển ảnh khi click ảnh nhỏ ngay bên ngoài danh sách
-                card.querySelectorAll('.card-thumb-trigger').forEach(thumb => {
-                    thumb.addEventListener('click', (e) => {
-                        e.stopPropagation(); // Ngăn chặn nhảy vào trang chi tiết khi click ảnh nhỏ
-                        card.querySelectorAll('.card-thumb-trigger').forEach(t => t.classList.remove('border-[#FF8C00]'));
-                        thumb.classList.add('border-[#FF8C00]');
-                        card.querySelector('.card-main-img').src = thumb.dataset.targetImg;
-                    });
-                });
-
-                // Sự kiện xem chi tiết
                 card.querySelector('.view-detail-btn').addEventListener('click', () => { 
                     showProductDetail(id); 
                 });
             });
         }
 
-        // ĐỒNG BỘ GIAO DIỆN CHI TIẾT SẢN PHẨM: ĐỔI SIZE THÀNH SỐ GAM (30G - 80G) CHO TẤT CẢ LOẠI SẢN PHẨM
+        // GIAO DIỆN CHI TIẾT SẢN PHẨM: ĐÃ BỎ HOÀN TOÀN CÁC Ô ẢNH NHỎ LỒNG DƯỚI ẢNH LỚN
         function showProductDetail(id){
             const prod = products.find(p => p.id === id);
             if(!prod) return;
@@ -670,82 +654,32 @@
             const mainAppContent = document.getElementById('appContent');
             if(!mainAppContent) return;
 
-            let thumbsImages = prod.images || [prod.image, prod.image, prod.image, prod.image];
-            let thumbsHtml = thumbsImages.map((imgUrl, idx) => {
-                let labelType = (prod.subTypes && prod.subTypes[idx]) ? prod.subTypes[idx] : `Mẫu ${idx + 1}`;
-                return `
-                    <div class="flex flex-col items-center gap-1">
-                        <img src="${imgUrl}" class="thumb-img w-full h-16 md:h-20 object-cover rounded-xl border-2 border-gray-200 cursor-pointer hover:border-[#FF8C00] transition ${idx === 0 ? 'active' : ''}" data-index="${idx}" data-img-src="${imgUrl}" data-type-name="${labelType}">
-                        <span class="text-[10px] text-gray-500 font-medium text-center line-clamp-1 w-full">${labelType}</span>
-                    </div>`;
-            }).join('');
+            // ĐỒNG BỘ: TẤT CẢ SẢN PHẨM ĐỀU SỬ DỤNG BỘ CHỌN TRỌNG LƯỢNG (SỐ GAM) TỪ 30G ĐẾN 80G ĐỒNG BỘ
+            let modalActionContent = `
+                <div class="space-y-4">
+                    <div>
+                        <span class="block text-sm font-bold text-gray-700 mb-1.5">Chọn Trọng Lượng (Số Gam)</span>
+                        <div class="grid grid-cols-3 gap-2" id="general-weight-container">
+                            <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs active" data-weight="30g">30g</button>
+                            <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="40g">40g</button>
+                            <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="50g">50g</button>
+                            <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="60g">60g</button>
+                            <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="70g">70g</button>
+                            <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="80g">80g</button>
+                        </div>
+                    </div>
 
-            let modalActionContent = '';
-
-            if(prod.isLenGroup) {
-                // Cấu trúc chọn loại và cân nặng của Bao Tay Len
-                let typesOptions = prod.subTypes.map((type, index) => `<option value="${type}" data-idx="${index}">${type}</option>`).join('');
-                
-                modalActionContent = `
-                    <div class="space-y-4">
-                        <div>
-                            <span class="block text-sm font-bold text-gray-700 mb-1.5">Chọn Chủng Loại Bao Tay Len</span>
-                            <select id="len-type-select" class="w-full text-sm border-2 border-gray-200 p-2.5 rounded-lg focus:outline-none focus:border-[#FF8C00] font-semibold bg-white">
-                                ${typesOptions}
-                            </select>
+                    <div class="pt-2 flex flex-wrap items-center gap-3">
+                        <div class="flex items-center border-2 border-gray-300 rounded-lg bg-white">
+                            <button id="modal-qty-minus" class="px-3 py-2 bg-gray-100 hover:bg-gray-200 font-bold text-sm rounded-l-md">-</button>
+                            <span id="modal-qty-value" class="px-4 font-bold text-sm">1</span>
+                            <button id="modal-qty-plus" class="px-3 py-2 bg-gray-100 hover:bg-gray-200 font-bold text-sm rounded-r-md">+</button>
                         </div>
-                        
-                        <div>
-                            <span class="block text-sm font-bold text-gray-700 mb-1.5">Chọn Trọng Lượng (Số Gam)</span>
-                            <div class="grid grid-cols-3 gap-2" id="len-weight-container">
-                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs active" data-weight="30g">30g</button>
-                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="40g">40g</button>
-                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="50g">50g</button>
-                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="60g">60g</button>
-                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="70g">70g</button>
-                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="80g">80g</button>
-                            </div>
-                        </div>
-
-                        <div class="pt-2 flex flex-wrap items-center gap-3">
-                            <div class="flex items-center border-2 border-gray-300 rounded-lg bg-white">
-                                <button id="modal-qty-minus" class="px-3 py-2 bg-gray-100 hover:bg-gray-200 font-bold text-sm rounded-l-md">-</button>
-                                <span id="modal-qty-value" class="px-4 font-bold text-sm">1</span>
-                                <button id="modal-qty-plus" class="px-3 py-2 bg-gray-100 hover:bg-gray-200 font-bold text-sm rounded-r-md">+</button>
-                            </div>
-                            <button id="btn-add-len-modal" class="btn-cta text-white px-6 py-2.5 rounded-lg font-bold text-sm shadow-md flex-1 flex items-center justify-center gap-2">
-                                <i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ YÊU CẦU
-                            </button>
-                        </div>
-                    </div>`;
-            } else {
-                // ĐỒNG BỘ CHO CÁC SẢN PHẨM KHÁC: ĐỔI LỰA CHỌN SIZE THÀNH CHỌN SỐ GAM (30G - 80G) ĐỒNG BỘ TOÀN DIỆN
-                modalActionContent = `
-                    <div class="space-y-4">
-                        <div>
-                            <span class="block text-sm font-bold text-gray-700 mb-1.5">Chọn Trọng Lượng (Số Gam)</span>
-                            <div class="grid grid-cols-3 gap-2" id="general-weight-container">
-                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs active" data-weight="30g">30g</button>
-                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="40g">40g</button>
-                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="50g">50g</button>
-                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="60g">60g</button>
-                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="70g">70g</button>
-                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="80g">80g</button>
-                            </div>
-                        </div>
-
-                        <div class="pt-2 flex flex-wrap items-center gap-3">
-                            <div class="flex items-center border-2 border-gray-300 rounded-lg bg-white">
-                                <button id="modal-qty-minus" class="px-3 py-2 bg-gray-100 hover:bg-gray-200 font-bold text-sm rounded-l-md">-</button>
-                                <span id="modal-qty-value" class="px-4 font-bold text-sm">1</span>
-                                <button id="modal-qty-plus" class="px-3 py-2 bg-gray-100 hover:bg-gray-200 font-bold text-sm rounded-r-md">+</button>
-                            </div>
-                            <button id="btn-add-cart-main-modal" class="btn-cta text-white px-6 py-2.5 rounded-lg font-bold text-sm shadow-md flex-1 flex items-center justify-center gap-2">
-                                <i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ YÊU CẦU
-                            </button>
-                        </div>
-                    </div>`;
-            }
+                        <button id="btn-add-cart-main-modal" class="btn-cta text-white px-6 py-2.5 rounded-lg font-bold text-sm shadow-md flex-1 flex items-center justify-center gap-2">
+                            <i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ YÊU CẦU
+                        </button>
+                    </div>
+                </div>`;
 
             let relatedHtml = '';
             if(relatedProducts.length > 0) {
@@ -767,7 +701,7 @@
                     </div>`;
             }
 
-            // ĐỔI NỘI DUNG DÒNG HOTLINE PHÍA DƯỚI: "Liên hệ để được báo giá chi tiết: 0981 171 750"
+            // NẰM THẲNG VÀO TRANG WEB: Đổi dòng hotline thành "Liên hệ để được báo giá chi tiết"
             mainAppContent.innerHTML = `
                 <div class="container mx-auto px-4 py-8 bg-white my-6 shadow-sm rounded-2xl border border-gray-100">
                     
@@ -779,12 +713,8 @@
                         
                         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
                             
-                            <div class="md:col-span-5 w-full space-y-4">
-                                <img id="detail-main-img" src="${thumbsImages[0]}" class="w-full h-auto object-cover rounded-2xl border border-gray-100 shadow-sm mx-auto">
-                                
-                                <div class="grid grid-cols-4 gap-3 pt-2">
-                                    ${thumbsHtml}
-                                </div>
+                            <div class="md:col-span-5 w-full">
+                                <img id="detail-main-img" src="${prod.image}" class="w-full h-auto object-cover rounded-2xl border border-gray-100 shadow-sm mx-auto">
                             </div>
                             
                             <div class="md:col-span-7 space-y-5">
@@ -834,39 +764,8 @@
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // Quy trình quản lý sự kiện tương tác
+            // Quản lý sự kiện tương tác
             document.getElementById('btn-back-to-products').onclick = () => { loadPage('products'); };
-
-            const mainImgEl = document.getElementById('detail-main-img');
-            const lenTypeSelect = document.getElementById('len-type-select');
-            
-            document.querySelectorAll('.thumb-img').forEach(thumb => {
-                thumb.addEventListener('click', () => {
-                    document.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('active'));
-                    thumb.classList.add('active');
-                    mainImgEl.src = thumb.dataset.imgSrc;
-                    
-                    if(prod.isLenGroup && lenTypeSelect) {
-                        let targetTypeName = thumb.dataset.typeName;
-                        for (let i = 0; i < lenTypeSelect.options.length; i++) {
-                            if (lenTypeSelect.options[i].value === targetTypeName) {
-                                lenTypeSelect.selectedIndex = i;
-                                break;
-                            }
-                        }
-                    }
-                });
-            });
-
-            if(prod.isLenGroup && lenTypeSelect) {
-                lenTypeSelect.addEventListener('change', () => {
-                    let selectedIdx = lenTypeSelect.selectedIndex;
-                    if(selectedIdx >= 0 && selectedIdx < 4) { 
-                        const targetThumb = document.querySelector(`.thumb-img[data-index="${selectedIdx}"]`);
-                        if(targetThumb) targetThumb.click();
-                    }
-                });
-            }
 
             document.querySelectorAll('.item-related-click').forEach(card => {
                 card.addEventListener('click', () => { showProductDetail(parseInt(card.dataset.id)); });
@@ -877,7 +776,6 @@
             document.getElementById('modal-qty-minus').onclick = () => { if(currentQty > 1) { currentQty--; qtyVal.innerText = currentQty; } };
             document.getElementById('modal-qty-plus').onclick = () => { currentQty++; qtyVal.innerText = currentQty; };
 
-            // Quản lý sự kiện nút số gam hoạt động
             let currentWeight = "30g";
             document.querySelectorAll('.weight-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -887,15 +785,9 @@
                 });
             });
 
-            if(prod.isLenGroup) {
-                document.getElementById('btn-add-len-modal').onclick = () => {
-                    addToCartSpecial(prod.id, lenTypeSelect.value, currentWeight, currentQty);
-                };
-            } else {
-                document.getElementById('btn-add-cart-main-modal').onclick = () => {
-                    addToCartSpecial(prod.id, null, currentWeight, currentQty);
-                };
-            }
+            document.getElementById('btn-add-cart-main-modal').onclick = () => {
+                addToCartSpecial(prod.id, currentWeight, currentQty);
+            };
         }
 
         function attachFilterEvents(){
@@ -951,7 +843,7 @@
             searchInput?.addEventListener('keypress', (e) => { if(e.key === 'Enter') triggerSearch(); });
         }
 
-        // KÍCH HOẠT ĐƯỜNG DẪN 4 NÚT TIÊU ĐỀ KHI CLICK CHUYỂN DANH MỤC
+        // KÍCH HOẠT ĐƯỜNG DẪN 4 NÚT TIÊU ĐỀ HOẠT ĐỘNG CHUYỂN TRANG VÀ LỌC DANH MỤC SẢN PHẨM CHUẨN XÁC
         function attachMegaMenuEvents() {
             document.querySelectorAll('.filter-mega').forEach(item => {
                 item.addEventListener('click', (e) => {
@@ -965,7 +857,6 @@
                 });
             });
 
-            // Kích hoạt đường dẫn click trực tiếp cho cả nút cha (category-main-btn) ở menu tiêu đề
             document.querySelectorAll('.click-mega-header').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
