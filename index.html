@@ -24,6 +24,8 @@
         .product-card:hover { box-shadow: 0 25px 50px rgba(0,0,0,0.12); transform: translateY(-8px) scale(1.01); }
         .cart-badge { top: -8px; right: -8px; }
         .nav-link { cursor: pointer; transition: color 0.2s; font-weight: 600; font-size: 1.1rem; padding: 0.5rem 0; display: inline-block; }
+
+        /* CHANGE 4: Updated hero-full and about-banner */
         .hero-full {
             min-height: calc(100vh - 180px);
             display: flex;
@@ -34,70 +36,36 @@
             background-size: cover;
             background-position: center;
         }
+
         .counter-number { font-size: 3rem; font-weight: bold; }
         .menu-bar { justify-content: center; gap: 2rem; background: #f9fafb; width: 100%; padding: 0.75rem 1rem; border-radius: 0; }
         .menu-bar a { font-size: 1.15rem; letter-spacing: 0.5px; }
+
         @media (max-width: 768px) {
-            .hero-full { min-height: auto; padding: 40px 0; }
-            .about-banner { min-height: 45vh; }
-            h1 { font-size: 38px !important; line-height: 1.2; }
-            .container { padding-left: 16px !important; padding-right: 16px !important; }
             .phone-area { flex-direction: row !important; flex-wrap: wrap; justify-content: center; }
             .menu-bar { gap: 1rem; flex-wrap: wrap; }
             .menu-bar a { font-size: 1rem; }
         }
 
-        .category-main-btn {
-            background: #f3f4f6;
-            padding: 12px 22px;
-            border-radius: 999px;
-            font-weight: 700;
-            white-space: nowrap;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
+        /* CHANGE 5: Added mobile responsive */
+        @media (max-width: 768px) {
+            .hero-full {
+                min-height: auto;
+                padding: 40px 0;
+            }
+            .about-banner {
+                min-height: 45vh;
+            }
+            h1 {
+                font-size: 38px !important;
+                line-height: 1.2;
+            }
+            .container {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
         }
-        .category-main-btn:hover {
-            background: #0F4C81;
-            color: white;
-            transform: translateY(-2px);
-        }
-        .mega-menu {
-            position: absolute;
-            top: 120%;
-            left: 0;
-            min-width: 240px;
-            background: white;
-            border-radius: 18px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-            padding: 14px;
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.3s;
-            z-index: 999;
-        }
-        .group:hover .mega-menu {
-            opacity: 1;
-            visibility: visible;
-            top: 100%;
-        }
-        .mega-item {
-            display: block;
-            padding: 12px 14px;
-            border-radius: 12px;
-            font-weight: 600;
-            color: #333;
-            transition: 0.2s;
-            cursor: pointer;
-        }
-        .mega-item:hover {
-            background: #f3f4f6;
-            color: #FF8C00;
-            transform: translateX(4px);
-        }
+
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -106,7 +74,6 @@
             color: #FF8C00;
             background-color: #FFF5E6;
         }
-        /* Style cho phần chi tiết sản phẩm mới */
         .product-detail-section {
             background: white;
             border-radius: 1.5rem;
@@ -143,7 +110,7 @@
 </head>
 <body>
 
-    <!-- HEADER MỚI THEO YÊU CẦU -->
+    <!-- CHANGE 1: Replaced header -->
     <header class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
 
         <!-- TOP HEADER -->
@@ -152,13 +119,15 @@
 
                 <!-- LOGO -->
                 <div class="min-w-[220px] text-center lg:text-left">
-                    <div class="text-3xl font-bold leading-none whitespace-nowrap">
-                        <span class="text-[#FF8C00]">Bao Tay</span>
-                        <span class="text-[#0F4C81]">Thùy Dương</span>
-                    </div>
-                    <div class="text-sm text-gray-500 mt-1 text-center lg:text-left">
-                        Bao Tay an toàn - Giá cả hợp lý
-                    </div>
+                    <a href="#" data-page="home" class="nav-link block">
+                        <div class="text-3xl font-bold leading-none whitespace-nowrap">
+                            <span class="text-[#FF8C00]">Bao Tay</span>
+                            <span class="text-[#0F4C81]">Thùy Dương</span>
+                        </div>
+                        <div class="text-sm text-gray-500 mt-1 text-center lg:text-left">
+                            Bao Tay an toàn - Giá cả hợp lý
+                        </div>
+                    </a>
                 </div>
 
                 <!-- SEARCH -->
@@ -168,29 +137,38 @@
                             type="text"
                             id="headerSearch"
                             placeholder="Tìm kiếm bao tay len, chống cắt, phủ PU..."
-                            class="w-full border-2 border-[#0F4C81] rounded-full py-3 pl-6 pr-16 text-base outline-none"
+                            class="w-full border-2 border-[#0F4C81] rounded-full py-3 pl-6 pr-16 text-base outline-none focus:ring-2 focus:ring-[#FF8C00]"
                         >
-                        <button id="headerSearchBtn" class="absolute right-1 top-1 bg-[#FF8C00] text-white w-12 h-12 rounded-full text-xl hover:bg-orange-600 transition">
+                        <button id="headerSearchBtn" class="absolute right-1 top-1 bg-[#FF8C00] text-white w-12 h-12 rounded-full text-xl hover:bg-orange-600 transition flex items-center justify-center">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- PHONE + CART -->
+                <!-- PHONE -->
                 <div class="flex items-center gap-4">
                     <div class="text-sm md:text-base font-semibold text-[#0F4C81] leading-8">
-                        <div><i class="fas fa-phone-alt mr-2"></i>033 444 9494</div>
-                        <div><i class="fas fa-phone-alt mr-2"></i>0981 171 750</div>
+                        <div>
+                            <i class="fas fa-phone-alt mr-2"></i>
+                            <a href="tel:0334449494" class="hover:text-[#FF8C00]">033 444 9494</a>
+                        </div>
+                        <div>
+                            <i class="fas fa-phone-alt mr-2"></i>
+                            <a href="tel:0981171750" class="hover:text-[#FF8C00]">0981 171 750</a>
+                        </div>
                     </div>
                     <div class="relative cursor-pointer" id="cartIconHeader">
                         <i class="fas fa-shopping-cart text-3xl text-gray-700"></i>
-                        <span id="cartCountHeader" class="absolute -top-2 -right-2 bg-[#FF8C00] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                        <span id="cartCountHeader"
+                            class="absolute -top-2 -right-2 bg-[#FF8C00] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                            0
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- MENU CHÍNH -->
+        <!-- MENU -->
         <div class="bg-gray-50 border-t border-gray-200 py-2">
             <div class="container mx-auto px-4">
                 <nav class="flex justify-center flex-wrap gap-10 text-[17px] font-semibold text-gray-700">
@@ -203,14 +181,22 @@
             </div>
         </div>
 
-        <!-- DANH MỤC (hàng dưới cùng của header) -->
+        <!-- DANH MỤC -->
         <div class="bg-white border-t border-gray-100 py-2">
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap justify-center gap-3 text-sm md:text-base font-semibold">
-                    <button class="px-5 py-2 rounded-full bg-gray-100 hover:bg-[#0F4C81] hover:text-white transition">
+                    <button class="px-5 py-2 rounded-full bg-gray-100 hover:bg-[#0F4C81] hover:text-white transition click-mega-header" data-cat="len">
                         🧤 Bao tay len
                     </button>
-                    <!-- Có thể thêm các nút danh mục khác nếu cần, nhưng giữ đúng yêu cầu -->
+                    <button class="px-5 py-2 rounded-full bg-gray-100 hover:bg-[#0F4C81] hover:text-white transition click-mega-header" data-cat="poly">
+                        👕 Bao tay Poly
+                    </button>
+                    <button class="px-5 py-2 rounded-full bg-gray-100 hover:bg-[#0F4C81] hover:text-white transition click-mega-header" data-cat="chong-cat-giat">
+                        ⚔️ Bao tay chống cắt / chống giật
+                    </button>
+                    <button class="px-5 py-2 rounded-full bg-gray-100 hover:bg-[#0F4C81] hover:text-white transition click-mega-header" data-cat="phu-son">
+                        🎨 Găng tay phủ sơn / PU / Nitrile
+                    </button>
                 </div>
             </div>
         </div>
@@ -247,7 +233,7 @@
     </div>
 
     <script>
-        // ======================== MẢNG SẢN PHẨM ĐẦY ĐỦ ========================
+        // ======================== MẢNG SẢN PHẨM ĐẦY ĐỦ VỚI NỘI DUNG CHI TIẾT MỚI ========================
         const products = [
             // 1. BAO TAY LEN (ID 1-5, 13-14)
             { 
@@ -292,10 +278,10 @@
                 applications: ["Công trình xây dựng", "Bốc xếp hàng hóa nặng", "Cơ khí", "Nông nghiệp thô"],
                 preservation: "Bảo quản nơi khô ráo, thoáng mát. Tránh tiếp xúc với hóa chất mạnh.",
                 hashtags: "#baotaylen #baotayxam #baotaydaydan"
-            }
+            },
         ];
 
-        // Bổ sung các sản phẩm len còn thiếu
+        // Bổ sung nhanh các sản phẩm len còn thiếu (id 3,4,5) với cấu trúc đơn giản nhưng đủ thông tin
         const lenProducts = [
             { id: 3, name: "Bao tay len màu Xám dệt kim 10 mịn đẹp", category: "len", image: "https://placehold.co/500x500/777777/white?text=Xam+Kim+10", featured: true, brand: "Thùy Dương", material: "Sợi cotton đan Polyester kim 10 khít mịn", colors: "Xám", weight: "30g,40g,50g", size: "Co giãn tốt", highlights: ["Mật độ dệt cao mịn đẹp","Co giãn tốt cử động thật tay"], applications: ["Cầm nắm công cụ kỹ thuật nhẹ","Kho vận","Đóng gói"], preservation: "Bảo quản nơi khô ráo", hashtags: "#baotaylen #baotaykim10" },
             { id: 4, name: "Bao tay len màu Kem cotton tự nhiên", category: "len", image: "https://placehold.co/500x500/F5F5DC/333333?text=Bao+Tay+Kem", featured: true, brand: "Thùy Dương", material: "Sợi cotton tự nhiên màu kem", colors: "Kem", weight: "30g,40g,50g", size: "Co giãn tốt", highlights: ["Sợi bông cotton kem cao cấp mềm mại","Thoáng khí"], applications: ["Đóng gói","Kho bãi logistics","Kiểm hàng"], preservation: "Bảo quản nơi khô ráo", hashtags: "#baotaylen #baotaykem" },
@@ -303,7 +289,7 @@
         ];
         lenProducts.forEach(p => products.push(p));
 
-        // Bổ sung Poly, PU, chống cắt, nitrile... (giữ nguyên như bản gốc)
+        // Bổ sung các sản phẩm Poly (id 21,22,23) với nội dung chi tiết
         const polyProducts = [
             { id: 21, name: "Bao tay Poly bảo hộ lao động màu Trắng", category: "poly", image: "https://placehold.co/500x500/eeeeee/333333?text=Poly+Trang", featured: true, brand: "Thùy Dương", material: "Polyester cao cấp, sợi Poly co giãn, Nylon tổng hợp", colors: "Trắng", weight: "30g,40g,50g", size: "Thiết kế ôm tay, co giãn linh hoạt", highlights: ["Chất liệu mềm nhẹ, tạo cảm giác thoải mái","Không bám bụi vải khi sử dụng","Độ đàn hồi cao, thao tác linh hoạt","Phù hợp công việc cần độ chính xác","Thoáng khí, hạn chế đổ mồ hôi tay","Chống trầy xước nhẹ khi thao tác","Đường dệt mịn đẹp, độ bền cao","Có thể sử dụng liên tục trong thời gian dài"], applications: ["Lắp ráp linh kiện điện tử","Nhà máy điện tử","Phòng sạch","Kho vận nhẹ","Đóng gói sản phẩm","Kiểm hàng","Sản xuất công nghiệp nhẹ"], preservation: "Giặt sạch sau khi sử dụng. Bảo quản nơi thoáng mát. Tránh tiếp xúc nhiệt độ cao. Không dùng với hóa chất mạnh.", hashtags: "#baotaypoly #baotaypolyester #baotayphongsach #baotaylaprap" },
             { id: 22, name: "Bao tay Poly bảo hộ lao động màu Xám", category: "poly", image: "https://placehold.co/500x500/999999/white?text=Poly+Xam", featured: false, brand: "Thùy Dương", material: "Polyester cao cấp", colors: "Xám", weight: "30g,40g,50g", size: "Ôm tay", highlights: ["Chất liệu co giãn linh hoạt mềm mại","Màu xám sạch sẽ lâu cũ"], applications: ["Nhà máy điện tử","Kiểm hàng","Đóng gói"], preservation: "Giặt sạch sau khi sử dụng", hashtags: "#baotaypoly #baotayxam" },
@@ -311,11 +297,20 @@
         ];
         polyProducts.forEach(p => products.push(p));
 
+        // Sản phẩm phủ PU (id 31)
         products.push({ id: 31, name: "Bao tay phủ PU chống trơn lòng bàn tay", category: "phu-son", image: "https://placehold.co/500x500/2E7D32/white?text=Phu+PU", featured: true, brand: "Thùy Dương / Nhập khẩu", material: "Sợi polyester mỏng nhẹ, phủ PU lòng bàn tay", colors: "Xám phủ đen, Trắng phủ PU, Đen phủ PU", weight: "40g,50g,60g", size: "Ôm sát bàn tay, co giãn tốt", highlights: ["Lớp phủ PU tăng độ bám khi cầm nắm","Hạn chế trơn trượt khi thao tác","Thiết kế ôm tay, thao tác dễ dàng","Chống mài mòn tốt","Chất liệu mềm mại, thoải mái","Độ bền cao, sử dụng lâu dài","Không gây cộm tay","Phù hợp công việc cần độ chính xác cao"], applications: ["Nhà máy điện tử","Kho hàng","Lắp ráp linh kiện","Cơ khí chính xác","Đóng gói sản phẩm","Sản xuất công nghiệp","Công việc cần chống trơn"], preservation: "Không phơi trực tiếp dưới nắng gắt. Tránh tiếp xúc dầu hóa chất mạnh. Giặt nhẹ sau khi sử dụng. Bảo quản nơi khô ráo.", hashtags: "#baotayPU #baotayphuPU #baotaychongtron" });
+
+        // Sản phẩm phủ sơn (id 41)
         products.push({ id: 41, name: "Bao tay phủ sơn nhám chống trơn công nghiệp", category: "phu-son", image: "https://placehold.co/500x500/1B5E20/white?text=Phu+Son+Nham", featured: true, brand: "Thùy Dương", material: "Len cotton, cao su latex, phủ sơn nhám lòng bàn tay", colors: "Xám phủ xanh, Đen phủ đen, Kem phủ cam", weight: "50g,60g,70g,80g", size: "Co giãn tốt, ôm tay chắc chắn", highlights: ["Lớp phủ nhám tăng độ ma sát cực tốt","Chống trơn trượt hiệu quả","Hạn chế trầy xước khi lao động","Chống mài mòn cao","Cầm nắm vật nặng chắc tay hơn","Chất liệu dày dặn, độ bền cao","Phù hợp môi trường làm việc khắc nghiệt","Sử dụng được trong môi trường dầu nhẹ"], applications: ["Công trình xây dựng","Cơ khí","Xưởng gỗ","Sắt thép","Kho vận","Bốc xếp hàng hóa","Nhà máy sản xuất","Công việc ngoài trời"], preservation: "Tránh tiếp xúc nhiệt độ quá cao. Bảo quản nơi thoáng mát. Vệ sinh sau khi sử dụng. Không ngâm hóa chất mạnh.", hashtags: "#baotayphuson #baotaychongtron #baotaycongtrinh" });
+
+        // Sản phẩm chống cắt (id 51)
         products.push({ id: 51, name: "Găng tay bảo hộ chống cắt sợi HPPE Level 5", category: "chong-cat-giat", image: "https://placehold.co/500x500/b71c1c/white?text=Chong+Cat+Lvl5", featured: true, brand: "Delta Plus / Nhập khẩu", material: "HPPE cao cấp, sợi chống cắt, sợi thủy tinh gia cường", colors: "Xám, Đen, Xám phủ PU", weight: "Cấp độ chống cắt Level 3, Level 5", size: "Co giãn tốt, ôm sát bàn tay", highlights: ["Khả năng chống cắt vượt trội","Bảo vệ tay khi thao tác vật sắc bén","Chất liệu bền chắc, chịu ma sát cao","Co giãn tốt, thao tác linh hoạt","Hạn chế đâm xuyên và trầy xước","Độ bám tốt khi cầm nắm","Thoáng khí, giảm bí nóng tay","Phù hợp môi trường công nghiệp nặng"], applications: ["Cơ khí","Gia công kim loại","Xưởng kính","Dao cắt công nghiệp","Chế biến thực phẩm","Sắt thép","Nhà máy sản xuất","Công trình kỹ thuật"], preservation: "Không dùng với nhiệt độ quá cao. Giặt sạch sau khi sử dụng. Bảo quản nơi khô ráo. Kiểm tra trước khi sử dụng lại.", hashtags: "#baotaychongcat #gangtaychongcat #baotaycokhi" });
+
+        // Sản phẩm chống giật cách điện (id 61,62)
         products.push({ id: 61, name: "Bao tay cách điện chống giật điện lực hạ thế", category: "chong-cat-giat", image: "https://placehold.co/500x500/EF6C00/white?text=Cach+Dien+Ha+The", featured: true, brand: "Nhập khẩu cách điện", material: "Cao su cách điện cao cấp, Latex chuyên dụng", colors: "Cam, Đỏ, Vàng", weight: "Điện áp: 500V, 1kV", size: "Thiết kế vừa tay, linh hoạt", highlights: ["Khả năng cách điện an toàn cao","Hạn chế rò rỉ điện khi làm việc","Chất liệu cao su đàn hồi tốt","Độ bền cao, chịu môi trường công nghiệp","Thiết kế ôm tay dễ thao tác","Bề mặt chống trơn khi cầm nắm dụng cụ","Đạt tiêu chuẩn an toàn điện","Phù hợp kỹ thuật điện chuyên nghiệp"], applications: ["Điện lực","Sửa chữa điện dân dụng","Thi công điện công trình","Nhà máy điện","Kỹ thuật điện công nghiệp","Bảo trì hệ thống điện","Công trình năng lượng"], preservation: "Không để gần vật sắc nhọn. Kiểm tra kỹ trước khi sử dụng. Tránh ánh nắng trực tiếp. Bảo quản nơi khô ráo.", hashtags: "#baotaychonggiat #baotaycachdien #baotayantoandien" });
         products.push({ id: 62, name: "Bao tay cách điện chống giật cao thế trung thế", category: "chong-cat-giat", image: "https://placehold.co/500x500/D84315/white?text=Trung+The+Cach+Dien", featured: false, brand: "Nhập khẩu", material: "Cao su tự nhiên tinh khiết", colors: "Cam, Đỏ", weight: "Điện áp: 7kV, 22kV", size: "Dài bao cánh tay", highlights: ["Kết cấu cao su dày siêu bền","Chiều dài bao trọn cánh tay chống phóng điện"], applications: ["Đường dây trung thế","Trạm biến áp","Nhà máy điện"], preservation: "Bảo quản hộp đựng chuyên dụng, tránh gấp nếp", hashtags: "#baotaycachdien #caothe" });
+
+        // Sản phẩm Nitrile (id 71)
         products.push({ id: 71, name: "Bao tay Nitrile chống dầu nhớt công nghiệp", category: "phu-son", image: "https://placehold.co/500x500/0288D1/white?text=Nitrile+Chong+Dau", featured: true, brand: "Nhập khẩu", material: "Nitrile Rubber cao cấp, cao su tổng hợp chống dầu", colors: "Xanh, Đen, Tím, Cam", weight: "Độ dày: Mỏng, Trung bình, Dày công nghiệp", size: "S, M, L, XL", highlights: ["Khả năng chống dầu và chống nhớt hiệu quả","Hạn chế thấm hóa chất nhẹ","Chất liệu co giãn tốt, ôm sát bàn tay","Không gây kích ứng da","Bề mặt tăng độ bám","Chống rách và chống thủng tốt","Độ đàn hồi cao","Phù hợp môi trường dầu mỡ","Thiết kế hiện đại","Sử dụng lâu dài"], applications: ["Gara ô tô","Sửa chữa xe máy","Cơ khí dầu nhớt","Nhà máy công nghiệp","Chế biến thực phẩm","Phòng thí nghiệm","Sơn – hóa chất nhẹ","Vệ sinh công nghiệp","Kho vận – sản xuất"], preservation: "Bảo quản nơi khô ráo thoáng mát. Tránh tiếp xúc nhiệt độ cao. Không để gần vật sắc nhọn. Thay mới khi rách thủng.", hashtags: "#baotaynitrile #baotaychongdau #baotaycokhi #baotaygara" });
 
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -323,11 +318,13 @@
 
         function displayPrice(price) { return price ? price.toLocaleString('vi-VN') + '₫' : 'Liên hệ để được báo giá'; }
         function saveCart() { localStorage.setItem('cart', JSON.stringify(cart)); updateCartUI(); }
+        
         function updateCartUI() { 
             let count = cart.reduce((s, i) => s + i.quantity, 0);
             if(document.getElementById('cartCountHeader')) document.getElementById('cartCountHeader').innerText = count;
             renderCartItems();
         }
+
         function renderCartItems() {
             const container = document.getElementById('cartItemsList');
             if(!container) return;
@@ -358,10 +355,12 @@
             });
             container.innerHTML = html;
             document.getElementById('cartTotal').innerText = 'Liên hệ';
+            
             document.querySelectorAll('.cart-qty-minus').forEach(btn => btn.addEventListener('click', () => { adjustQuantityUnique(btn.dataset.unique, -1); }));
             document.querySelectorAll('.cart-qty-plus').forEach(btn => btn.addEventListener('click', () => { adjustQuantityUnique(btn.dataset.unique, 1); }));
             document.querySelectorAll('.remove-item').forEach(btn => btn.addEventListener('click', () => { cart = cart.filter(i => i.uniqueId !== btn.dataset.unique); saveCart(); }));
         }
+
         function adjustQuantityUnique(uniqueId, delta) {
             let idx = cart.findIndex(i => i.uniqueId === uniqueId);
             if(idx !== -1) {
@@ -370,14 +369,19 @@
                 saveCart();
             }
         }
+
         function addToCartSpecial(id, weight = null, qty = 1) {
             let uniqueId = id + (weight ? '-' + weight : '');
             let existing = cart.find(i => i.uniqueId === uniqueId);
-            if(existing) existing.quantity += qty;
-            else cart.push({ uniqueId, id, weight, quantity: qty });
+            if(existing) {
+                existing.quantity += qty;
+            } else {
+                cart.push({ uniqueId, id, weight, quantity: qty });
+            }
             saveCart();
             showToast("✅ Đã thêm vào danh sách yêu cầu báo giá!");
         }
+
         function showToast(msg) { 
             let toast = document.createElement('div'); 
             toast.className = "fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-5 py-2 rounded-lg z-[1200] text-sm shadow-lg text-center min-w-[250px]"; 
@@ -386,26 +390,111 @@
             setTimeout(()=>toast.remove(),2000); 
         }
 
-        // ========== HIỂN THỊ CHI TIẾT SẢN PHẨM ==========
+        // ========== HÀM HIỂN THỊ CHI TIẾT SẢN PHẨM ==========
         function showProductDetail(id) {
             const prod = products.find(p => p.id === id);
             if(!prod) return;
-            const renderInfoBlock = (title, items, isList = true) => {
-                if(!items || (Array.isArray(items) && items.length === 0)) return '';
-                if(typeof items === 'string') return `<div class="detail-card"><h4 class="font-bold text-[#0F4C81] mb-2">${title}</h4><p class="text-gray-700">${items}</p></div>`;
-                if(isList) return `<div class="detail-card"><h4 class="font-bold text-[#0F4C81] mb-2">${title}</h4><ul class="list-disc list-inside space-y-1 text-gray-700">${items.map(i => `<li>${i}</li>`).join('')}</ul></div>`;
-                return '';
-            };
-            const detailHTML = `<div class="product-detail-section"><div class="detail-grid">${prod.material ? `<div class="detail-card"><h4 class="font-bold text-[#0F4C81] mb-2">📌 Chất liệu</h4><p class="text-gray-700">${prod.material}</p></div>` : ''}${prod.colors ? `<div class="detail-card"><h4 class="font-bold text-[#0F4C81] mb-2">🎨 Màu sắc</h4><p class="text-gray-700">${prod.colors}</p></div>` : ''}${prod.weight ? `<div class="detail-card"><h4 class="font-bold text-[#0F4C81] mb-2">⚖️ Trọng lượng / Thông số</h4><p class="text-gray-700">${prod.weight}</p></div>` : ''}${prod.size ? `<div class="detail-card"><h4 class="font-bold text-[#0F4C81] mb-2">📏 Kích thước</h4><p class="text-gray-700">${prod.size}</p></div>` : ''}</div>${prod.highlights ? `<div class="detail-card mt-4"><h4 class="font-bold text-[#0F4C81] mb-2">⭐ ĐẶC ĐIỂM NỔI BẬT</h4><ul class="grid grid-cols-1 md:grid-cols-2 gap-2 list-disc list-inside text-gray-700">${prod.highlights.map(h => `<li>${h}</li>`).join('')}</ul></div>` : ''}${prod.applications ? `<div class="detail-card mt-4"><h4 class="font-bold text-[#0F4C81] mb-2">🔧 ỨNG DỤNG THỰC TẾ</h4><ul class="grid grid-cols-1 md:grid-cols-2 gap-2 list-disc list-inside text-gray-700">${prod.applications.map(a => `<li>${a}</li>`).join('')}</ul></div>` : ''}${prod.preservation ? `<div class="detail-card mt-4"><h4 class="font-bold text-[#0F4C81] mb-2">🛡 HƯỚNG DẪN BẢO QUẢN</h4><p class="text-gray-700">${prod.preservation}</p></div>` : ''}${prod.hashtags ? `<div class="hashtag-list mt-4">${prod.hashtags.split(' ').map(tag => `<span class="hashtag">${tag}</span>`).join('')}</div>` : ''}</div>`;
+
+            const detailHTML = `
+                <div class="product-detail-section">
+                    <div class="detail-grid">
+                        ${prod.material ? `<div class="detail-card"><h4 class="font-bold text-[#0F4C81] mb-2">📌 Chất liệu</h4><p class="text-gray-700">${prod.material}</p></div>` : ''}
+                        ${prod.colors ? `<div class="detail-card"><h4 class="font-bold text-[#0F4C81] mb-2">🎨 Màu sắc</h4><p class="text-gray-700">${prod.colors}</p></div>` : ''}
+                        ${prod.weight ? `<div class="detail-card"><h4 class="font-bold text-[#0F4C81] mb-2">⚖️ Trọng lượng / Thông số</h4><p class="text-gray-700">${prod.weight}</p></div>` : ''}
+                        ${prod.size ? `<div class="detail-card"><h4 class="font-bold text-[#0F4C81] mb-2">📏 Kích thước</h4><p class="text-gray-700">${prod.size}</p></div>` : ''}
+                    </div>
+                    ${prod.highlights ? `<div class="detail-card mt-4"><h4 class="font-bold text-[#0F4C81] mb-2">⭐ ĐẶC ĐIỂM NỔI BẬT</h4><ul class="grid grid-cols-1 md:grid-cols-2 gap-2 list-disc list-inside text-gray-700">${prod.highlights.map(h => `<li>${h}</li>`).join('')}</ul></div>` : ''}
+                    ${prod.applications ? `<div class="detail-card mt-4"><h4 class="font-bold text-[#0F4C81] mb-2">🔧 ỨNG DỤNG THỰC TẾ</h4><ul class="grid grid-cols-1 md:grid-cols-2 gap-2 list-disc list-inside text-gray-700">${prod.applications.map(a => `<li>${a}</li>`).join('')}</ul></div>` : ''}
+                    ${prod.preservation ? `<div class="detail-card mt-4"><h4 class="font-bold text-[#0F4C81] mb-2">🛡 HƯỚNG DẪN BẢO QUẢN</h4><p class="text-gray-700">${prod.preservation}</p></div>` : ''}
+                    ${prod.hashtags ? `<div class="hashtag-list mt-4">${prod.hashtags.split(' ').map(tag => `<span class="hashtag">${tag}</span>`).join('')}</div>` : ''}
+                </div>
+            `;
+
             const mainAppContent = document.getElementById('appContent');
             if(!mainAppContent) return;
+
             const relatedProducts = products.filter(p => p.category === prod.category && p.id !== prod.id).slice(0, 4);
             let relatedHtml = '';
-            if(relatedProducts.length > 0) relatedHtml = `<div class="pt-4 border-t mt-6"><h4 class="font-bold text-gray-800 mb-3 text-sm flex items-center gap-2 text-[#0F4C81]"><i class="fas fa-link"></i> Sản phẩm liên quan</h4><div class="grid grid-cols-2 md:grid-cols-4 gap-4">${relatedProducts.map(rp => `<div class="bg-white p-3 rounded-xl border border-gray-200 flex flex-col justify-between cursor-pointer hover:shadow-md transition item-related-click" data-id="${rp.id}"><img src="${rp.image}" class="w-full h-24 object-cover rounded-lg mb-2"><h5 class="text-xs font-bold text-gray-700 line-clamp-1">${rp.name}</h5><p class="text-red-600 font-bold text-[11px] mt-0.5">${displayPrice(rp.price)}</p></div>`).join('')}</div></div>`;
-            mainAppContent.innerHTML = `<div class="container mx-auto px-4 py-8 bg-white my-6 shadow-sm rounded-2xl border border-gray-100"><button id="btn-back-to-products" class="mb-6 flex items-center gap-2 text-sm font-semibold text-[#0F4C81] hover:text-[#FF8C00] transition"><i class="fas fa-arrow-left"></i> Quay lại danh sách sản phẩm</button><div class="space-y-8"><div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start"><div class="md:col-span-5 w-full"><img src="${prod.image}" class="w-full h-auto object-cover rounded-2xl border border-gray-100 shadow-sm mx-auto"></div><div class="md:col-span-7 space-y-5"><h3 class="text-2xl md:text-3xl font-bold text-gray-800 leading-tight">${prod.name}</h3><div class="text-2xl text-red-600 font-extrabold py-3.5 border-y border-gray-100 bg-gray-50 px-4 rounded-xl text-left">${displayPrice(prod.price)}</div><div class="text-sm space-y-2 text-gray-600 pl-1"><p><span class="text-[#FF8C00] mr-1.5">▪</span><strong class="text-gray-800">Thương hiệu:</strong> ${prod.brand || 'Thùy Dương'}</p><p><span class="text-[#FF8C00] mr-1.5">▪</span><strong class="text-gray-800">Chất liệu:</strong> ${prod.material || 'Chất lượng cao'}</p></div><div class="pt-2 border-t border-dashed border-gray-200"><div class="space-y-4"><div><span class="block text-sm font-bold text-gray-700 mb-1.5">Chọn Trọng Lượng (Số Gam)</span><div class="grid grid-cols-3 gap-2" id="general-weight-container"><button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs active" data-weight="30g">30g</button><button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="40g">40g</button><button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="50g">50g</button><button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="60g">60g</button><button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="70g">70g</button><button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="80g">80g</button></div></div><div class="flex flex-wrap items-center gap-3"><div class="flex items-center border-2 border-gray-300 rounded-lg bg-white"><button id="modal-qty-minus" class="px-3 py-2 bg-gray-100 hover:bg-gray-200 font-bold text-sm rounded-l-md">-</button><span id="modal-qty-value" class="px-4 font-bold text-sm">1</span><button id="modal-qty-plus" class="px-3 py-2 bg-gray-100 hover:bg-gray-200 font-bold text-sm rounded-r-md">+</button></div><button id="btn-add-cart-main-modal" class="btn-cta text-white px-6 py-2.5 rounded-lg font-bold text-sm shadow-md flex-1 flex items-center justify-center gap-2"><i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ YÊU CẦU</button></div></div></div><div class="pt-3 border-t border-gray-100 flex items-center gap-3 text-sm text-gray-700 font-semibold"><div class="w-9 h-9 rounded-full bg-red-600 text-white flex items-center justify-center animate-pulse"><i class="fas fa-phone-alt text-sm"></i></div><span>Liên hệ báo giá: <a href="tel:0981171750" class="text-red-600 text-base font-bold hover:underline">0981 171 750</a></span></div></div></div>${detailHTML}${relatedHtml}</div></div>`;
+            if(relatedProducts.length > 0) {
+                relatedHtml = `
+                    <div class="pt-4 border-t mt-6">
+                        <h4 class="font-bold text-gray-800 mb-3 text-sm flex items-center gap-2 text-[#0F4C81]">
+                            <i class="fas fa-link"></i> Sản phẩm liên quan
+                        </h4>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            ${relatedProducts.map(rp => `
+                                <div class="bg-white p-3 rounded-xl border border-gray-200 flex flex-col justify-between cursor-pointer hover:shadow-md transition item-related-click" data-id="${rp.id}">
+                                    <img src="${rp.image}" class="w-full h-24 object-cover rounded-lg mb-2">
+                                    <h5 class="text-xs font-bold text-gray-700 line-clamp-1">${rp.name}</h5>
+                                    <p class="text-red-600 font-bold text-[11px] mt-0.5">${displayPrice(rp.price)}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>`;
+            }
+
+            mainAppContent.innerHTML = `
+                <div class="container mx-auto px-4 py-8 bg-white my-6 shadow-sm rounded-2xl border border-gray-100">
+                    <button id="btn-back-to-products" class="mb-6 flex items-center gap-2 text-sm font-semibold text-[#0F4C81] hover:text-[#FF8C00] transition">
+                        <i class="fas fa-arrow-left"></i> Quay lại danh sách sản phẩm
+                    </button>
+                    <div class="space-y-8">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                            <div class="md:col-span-5 w-full">
+                                <img src="${prod.image}" class="w-full h-auto object-cover rounded-2xl border border-gray-100 shadow-sm mx-auto">
+                            </div>
+                            <div class="md:col-span-7 space-y-5">
+                                <h3 class="text-2xl md:text-3xl font-bold text-gray-800 leading-tight">${prod.name}</h3>
+                                <div class="text-2xl text-red-600 font-extrabold py-3.5 border-y border-gray-100 bg-gray-50 px-4 rounded-xl text-left">
+                                    ${displayPrice(prod.price)}
+                                </div>
+                                <div class="text-sm space-y-2 text-gray-600 pl-1">
+                                    <p><span class="text-[#FF8C00] mr-1.5">▪</span><strong class="text-gray-800">Thương hiệu:</strong> ${prod.brand || 'Thùy Dương'}</p>
+                                    <p><span class="text-[#FF8C00] mr-1.5">▪</span><strong class="text-gray-800">Chất liệu:</strong> ${prod.material || 'Chất lượng cao'}</p>
+                                </div>
+                                <div class="pt-2 border-t border-dashed border-gray-200">
+                                    <div class="space-y-4">
+                                        <div>
+                                            <span class="block text-sm font-bold text-gray-700 mb-1.5">Chọn Trọng Lượng (Số Gam)</span>
+                                            <div class="grid grid-cols-3 gap-2" id="general-weight-container">
+                                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs active" data-weight="30g">30g</button>
+                                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="40g">40g</button>
+                                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="50g">50g</button>
+                                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="60g">60g</button>
+                                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="70g">70g</button>
+                                                <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="80g">80g</button>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-wrap items-center gap-3">
+                                            <div class="flex items-center border-2 border-gray-300 rounded-lg bg-white">
+                                                <button id="modal-qty-minus" class="px-3 py-2 bg-gray-100 hover:bg-gray-200 font-bold text-sm rounded-l-md">-</button>
+                                                <span id="modal-qty-value" class="px-4 font-bold text-sm">1</span>
+                                                <button id="modal-qty-plus" class="px-3 py-2 bg-gray-100 hover:bg-gray-200 font-bold text-sm rounded-r-md">+</button>
+                                            </div>
+                                            <button id="btn-add-cart-main-modal" class="btn-cta text-white px-6 py-2.5 rounded-lg font-bold text-sm shadow-md flex-1 flex items-center justify-center gap-2">
+                                                <i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ YÊU CẦU
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-3 border-t border-gray-100 flex items-center gap-3 text-sm text-gray-700 font-semibold">
+                                    <div class="w-9 h-9 rounded-full bg-red-600 text-white flex items-center justify-center animate-pulse">
+                                        <i class="fas fa-phone-alt text-sm"></i>
+                                    </div>
+                                    <span>Liên hệ báo giá: <a href="tel:0981171750" class="text-red-600 text-base font-bold hover:underline">0981 171 750</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        ${detailHTML}
+                        ${relatedHtml}
+                    </div>
+                </div>`;
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
             document.getElementById('btn-back-to-products').onclick = () => loadPage('products');
-            document.querySelectorAll('.item-related-click').forEach(card => card.addEventListener('click', () => showProductDetail(parseInt(card.dataset.id))));
+            document.querySelectorAll('.item-related-click').forEach(card => {
+                card.addEventListener('click', () => showProductDetail(parseInt(card.dataset.id)));
+            });
             let currentQty = 1;
             const qtyVal = document.getElementById('modal-qty-value');
             document.getElementById('modal-qty-minus').onclick = () => { if(currentQty > 1) { currentQty--; qtyVal.innerText = currentQty; } };
@@ -421,48 +510,100 @@
             document.getElementById('btn-add-cart-main-modal').onclick = () => addToCartSpecial(prod.id, currentWeight, currentQty);
         }
 
-        // ========== TRANG CHỦ MỚI ==========
+        // ---------- TRANG CHỦ (HOME) ----------
         function renderHome() {
             const featured = products.filter(p => p.featured);
             return `
-            <!-- HERO MỚI THEO YÊU CẦU -->
+            <!-- CHANGE 2: Replaced hero section -->
             <section class="bg-gradient-to-r from-[#0F4C81] to-[#0b3a62] text-white overflow-hidden">
                 <div class="container mx-auto px-4 min-h-[calc(100vh-180px)] flex items-center">
                     <div class="grid lg:grid-cols-2 gap-10 items-center w-full py-10">
+                        <!-- LEFT -->
                         <div>
-                            <h1 class="text-4xl md:text-6xl font-bold leading-tight">BAO TAY LEN BẢO HỘ LAO ĐỘNG</h1>
-                            <p class="text-2xl text-[#FF8C00] font-semibold mt-5">Chất lượng cao – Giá tận xưởng – Giao hàng toàn quốc</p>
+                            <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                                BAO TAY LEN BẢO HỘ LAO ĐỘNG
+                            </h1>
+                            <p class="text-2xl text-[#FF8C00] font-semibold mt-5">
+                                Chất lượng cao – Giá tận xưởng – Giao hàng toàn quốc
+                            </p>
                             <div class="mt-8 flex flex-wrap gap-4">
-                                <a href="#" data-page="products" class="bg-[#FF8C00] hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition">Xem sản phẩm</a>
-                                <button id="getQuoteBtn" class="border-2 border-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-[#0F4C81] transition">Liên hệ báo giá</button>
+                                <a href="#"
+                                    data-page="products"
+                                    class="nav-link bg-[#FF8C00] hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition inline-block">
+                                    Xem sản phẩm
+                                </a>
+                                <button id="getQuoteBtn" class="border-2 border-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-[#0F4C81] transition">
+                                    Liên hệ báo giá
+                                </button>
                             </div>
                         </div>
-                        <div><img src="https://placehold.co/600x500/FFFFFF/0F4C81?text=Găng+tay+Thùy+Dương" alt="Banner" class="rounded-2xl shadow-2xl w-full"></div>
+                        <!-- RIGHT -->
+                        <div>
+                            <img src="https://placehold.co/600x500/FFFFFF/0F4C81?text=Găng+tay+Thùy+Dương" alt="Banner" class="rounded-2xl shadow-2xl w-full">
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- GIỚI THIỆU CÔNG TY MỚI -->
+            <!-- CHANGE 3: Added company intro section below hero -->
             <section class="py-20 bg-white">
                 <div class="container mx-auto px-4">
                     <div class="grid lg:grid-cols-2 gap-14 items-center">
-                        <div><img src="https://placehold.co/700x500/0F4C81/FFFFFF?text=XUÂN+CHƯƠNG+GLOVES" class="rounded-3xl shadow-2xl w-full"></div>
+                        <!-- HÌNH -->
                         <div>
-                            <div class="inline-block bg-orange-100 text-[#FF8C00] px-4 py-2 rounded-full font-bold mb-5">GIỚI THIỆU CÔNG TY</div>
-                            <h2 class="text-4xl font-bold text-[#0F4C81] leading-tight">CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</h2>
-                            <p class="mt-6 text-lg text-gray-700 leading-8">Chuyên sản xuất và phân phối bao tay len bảo hộ lao động, bao tay phủ PU, bao tay chống cắt, bao tay phủ sơn, bao tay nitrile và các dòng găng tay công nghiệp.</p>
-                            <p class="mt-5 text-lg text-gray-700 leading-8">Với hệ thống sản xuất hiện đại cùng đội ngũ kỹ thuật nhiều kinh nghiệm, công ty cung cấp số lượng lớn cho nhà máy, công trình, xưởng cơ khí, kho vận và đại lý trên toàn quốc.</p>
-                            <div class="mt-8 space-y-4 text-lg">
-                                <div class="flex items-start gap-4"><div class="text-[#FF8C00] text-2xl"><i class="fas fa-map-marker-alt"></i></div><div>Số 68, tổ 4, Khu phố 4, Phường Trảng Dài, Thành phố Biên Hòa, Đồng Nai</div></div>
-                                <div class="flex items-center gap-4"><div class="text-[#FF8C00] text-2xl"><i class="fas fa-phone-alt"></i></div><div>033 444 9494 - 0981 171 750</div></div>
+                            <img
+                                src="https://placehold.co/700x500/0F4C81/FFFFFF?text=XUÂN+CHƯƠNG+GLOVES"
+                                class="rounded-3xl shadow-2xl w-full"
+                            >
+                        </div>
+                        <!-- NỘI DUNG -->
+                        <div>
+                            <div class="inline-block bg-orange-100 text-[#FF8C00] px-4 py-2 rounded-full font-bold mb-5">
+                                GIỚI THIỆU CÔNG TY
                             </div>
-                            <div class="mt-10"><a href="#" data-page="about" class="bg-[#0F4C81] hover:bg-[#0b3a62] text-white px-8 py-4 rounded-xl font-bold inline-block transition">Xem chi tiết công ty</a></div>
+                            <h2 class="text-4xl font-bold text-[#0F4C81] leading-tight">
+                                CÔNG TY TNHH XUÂN CHƯƠNG GLOVES
+                            </h2>
+                            <p class="mt-6 text-lg text-gray-700 leading-8">
+                                Chuyên sản xuất và phân phối bao tay len bảo hộ lao động, bao tay phủ PU,
+                                bao tay chống cắt, bao tay phủ sơn, bao tay nitrile và các dòng găng tay công nghiệp.
+                            </p>
+                            <p class="mt-5 text-lg text-gray-700 leading-8">
+                                Với hệ thống sản xuất hiện đại cùng đội ngũ kỹ thuật nhiều kinh nghiệm,
+                                công ty cung cấp số lượng lớn cho nhà máy, công trình, xưởng cơ khí,
+                                kho vận và đại lý trên toàn quốc.
+                            </p>
+                            <div class="mt-8 space-y-4 text-lg">
+                                <div class="flex items-start gap-4">
+                                    <div class="text-[#FF8C00] text-2xl">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        Số 68, tổ 4, Khu phố 4, Phường Trảng Dài,
+                                        Thành phố Biên Hòa, Đồng Nai
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-[#FF8C00] text-2xl">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div>
+                                        033 444 9494 - 0981 171 750
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-10">
+                                <a href="#"
+                                    data-page="about"
+                                    class="nav-link bg-[#0F4C81] hover:bg-[#0b3a62] text-white px-8 py-4 rounded-xl font-bold inline-block transition">
+                                    Xem chi tiết công ty
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- DANH MỤC SẢN PHẨM (giữ nguyên) -->
             <section class="py-16 bg-gray-50">
                 <div class="container mx-auto px-4">
                     <h2 class="text-3xl font-bold text-center text-[#0F4C81] mb-10">Danh mục sản phẩm</h2>
@@ -474,24 +615,20 @@
                     </div>
                 </div>
             </section>
-
-            <!-- SẢN PHẨM NỔI BẬT -->
             <section class="py-16 bg-white">
                 <div class="container mx-auto px-4">
                     <div class="flex justify-between items-center mb-8"><h2 class="text-3xl font-bold text-[#0F4C81]">Sản phẩm nổi bật</h2><a href="#" data-page="products" class="nav-link text-[#FF8C00] text-lg">Xem tất cả →</a></div>
                     <div class="swiper featuredSwiper overflow-hidden"><div class="swiper-wrapper">${featured.map(p => `<div class="swiper-slide"><div class="bg-gray-50 p-5 rounded-xl shadow text-center flex flex-col justify-between h-80"><img src="${p.image}" class="h-36 mx-auto object-cover rounded-lg"><h3 class="font-bold text-sm mt-3 line-clamp-1 text-gray-800">${p.name}</h3><p class="text-red-600 font-bold text-xs mt-1">${displayPrice(p.price)}</p><button class="view-detail-btn bg-[#0F4C81] text-white px-4 py-2 rounded-full mt-3 w-full text-xs hover:bg-opacity-90" data-id="${p.id}">Chi tiết / Báo giá</button></div></div>`).join('')}</div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
                 </div>
             </section>
-
-            <!-- VIDEO NHÀ MÁY -->
             <section class="py-16 bg-gray-900 text-white">
                 <div class="container mx-auto px-4 text-center">
                     <h2 class="text-3xl font-bold mb-6">Nhà máy sản xuất hiện đại</h2>
-                    <div class="max-w-4xl mx-auto"><iframe width="100%" height="450" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0" title="Nhà máy" frameborder="0" allowfullscreen class="rounded-2xl shadow-2xl"></iframe></div>
+                    <div class="max-w-4xl mx-auto">
+                        <iframe width="100%" height="450" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0" title="Nhà máy" frameborder="0" allowfullscreen class="rounded-2xl shadow-2xl"></iframe>
+                    </div>
                 </div>
             </section>
-
-            <!-- FOOTER -->
             <footer class="bg-gray-800 text-gray-300 py-10">
                 <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
                     <div><h4 class="text-xl font-bold text-white mb-3">Bao Tay Thùy Dương</h4><p class="text-sm">Chuyên cung cấp găng tay bảo hộ lao động</p><p class="mt-2 text-sm"><i class="fas fa-phone-alt"></i> 033 444 9494</p><p class="text-sm"><i class="fab fa-zalo"></i> 0981 171 750</p></div>
@@ -503,7 +640,7 @@
             </footer>`;
         }
 
-        // ---------- TRANG GIỚI THIỆU ----------
+        // ---------- TRANG GIỚI THIỆU (ABOUT) ----------
         function renderAbout() {
             return `<div class="about-banner bg-[#0F4C81] flex items-center justify-center" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1600x700/0F4C81/white?text=GIỚI+THIỆU+CÔNG+TY'); background-size: cover;"><div class="text-center text-white"><h1 class="text-5xl md:text-7xl font-bold">GIỚI THIỆU</h1><p class="text-xl md:text-2xl mt-3">Công ty TNHH Xuân Chương Gloves</p></div></div>
             <section class="py-16 bg-white"><div class="container mx-auto px-4 max-w-5xl"><div class="flex flex-col md:flex-row gap-10 items-center"><div><h2 class="text-3xl font-bold text-[#0F4C81]">Công ty TNHH Xuân Chương Gloves</h2><p class="mt-4 text-gray-700 text-lg">Được thành lập năm 2018, chúng tôi tự hào là đơn vị sản xuất và phân phối bao tay bảo hộ lao động hàng đầu khu vực phía Nam. Với dây chuyền hiện đại sản xuất số lượng lớn, chúng tôi cam kết đáp ứng mọi nhu cầu sỉ trên toàn quốc.</p></div></div></div></section>`;
@@ -511,36 +648,177 @@
 
         // ---------- TRANG SẢN PHẨM ----------
         function renderProductsPage(){
-            return `<div class="container mx-auto px-4 py-10"><div class="flex flex-col md:flex-row gap-8"><div class="md:w-1/4 bg-white p-5 rounded-xl shadow h-fit"><h3 class="font-bold text-2xl mb-4">Bộ lọc</h3><label class="block text-sm font-medium text-gray-700 mb-1">Danh mục</label><select id="categoryFilter" class="w-full border p-3 rounded-lg mb-4 text-sm focus:outline-none focus:border-[#0F4C81]"><option value="all">Tất cả sản phẩm</option><option value="len">Bao tay len</option><option value="poly">Bao tay Poly</option><option value="chong-cat-giat">Chống cắt / chống giật</option><option value="phu-son">Phủ sơn / PU / Nitrile</option></select><label class="block text-sm font-medium text-gray-700 mb-1">Từ khóa</label><input type="text" id="searchInputFilter" placeholder="Tìm sản phẩm..." class="w-full border p-3 rounded-lg text-sm focus:outline-none focus:border-[#0F4C81]"></div><div class="md:w-3/4"><div class="grid grid-cols-2 md:grid-cols-3 gap-6" id="productGridContainer"></div></div></div></div>`;
+            return `<div class="container mx-auto px-4 py-10">
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/4 bg-white p-5 rounded-xl shadow h-fit">
+                                <h3 class="font-bold text-2xl mb-4">Bộ lọc</h3>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Danh mục</label>
+                                <select id="categoryFilter" class="w-full border p-3 rounded-lg mb-4 text-sm focus:outline-none focus:border-[#0F4C81]">
+                                    <option value="all">Tất cả sản phẩm</option>
+                                    <option value="len">Bao tay len</option>
+                                    <option value="poly">Bao tay Poly</option>
+                                    <option value="chong-cat-giat">Chống cắt / chống giật</option>
+                                    <option value="phu-son">Phủ sơn / PU / Nitrile</option>
+                                </select>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Từ khóa</label>
+                                <input type="text" id="searchInputFilter" placeholder="Tìm sản phẩm..." class="w-full border p-3 rounded-lg text-sm focus:outline-none focus:border-[#0F4C81]">
+                            </div>
+                            <div class="md:w-3/4">
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-6" id="productGridContainer"></div>
+                            </div>
+                        </div>
+                    </div>`;
         }
         
         function renderProductList(filterCategory = "all", searchQuery = "") {
             let filtered = products.filter(p => (filterCategory === "all" || p.category === filterCategory) && p.name.toLowerCase().includes(searchQuery.toLowerCase()));
             const container = document.getElementById('productGridContainer');
             if(!container) return;
-            if(filtered.length === 0) { container.innerHTML = '<div class="col-span-full text-center py-12 text-gray-500 text-lg">Không tìm thấy sản phẩm phù hợp</div>'; return; }
-            container.innerHTML = filtered.map(p => `<div class="product-card bg-white rounded-xl shadow-md p-4 flex flex-col justify-between h-80" data-id="${p.id}"><div><img src="${p.image}" class="card-main-img w-full h-44 object-cover rounded-lg mb-3"><h3 class="font-bold text-sm line-clamp-2 min-h-[2.5rem] text-gray-800 leading-tight">${p.name}</h3><p class="text-red-600 font-bold text-xs mt-1">${displayPrice(p.price)}</p></div><div class="flex flex-col gap-2 mt-3"><button class="view-detail-btn bg-[#0F4C81] text-white px-3 py-2 rounded-full text-xs hover:bg-opacity-90 w-full"><i class="fas fa-layer-group mr-1"></i> Xem chi tiết & Tùy chọn</button></div></div>`).join('');
+            if(filtered.length === 0) { 
+                container.innerHTML = '<div class="col-span-full text-center py-12 text-gray-500 text-lg">Không tìm thấy sản phẩm phù hợp</div>'; 
+                return;
+            }
+            container.innerHTML = filtered.map(p => `
+                <div class="product-card bg-white rounded-xl shadow-md p-4 flex flex-col justify-between h-80" data-id="${p.id}">
+                    <div>
+                        <img src="${p.image}" class="card-main-img w-full h-44 object-cover rounded-lg mb-3">
+                        <h3 class="font-bold text-sm line-clamp-2 min-h-[2.5rem] text-gray-800 leading-tight">${p.name}</h3>
+                        <p class="text-red-600 font-bold text-xs mt-1">${displayPrice(p.price)}</p>
+                    </div>
+                    <div class="flex flex-col gap-2 mt-3">
+                        <button class="view-detail-btn bg-[#0F4C81] text-white px-3 py-2 rounded-full text-xs hover:bg-opacity-90 w-full">
+                            <i class="fas fa-layer-group mr-1"></i> Xem chi tiết & Tùy chọn
+                        </button>
+                    </div>
+                </div>`).join('');
             attachProductEvents();
         }
-        function attachProductEvents(){ document.querySelectorAll('.product-card').forEach(card => { let id = parseInt(card.dataset.id); card.querySelector('.view-detail-btn').addEventListener('click', () => showProductDetail(id)); }); }
-        function attachFilterEvents(){ const catFilter = document.getElementById('categoryFilter'); const searchFilter = document.getElementById('searchInputFilter'); const refresh = () => renderProductList(catFilter?.value || 'all', searchFilter?.value || ''); if(catFilter) catFilter.addEventListener('change', refresh); if(searchFilter) searchFilter.addEventListener('input', refresh); refresh(); }
-        function attachHomeEvents() { document.querySelectorAll('.filter-cat').forEach(el => el.addEventListener('click', () => { let cat = el.dataset.cat; loadPage('products'); setTimeout(()=>{ const catFilter = document.getElementById('categoryFilter'); if(catFilter) { catFilter.value = cat; renderProductList(cat, ''); } }, 50); })); document.querySelectorAll('.view-detail-btn').forEach(btn => btn.addEventListener('click', ()=>{ showProductDetail(parseInt(btn.dataset.id)); })); document.getElementById('getQuoteBtn')?.addEventListener('click', () => showToast("Liên hệ báo giá sỉ: 033 444 9494 hoặc Zalo 0981 171 750")); }
-        function initSwiper(){ if(document.querySelector('.featuredSwiper')) { new Swiper('.featuredSwiper', { slidesPerView: 2, spaceBetween: 16, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, breakpoints: { 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } } }); } }
-        function initHeaderSearch() { const searchInput = document.getElementById('headerSearch'); const searchBtn = document.getElementById('headerSearchBtn'); const triggerSearch = () => { let query = searchInput.value.trim(); loadPage('products'); setTimeout(() => { const searchFilter = document.getElementById('searchInputFilter'); if(searchFilter) { searchFilter.value = query; renderProductList('all', query); } }, 50); }; searchBtn?.addEventListener('click', triggerSearch); searchInput?.addEventListener('keypress', (e) => { if(e.key === 'Enter') triggerSearch(); }); }
-        function attachMegaMenuEvents() { /* không còn mega menu cũ */ }
-        function renderSimplePage(title, content) { return `<div class="container mx-auto px-4 py-20 text-center"><h2 class="text-3xl font-bold text-[#0F4C81]">${title}</h2><p class="text-lg mt-4 text-gray-600">${content}</p><div class="mt-6"><a href="#" data-page="home" class="nav-link btn-cta text-white px-6 py-3 rounded-lg inline-block">Về trang chủ</a></div></div>`; }
-        function loadPage(page) { currentPage = page; const main = document.getElementById('appContent'); if(!main) return; if(page === 'home') { main.innerHTML = renderHome(); attachHomeEvents(); initSwiper(); } else if(page === 'about') { main.innerHTML = renderAbout(); } else if(page === 'products') { main.innerHTML = renderProductsPage(); renderProductList('all',''); attachFilterEvents(); } else if(page === 'news') main.innerHTML = renderSimplePage("Tin tức", "Cập nhật các bài viết về bảo hộ lao động sắp ra mắt."); else if(page === 'contact') main.innerHTML = renderSimplePage("Liên hệ", "📞 033 444 9494 - 📱 Zalo 0981 171 750 - 📧 baotay@thuydung.com"); bindMenuEvents(); window.scrollTo({ top: 0 }); }
-        function bindMenuEvents() { document.querySelectorAll('.nav-link').forEach(link => { link.removeEventListener('click', handleNavClick); link.addEventListener('click', handleNavClick); }); }
-        function handleNavClick(e) { e.preventDefault(); const page = e.currentTarget.getAttribute('data-page'); if(page) loadPage(page); }
+
+        function attachProductEvents(){
+            document.querySelectorAll('.product-card').forEach(card => {
+                let id = parseInt(card.dataset.id);
+                card.querySelector('.view-detail-btn').addEventListener('click', () => showProductDetail(id));
+            });
+        }
+
+        function attachFilterEvents(){
+            const catFilter = document.getElementById('categoryFilter');
+            const searchFilter = document.getElementById('searchInputFilter');
+            const refresh = () => renderProductList(catFilter?.value || 'all', searchFilter?.value || '');
+            if(catFilter) catFilter.addEventListener('change', refresh);
+            if(searchFilter) searchFilter.addEventListener('input', refresh);
+            refresh();
+        }
+
+        function attachHomeEvents() {
+            document.querySelectorAll('.filter-cat').forEach(el => el.addEventListener('click', () => { 
+                let cat = el.dataset.cat; 
+                loadPage('products'); 
+                setTimeout(()=>{ 
+                    const catFilter = document.getElementById('categoryFilter');
+                    if(catFilter) { catFilter.value = cat; renderProductList(cat, ''); }
+                }, 50); 
+            }));
+            document.querySelectorAll('.view-detail-btn').forEach(btn => btn.addEventListener('click', ()=>{ 
+                showProductDetail(parseInt(btn.dataset.id)); 
+            }));
+            document.getElementById('getQuoteBtn')?.addEventListener('click', () => showToast("Liên hệ báo giá sỉ: 033 444 9494 hoặc Zalo 0981 171 750"));
+        }
+
+        function initSwiper(){
+            if(document.querySelector('.featuredSwiper')) {
+                new Swiper('.featuredSwiper', { 
+                    slidesPerView: 2, 
+                    spaceBetween: 16, 
+                    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, 
+                    breakpoints: { 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } } 
+                });
+            }
+        }
+
+        function initHeaderSearch() {
+            const searchInput = document.getElementById('headerSearch');
+            const searchBtn = document.getElementById('headerSearchBtn');
+            const triggerSearch = () => {
+                let query = searchInput.value.trim();
+                loadPage('products');
+                setTimeout(() => {
+                    const searchFilter = document.getElementById('searchInputFilter');
+                    if(searchFilter) { searchFilter.value = query; renderProductList('all', query); }
+                }, 50);
+            };
+            searchBtn?.addEventListener('click', triggerSearch);
+            searchInput?.addEventListener('keypress', (e) => { if(e.key === 'Enter') triggerSearch(); });
+        }
+
+        function attachMegaMenuEvents() {
+            document.querySelectorAll('.click-mega-header').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let cat = btn.dataset.cat;
+                    loadPage('products');
+                    setTimeout(() => {
+                        const catFilter = document.getElementById('categoryFilter');
+                        if(catFilter) { catFilter.value = cat; renderProductList(cat, ''); }
+                    }, 50);
+                });
+            });
+        }
+
+        function renderSimplePage(title, content) {
+            return `<div class="container mx-auto px-4 py-20 text-center"><h2 class="text-3xl font-bold text-[#0F4C81]">${title}</h2><p class="text-lg mt-4 text-gray-600">${content}</p><div class="mt-6"><a href="#" data-page="home" class="nav-link btn-cta text-white px-6 py-3 rounded-lg inline-block">Về trang chủ</a></div></div>`;
+        }
+
+        function loadPage(page) {
+            currentPage = page;
+            const main = document.getElementById('appContent');
+            if(!main) return;
+            
+            if(page === 'home') { main.innerHTML = renderHome(); attachHomeEvents(); initSwiper(); }
+            else if(page === 'about') { main.innerHTML = renderAbout(); }
+            else if(page === 'products') { main.innerHTML = renderProductsPage(); renderProductList('all',''); attachFilterEvents(); }
+            else if(page === 'news') main.innerHTML = renderSimplePage("Tin tức", "Cập nhật các bài viết về bảo hộ lao động sắp ra mắt.");
+            else if(page === 'contact') main.innerHTML = renderSimplePage("Liên hệ", "📞 033 444 9494 - 📱 Zalo 0981 171 750 - 📧 baotay@thuydung.com");
+            
+            bindMenuEvents();
+            window.scrollTo({ top: 0 });
+        }
+
+        function bindMenuEvents() {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.removeEventListener('click', handleNavClick);
+                link.addEventListener('click', handleNavClick);
+            });
+        }
+        
+        function handleNavClick(e) {
+            e.preventDefault();
+            const page = e.currentTarget.getAttribute('data-page');
+            if(page) loadPage(page);
+        }
+
         document.getElementById('cartIconHeader')?.addEventListener('click', () => document.getElementById('cartDrawer')?.classList.remove('translate-x-full'));
         document.getElementById('closeCartBtn')?.addEventListener('click', () => document.getElementById('cartDrawer')?.classList.add('translate-x-full'));
-        document.getElementById('checkoutBtn')?.addEventListener('click', () => { if(cart.length === 0) { showToast("Vui lòng thêm sản phẩm cần báo giá vào danh sách!"); return; } document.getElementById('checkoutModal').style.display = 'flex'; });
+        document.getElementById('checkoutBtn')?.addEventListener('click', () => {
+            if(cart.length === 0) { showToast("Vui lòng thêm sản phẩm cần báo giá vào danh sách!"); return; }
+            document.getElementById('checkoutModal').style.display = 'flex';
+        });
         document.getElementById('closeCheckout')?.addEventListener('click', () => document.getElementById('checkoutModal').style.display = 'none');
-        document.getElementById('checkoutForm')?.addEventListener('submit', (e) => { e.preventDefault(); alert("✅ Gửi yêu cầu thành công! Chúng tôi sẽ tổng hợp danh sách mặt hàng và liên hệ báo giá sỉ sớm nhất."); cart = []; saveCart(); document.getElementById('checkoutModal').style.display = 'none'; document.getElementById('cartDrawer')?.classList.add('translate-x-full'); loadPage('products'); });
-        setTimeout(() => document.getElementById('discountPopup')?.classList.remove('hidden'), 5000);
-        document.getElementById('closePopup')?.addEventListener('click', () => document.getElementById('discountPopup')?.classList.add('hidden'));
-        document.getElementById('popupCta')?.addEventListener('click', () => { window.location.href = "tel:0334449494"; });
-        window.addEventListener('DOMContentLoaded', () => { loadPage('home'); updateCartUI(); initHeaderSearch(); attachMegaMenuEvents(); });
+        document.getElementById('checkoutForm')?.addEventListener('submit', (e) => { 
+            e.preventDefault(); 
+            alert("✅ Gửi yêu cầu thành công! Chúng tôi sẽ tổng hợp danh sách mặt hàng và liên hệ báo giá sỉ sớm nhất."); 
+            cart = []; saveCart(); 
+            document.getElementById('checkoutModal').style.display = 'none'; 
+            document.getElementById('cartDrawer')?.classList.add('translate-x-full'); 
+            loadPage('products');
+        });
+
+        window.addEventListener('DOMContentLoaded', () => { 
+            loadPage('home'); 
+            updateCartUI(); 
+            initHeaderSearch();
+            attachMegaMenuEvents();
+        });
     </script>
 </body>
 </html>
