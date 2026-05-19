@@ -24,70 +24,55 @@
         .product-card:hover { box-shadow: 0 20px 25px -12px rgba(0,0,0,0.15); transform: translateY(-4px); }
         .cart-badge { top: -8px; right: -8px; }
         @media (max-width: 768px) {
-            .header-top { flex-direction: column; gap: 0.75rem; text-align: center; }
-            .search-area { width: 100%; margin: 0.5rem 0; }
+            .header-main { flex-direction: column; text-align: center; }
+            .menu-bar { flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
             .phone-area { justify-content: center; }
-            .menu-bar { overflow-x: auto; white-space: nowrap; padding-bottom: 0.5rem; }
-            .menu-bar a { display: inline-block; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER MỚI: logo trái + tìm kiếm giữa + số điện thoại phải -->
+    <!-- HEADER: Logo & Slogan căn giữa, Menu căn giữa, Số điện thoại bên phải -->
     <header class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3">
-            <!-- Hàng đầu: logo + tìm kiếm + số điện thoại -->
-            <div class="header-top flex flex-wrap items-center justify-between gap-4">
-                <!-- Bên trái: logo và slogan -->
-                <div class="flex flex-col">
-                    <div class="text-3xl md:text-4xl font-bold">
+        <div class="container mx-auto px-4 py-4">
+            <!-- Hàng trên: Logo trung tâm, số điện thoại bên phải -->
+            <div class="header-main flex flex-wrap items-center justify-between gap-4">
+                <!-- Khoảng trống bên trái để cân bằng với số điện thoại -->
+                <div class="w-20 md:w-32"></div>
+                
+                <!-- Logo và slogan ở giữa -->
+                <div class="text-center flex-1">
+                    <div class="text-4xl md:text-5xl font-bold">
                         <span class="text-[#FF8C00]">Bao Tay</span>
-                        <span class="text-[#0F4C81]"> Thùy Dương</span>
+                        <span class="text-[#0F4C81]"> Thủy Dương</span>
                     </div>
-                    <div class="text-sm text-gray-500 mt-1">Bao Tay an toàn - Giá cả hợp lý</div>
+                    <div class="text-lg md:text-xl text-gray-600 mt-2 font-medium">Bao Tay an toàn - Giá cả hợp lý</div>
                 </div>
 
-                <!-- Ô tìm kiếm ở giữa -->
-                <div class="search-area flex-1 max-w-md mx-4">
-                    <div class="relative">
-                        <input type="text" id="globalSearchInput" placeholder="Tìm kiếm sản phẩm, mã hàng..." 
-                               class="w-full p-3 pl-10 border border-gray-300 rounded-full focus:outline-none focus:border-[#FF8C00] focus:ring-1 focus:ring-[#FF8C00] text-base">
-                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                <!-- 2 số điện thoại bên phải, mỗi số có icon phone + Zalo -->
+                <div class="phone-area flex flex-col items-end space-y-2 w-20 md:w-32">
+                    <div class="flex items-center gap-2">
+                        <a href="tel:0334449494" class="text-[#0F4C81] font-bold text-base md:text-lg"><i class="fas fa-phone-alt mr-1"></i> 033 444 9494</a>
+                        <a href="https://zalo.me/0981171750" class="text-[#0068FF] text-xl"><i class="fab fa-zalo"></i></a>
                     </div>
-                    <div id="searchSuggestHeader" class="absolute bg-white shadow-lg w-full max-w-md rounded-lg hidden z-50"></div>
-                </div>
-
-                <!-- Bên phải: 2 số điện thoại (2 hàng) + icon Zalo/Messenger -->
-                <div class="phone-area flex flex-col items-end space-y-1">
-                    <a href="tel:0334449494" class="flex items-center text-[#0F4C81] font-bold text-lg hover:text-[#FF8C00]">
-                        <i class="fas fa-phone-alt mr-2"></i> 033 444 9494
-                    </a>
-                    <a href="https://zalo.me/0981171750" class="flex items-center text-[#0068FF] font-semibold text-lg">
-                        <i class="fab fa-zalo mr-2"></i> 0981 171 750
-                    </a>
-                    <div class="flex gap-3 mt-1">
-                        <a href="https://zalo.me/0981171750" class="text-[#0068FF] text-2xl"><i class="fab fa-zalo"></i></a>
-                        <a href="https://m.me/baotaythuydung" class="text-[#1877F2] text-2xl"><i class="fab fa-facebook-messenger"></i></a>
-                        <div class="relative cursor-pointer" id="cartIconHeader">
-                            <i class="fas fa-shopping-cart text-2xl text-gray-700"></i>
-                            <span id="cartCountHeader" class="absolute cart-badge bg-[#FF8C00] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
-                        </div>
+                    <div class="flex items-center gap-2">
+                        <a href="tel:0981171750" class="text-[#0F4C81] font-bold text-base md:text-lg"><i class="fas fa-phone-alt mr-1"></i> 0981 171 750</a>
+                        <a href="https://zalo.me/0981171750" class="text-[#0068FF] text-xl"><i class="fab fa-zalo"></i></a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Thanh menu ngang bên dưới: Trang chủ, Sản phẩm, ... -->
+        <!-- Thanh menu ngang căn giữa, chữ to -->
         <div class="bg-gray-50 border-t border-gray-200">
             <div class="container mx-auto px-4">
-                <nav class="menu-bar flex space-x-6 md:space-x-8 py-3 text-base font-medium overflow-x-auto">
-                    <a href="#" data-page="home" class="nav-link text-gray-700 hover:text-[#0F4C81] whitespace-nowrap">Trang chủ</a>
-                    <a href="#" data-page="products" class="nav-link text-gray-700 hover:text-[#0F4C81] whitespace-nowrap">Sản phẩm</a>
-                    <a href="#" data-page="quote" class="nav-link text-gray-700 hover:text-[#0F4C81] whitespace-nowrap">Báo giá sỉ</a>
-                    <a href="#" data-page="news" class="nav-link text-gray-700 hover:text-[#0F4C81] whitespace-nowrap">Tin tức</a>
-                    <a href="#" data-page="about" class="nav-link text-gray-700 hover:text-[#0F4C81] whitespace-nowrap">Giới thiệu</a>
-                    <a href="#" data-page="contact" class="nav-link text-gray-700 hover:text-[#0F4C81] whitespace-nowrap">Liên hệ</a>
+                <nav class="menu-bar flex justify-center space-x-6 md:space-x-10 py-4 text-base md:text-lg font-semibold">
+                    <a href="#" data-page="home" class="nav-link text-gray-700 hover:text-[#FF8C00] transition">Trang chủ</a>
+                    <a href="#" data-page="products" class="nav-link text-gray-700 hover:text-[#FF8C00] transition">Sản phẩm</a>
+                    <a href="#" data-page="quote" class="nav-link text-gray-700 hover:text-[#FF8C00] transition">Báo giá sỉ</a>
+                    <a href="#" data-page="news" class="nav-link text-gray-700 hover:text-[#FF8C00] transition">Tin tức</a>
+                    <a href="#" data-page="about" class="nav-link text-gray-700 hover:text-[#FF8C00] transition">Giới thiệu</a>
+                    <a href="#" data-page="contact" class="nav-link text-gray-700 hover:text-[#FF8C00] transition">Liên hệ</a>
                 </nav>
             </div>
         </div>
@@ -95,7 +80,7 @@
 
     <main id="appContent" class="min-h-screen"></main>
 
-    <!-- GIỎ HÀNG DRAWER (giữ nguyên) -->
+    <!-- GIỎ HÀNG DRAWER -->
     <div id="cartDrawer" class="fixed top-0 right-0 w-full md:w-96 h-full bg-white shadow-2xl z-[1000] transform translate-x-full transition-transform duration-300 flex flex-col">
         <div class="p-4 border-b flex justify-between items-center bg-[#0F4C81] text-white">
             <h3 class="text-xl font-bold"><i class="fas fa-shopping-cart mr-2"></i> Giỏ hàng</h3>
@@ -126,18 +111,10 @@
         </div>
     </div>
 
-    <!-- Popup khuyến mãi -->
-    <div id="discountPopup" class="fixed bottom-5 left-5 bg-white p-4 rounded-xl shadow-2xl border-l-4 border-[#FF8C00] hidden z-[1100]">
-        <div class="flex justify-between"><span class="font-bold text-[#0F4C81] text-lg"><i class="fas fa-gift"></i> Giảm 10% đơn đầu</span><button id="closePopup" class="text-gray-400 text-xl">&times;</button></div>
-        <p class="text-sm mt-1">Nhập mã <span class="font-bold text-[#FF8C00]">THUYDUNG10</span> khi thanh toán.</p>
-        <button id="popupCta" class="mt-2 bg-[#FF8C00] text-white text-sm px-3 py-1 rounded">Nhận ngay</button>
-    </div>
-
-    <!-- Floating Contact -->
+    <!-- Floating Zalo + Phone (bỏ Messenger) -->
     <div class="fixed bottom-6 right-4 flex flex-col gap-3 z-50">
         <a href="https://zalo.me/0981171750" class="bg-[#0068FF] text-white p-3 rounded-full shadow-lg text-2xl w-12 h-12 flex items-center justify-center"><i class="fab fa-zalo"></i></a>
         <a href="tel:0334449494" class="bg-[#0F4C81] text-white p-3 rounded-full shadow-lg text-2xl w-12 h-12 flex items-center justify-center"><i class="fas fa-phone-alt"></i></a>
-        <a href="https://m.me/baotaythuydung" class="bg-[#1877F2] text-white p-3 rounded-full shadow-lg text-2xl w-12 h-12 flex items-center justify-center"><i class="fab fa-facebook-messenger"></i></a>
     </div>
 
     <script>
@@ -157,7 +134,6 @@
         function saveCart() { localStorage.setItem('cart', JSON.stringify(cart)); updateCartUI(); }
         function updateCartUI() { 
             let count = cart.reduce((s, i) => s + i.quantity, 0);
-            document.getElementById('cartCountHeader').innerText = count;
             if(document.getElementById('cartCount')) document.getElementById('cartCount').innerText = count;
             renderCartItems();
         }
@@ -224,6 +200,7 @@
             modalDiv.querySelector('.btn-add-cart-modal').onclick = () => { addToCart(prod.id, 1); modalDiv.remove(); };
         }
 
+        // Trang chủ đã bỏ video và testimonial
         function renderHome() {
             const featured = products.filter(p => p.featured);
             return `
@@ -236,7 +213,6 @@
             <div class="bg-white py-10 shadow-sm"><div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center"><div><i class="fas fa-truck-fast text-4xl text-[#0F4C81]"></i><p class="font-bold text-lg mt-2">Giao hàng toàn quốc</p></div><div><i class="fas fa-factory text-4xl text-[#0F4C81]"></i><p class="font-bold text-lg mt-2">Sản xuất trực tiếp</p></div><div><i class="fas fa-tags text-4xl text-[#0F4C81]"></i><p class="font-bold text-lg mt-2">Giá sỉ cạnh tranh</p></div><div><i class="fas fa-certificate text-4xl text-[#0F4C81]"></i><p class="font-bold text-lg mt-2">Chất lượng chuẩn</p></div></div></div>
             <div class="container mx-auto px-4 py-12"><h2 class="text-3xl font-bold border-l-4 border-[#FF8C00] pl-4 mb-8">Danh mục nổi bật</h2><div class="grid grid-cols-2 md:grid-cols-5 gap-5">${['len','hat-nhua','chong-cat','phu-pu','cotton'].map(cat => `<div class="bg-white rounded-xl shadow p-4 text-center cursor-pointer filter-cat hover:shadow-lg transition" data-cat="${cat}"><img src="https://placehold.co/120x120/0F4C81/white?text=${cat}" class="mx-auto w-24 h-24 object-cover rounded-full"><p class="mt-3 font-medium text-lg capitalize">${cat.replace('-',' ')}</p></div>`).join('')}</div></div>
             <div class="container mx-auto px-4 py-8"><div class="flex justify-between items-center"><h2 class="text-3xl font-bold">Sản phẩm bán chạy</h2><a href="#" data-page="products" class="text-[#FF8C00] text-lg">Xem tất cả →</a></div><div class="swiper featuredSwiper mt-8 overflow-hidden"><div class="swiper-wrapper">${featured.map(p => `<div class="swiper-slide"><div class="bg-white p-5 rounded-xl shadow hover:shadow-lg"><img src="${p.image}" class="h-44 mx-auto object-cover"><h3 class="font-bold text-xl mt-2">${p.name}</h3><p class="text-red-600 font-bold text-xl">${formatPrice(p.price)}</p><button class="btn-add-cart-featured bg-[#0F4C81] text-white px-4 py-2 rounded-full mt-3 w-full text-lg" data-id="${p.id}">Mua ngay</button></div></div>`).join('')}</div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div></div>
-            <div class="bg-gray-100 py-12"><div class="container mx-auto px-4 grid md:grid-cols-2 gap-8"><div><div class="bg-black rounded-2xl overflow-hidden"><iframe width="100%" height="280" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0" title="Nhà máy" frameborder="0" allowfullscreen></iframe></div><p class="mt-3 text-center text-lg">🏭 Quy trình sản xuất hiện đại</p></div><div><h3 class="text-2xl font-bold">Khách hàng nói gì?</h3><div class="swiper testimonialSwiper mt-4"><div class="swiper-wrapper"><div class="swiper-slide bg-white p-5 rounded-lg shadow text-lg"><i class="fas fa-star text-yellow-400"></i> Chất lượng tốt, giao nhanh. Công ty tôi đặt hàng thường xuyên!</div><div class="swiper-slide bg-white p-5 rounded-lg shadow text-lg"><i class="fas fa-star text-yellow-400"></i> Giá sỉ hợp lý, tư vấn nhiệt tình. Số Zalo rất tiện.</div></div><div class="swiper-pagination"></div></div></div></div></div>
             <footer class="bg-[#0F4C81] text-white py-10 mt-8"><div class="container mx-auto grid md:grid-cols-4 gap-8 px-4"><div><h4 class="font-bold text-xl">Bao Tay Thủy Dương</h4><p class="mt-2">Chuyên cung cấp găng tay bảo hộ lao động</p><p class="mt-2"><i class="fas fa-phone-alt"></i> 033 444 9494</p><p><i class="fab fa-zalo"></i> 0981 171 750</p></div><div><h4 class="font-bold text-lg">Danh mục</h4><ul class="mt-2 space-y-1"><li>Bao tay len</li><li>Găng chống cắt</li><li>Phủ hạt nhựa</li></ul></div><div><h4 class="font-bold text-lg">Chính sách</h4><p>Bảo hành 30 ngày, đổi trả miễn phí</p></div><div><iframe width="100%" height="180" style="border:0" loading="lazy" src="https://maps.google.com/maps?q=Hanoi&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe></div></div><div class="text-center text-sm border-t border-white/20 pt-5 mt-5">© 2025 Bao Tay Thủy Dương - Bảo hộ lao động chuyên nghiệp</div></footer>`;
         }
 
@@ -276,26 +252,7 @@
         }
         function initSwiper(){
             if(document.querySelector('.featuredSwiper')) new Swiper('.featuredSwiper', { slidesPerView: 2, spaceBetween: 20, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, breakpoints: { 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } } });
-            if(document.querySelector('.testimonialSwiper')) new Swiper('.testimonialSwiper', { slidesPerView: 1, pagination: { el: '.swiper-pagination', clickable: true } });
         }
-
-        // Global search từ header
-        document.getElementById('globalSearchInput')?.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
-            if(currentPage === 'products') {
-                document.getElementById('searchInputFilter').value = query;
-                renderProductList(document.getElementById('categoryFilter')?.value || 'all', query);
-            } else {
-                // nếu đang ở trang chủ, có thể chuyển sang trang sản phẩm và tìm
-                if(query.length > 0) {
-                    loadPage('products');
-                    setTimeout(() => {
-                        document.getElementById('searchInputFilter').value = query;
-                        renderProductList('all', query);
-                    }, 100);
-                }
-            }
-        });
 
         // Sự kiện DOM
         document.getElementById('cartIconHeader')?.addEventListener('click', () => document.getElementById('cartDrawer')?.classList.remove('translate-x-full'));
