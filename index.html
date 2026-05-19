@@ -96,7 +96,7 @@
     <header class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-                <!-- Cột 1: Logo + Slogan -->
+                <!-- Logo + Slogan -->
                 <div class="md:col-span-3 text-left md:text-left">
                     <a href="#" data-page="home" class="nav-link block">
                         <div class="text-2xl md:text-3xl font-bold leading-none">
@@ -107,7 +107,7 @@
                     </a>
                 </div>
 
-                <!-- Cột 2: Ô tìm kiếm mới nâng cấp -->
+                <!-- Ô tìm kiếm -->
                 <div class="md:col-span-5 w-full">
                     <div class="relative w-full">
                         <input
@@ -122,7 +122,7 @@
                     </div>
                 </div>
 
-                <!-- Cột 3: Điện thoại & Giỏ hàng -->
+                <!-- Điện thoại & Giỏ hàng -->
                 <div class="md:col-span-4 flex items-center justify-between md:justify-end gap-6 phone-area">
                     <div class="flex flex-col items-end gap-1 text-sm">
                         <div class="flex items-center gap-2">
@@ -156,66 +156,36 @@
             </div>
         </div>
 
-        <!-- MENU PHÂN LOẠI SẢN PHẨM PHỤ TRỢ (MEGA MENU) -->
+        <!-- MEGA MENU PHÂN LOẠI -->
         <div class="bg-white border-t border-gray-100 shadow-sm py-2.5 overflow-x-auto no-scrollbar hidden md:block">
             <div class="container mx-auto px-4 flex justify-center gap-6">
-                <!-- Nhóm 1: Bao tay len -->
                 <div class="relative group">
-                    <button class="category-main-btn">
-                        <span>🧤 Bao tay len</span>
-                    </button>
+                    <button class="category-main-btn"><span>🧤 Bao tay len</span></button>
                     <div class="mega-menu">
                         <span class="mega-item filter-mega" data-cat="len">Bao tay len tiêu chuẩn</span>
-                        <span class="mega-item filter-mega" data-cat="len">Bao tay len 40g</span>
-                        <span class="mega-item filter-mega" data-cat="len">Bao tay len chống trơn</span>
+                        <span class="mega-item filter-mega" data-cat="len">Bao tay xám kim 7</span>
+                        <span class="mega-item filter-mega" data-cat="len">Bao tay xám kim 10</span>
+                        <span class="mega-item filter-mega" data-cat="len">Bao tay kem / Muối tiêu</span>
                     </div>
                 </div>
-
-                <!-- Nhóm 2: Chống cắt -->
                 <div class="relative group">
-                    <button class="category-main-btn">
-                        <span>⚔️ Găng tay chống cắt</span>
-                    </button>
+                    <button class="category-main-btn"><span>⚔️ Găng tay chống cắt</span></button>
                     <div class="mega-menu">
                         <span class="mega-item filter-mega" data-cat="chong-cat">Chống cắt cấp 5</span>
-                        <span class="mega-item filter-mega" data-cat="chong-cat">Chống cắt cao cấp</span>
                     </div>
                 </div>
-
-                <!-- Nhóm 3: Chống giật -->
                 <div class="relative group">
-                    <button class="category-main-btn">
-                        <span>⚡ Bao tay chống giật</span>
-                    </button>
+                    <button class="category-main-btn"><span>⚡ Bao tay chống giật</span></button>
                     <div class="mega-menu">
                         <span class="mega-item filter-mega" data-cat="chong-giat">Chống giật hạ thế</span>
                         <span class="mega-item filter-mega" data-cat="chong-giat">Chống giật trung thế</span>
                     </div>
                 </div>
-
-                <!-- Nhóm 4: Phủ sơn / PU -->
                 <div class="relative group">
-                    <button class="category-main-btn">
-                        <span>🎨 Găng tay phủ sơn/PU</span>
-                    </button>
+                    <button class="category-main-btn"><span>🎨 Găng tay phủ sơn/PU</span></button>
                     <div class="mega-menu">
                         <span class="mega-item filter-mega" data-cat="phu-son">Phủ PU trắng</span>
                         <span class="mega-item filter-mega" data-cat="phu-son">Phủ PU đen</span>
-                        <span class="mega-item filter-mega" data-cat="hat-nhua">Phủ hạt nhựa</span>
-                        <span class="mega-item filter-mega" data-cat="phu-pu">Phủ PU mỏng</span>
-                    </div>
-                </div>
-
-                <!-- Nhóm 5: Khác -->
-                <div class="relative group">
-                    <button class="category-main-btn">
-                        <span>📦 Bao tay khác</span>
-                    </button>
-                    <div class="mega-menu">
-                        <span class="mega-item filter-mega" data-cat="cotton">Bao tay cotton</span>
-                        <span class="mega-item filter-mega" data-cat="hat-nhua">Bao tay hạt nhựa</span>
-                        <span class="mega-item filter-mega" data-cat="y-te">Bao tay y tế</span>
-                        <span class="mega-item filter-mega" data-cat="da">Bao tay da</span>
                     </div>
                 </div>
             </div>
@@ -232,9 +202,8 @@
         </div>
         <div id="cartItemsList" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
         <div class="border-t p-4 bg-gray-50">
-            <div class="flex justify-between font-bold text-lg mb-3"><span>Tổng:</span><span id="cartTotal">0₫</span></div>
-            <button id="checkoutBtn" class="w-full btn-cta text-white py-3 rounded-lg font-bold text-lg">Thanh toán ngay</button>
-            <p class="text-xs text-gray-500 mt-2 text-center">COD, chuyển khoản, QR</p>
+            <div class="flex justify-between font-bold text-lg mb-3"><span>Tổng:</span><span id="cartTotal">Liên hệ</span></div>
+            <button id="checkoutBtn" class="w-full btn-cta text-white py-3 rounded-lg font-bold text-lg">Gửi yêu cầu báo giá</button>
         </div>
     </div>
 
@@ -246,7 +215,7 @@
                 <input type="text" placeholder="Họ tên" required class="w-full border p-3 rounded mb-3 text-base">
                 <input type="tel" placeholder="Số điện thoại" required class="w-full border p-3 rounded mb-3 text-base">
                 <input type="text" placeholder="Địa chỉ" required class="w-full border p-3 rounded mb-3 text-base">
-                <textarea placeholder="Ghi chú" rows="2" class="w-full border p-3 rounded mb-3 text-base"></textarea>
+                <textarea placeholder="Ghi chú đơn hàng" rows="2" class="w-full border p-3 rounded mb-3 text-base"></textarea>
                 <div class="flex gap-3">
                     <button type="submit" class="flex-1 btn-cta text-white py-2 rounded text-lg">Xác nhận</button>
                     <button type="button" id="closeCheckout" class="flex-1 bg-gray-300 rounded text-lg">Hủy</button>
@@ -257,9 +226,9 @@
 
     <!-- Popup khuyến mãi -->
     <div id="discountPopup" class="fixed bottom-5 left-5 bg-white p-4 rounded-xl shadow-2xl border-l-4 border-l-[#FF8C00] hidden z-[1100]">
-        <div class="flex justify-between gap-4"><span class="font-bold text-[#0F4C81] text-lg"><i class="fas fa-gift"></i> Giảm 10% đơn đầu</span><button id="closePopup" class="text-gray-400 text-xl">&times;</button></div>
-        <p class="text-sm mt-1">Nhập mã <span class="font-bold text-[#FF8C00]">THUYDUNG10</span> khi thanh toán.</p>
-        <button id="popupCta" class="mt-2 bg-[#FF8C00] text-white text-sm px-3 py-1 rounded">Nhận ngay</button>
+        <div class="flex justify-between gap-4"><span class="font-bold text-[#0F4C81] text-lg"><i class="fas fa-gift"></i> Nhận báo giá sỉ</span><button id="closePopup" class="text-gray-400 text-xl">&times;</button></div>
+        <p class="text-sm mt-1">Liên hệ trực tiếp để có chiết khấu nhà máy tốt nhất.</p>
+        <button id="popupCta" class="mt-2 bg-[#FF8C00] text-white text-sm px-3 py-1 rounded">Gọi ngay</button>
     </div>
 
     <!-- Floating Zalo + Phone -->
@@ -269,31 +238,46 @@
     </div>
 
     <script>
-        // DANH SÁCH SẢN PHẨM MẪU (Đã cập nhật dữ liệu đầy đủ)
+        // CẤU TRÚC DANH SÁCH SẢN PHẨM MỚI
         const products = [
-            { id: 1, name: "Bao tay len 40g - Cao cấp", price: 8500, category: "len", stock: 1500, image: "https://placehold.co/400x400/0F4C81/white?text=Len+40g", rating: 4.8, featured: true },
-            { id: 2, name: "Bao tay phủ hạt nhựa", price: 15900, category: "hat-nhua", stock: 890, image: "https://placehold.co/400x400/FF8C00/white?text=Phủ+Hạt+Nhựa", rating: 4.9, featured: true },
-            { id: 3, name: "Găng tay chống cắt cấp 5 - Chuẩn", price: 45000, category: "chong-cat", stock: 340, image: "https://placehold.co/400x400/d32f2f/white?text=Chống+Cắt", rating: 5.0, featured: false },
-            { id: 4, name: "Bao tay phủ PU mỏng", price: 18900, category: "phu-pu", stock: 2100, image: "https://placehold.co/400x400/2e7d32/white?text=Phủ+PU", rating: 4.7, featured: false },
-            { id: 5, name: "Bao tay cotton tráng nhựa", price: 6900, category: "cotton", stock: 3000, image: "https://placehold.co/400x400/795548/white?text=Cotton", rating: 4.5, featured: true },
-            { id: 6, name: "Bao tay len chống trơn", price: 12500, category: "len", stock: 950, image: "https://placehold.co/400x400/1565C0/white?text=Chống+Trơn", rating: 4.8, featured: true },
-            { id: 8, name: "Bao tay chống cắt cấp 5", price: 49000, category: "chong-cat", weight: "N/A", stock: 500, rating: 5.0, image: "https://placehold.co/400x400/b71c1c/white?text=Cap+5", featured: true },
-            { id: 9, name: "Bao tay chống giật hạ thế", price: 85000, category: "chong-giat", weight: "N/A", stock: 250, rating: 4.8, image: "https://placehold.co/400x400/F57C00/white?text=Ha+The", featured: true },
-            { id: 10, name: "Bao tay chống giật trung thế", price: 145000, category: "chong-giat", weight: "N/A", stock: 150, rating: 5.0, image: "https://placehold.co/400x400/EF6C00/white?text=Trung+The", featured: true },
-            { id: 11, name: "Bao tay phủ PU trắng", price: 16500, category: "phu-son", weight: "N/A", stock: 2800, rating: 4.7, image: "https://placehold.co/400x400/2E7D32/white?text=PU+Trang", featured: true },
-            { id: 12, name: "Bao tay phủ PU đen", price: 17500, category: "phu-son", weight: "N/A", stock: 2400, rating: 4.8, image: "https://placehold.co/400x400/1B5E20/white?text=PU+Den", featured: true }
+            { 
+                id: 1, 
+                name: "Bao tay len bảo hộ lao động", 
+                price: null, // Để trống giá
+                category: "len", 
+                stock: 5000, 
+                image: "https://placehold.co/400x400/0F4C81/white?text=Bao+Tay+Len", 
+                rating: 5.0, 
+                featured: true,
+                description: "Sản phẩm bao tay len bảo hộ dệt từ sợi cotton/poly cao cấp, bảo vệ đôi tay người lao động, chống trơn trượt, trầy xước. Thích hợp dùng trong bốc dỡ hàng hóa, nhà máy dệt, công trường xây dựng.",
+                isLenGroup: true, // Đánh dấu sản phẩm này có chứa nhóm tùy chọn đặc biệt
+                subTypes: [
+                    "Bao tay xám kim 7",
+                    "Bao tay xám kim 10",
+                    "Bao tay kem",
+                    "Bao tay muối tiêu",
+                    "[Sản phẩm trống 1]",
+                    "[Sản phẩm trống 2]",
+                    "[Sản phẩm trống 3]",
+                    "[Sản phẩm trống 4]"
+                ]
+            },
+            { id: 8, name: "Bao tay chống cắt cấp 5", price: null, category: "chong-cat", stock: 500, rating: 5.0, image: "https://placehold.co/400x400/b71c1c/white?text=Cap+5", featured: true, description: "Chống cắt cấp độ cao phục vụ cơ khí, kính, thép." },
+            { id: 9, name: "Bao tay chống giật hạ thế", price: null, category: "chong-giat", stock: 250, rating: 4.8, image: "https://placehold.co/400x400/F57C00/white?text=Ha+The", featured: true, description: "Bảo hộ ngành điện lực an toàn chuẩn quốc tế." },
+            { id: 10, name: "Bao tay chống giật trung thế", price: null, category: "chong-giat", stock: 150, rating: 5.0, image: "https://placehold.co/400x400/EF6C00/white?text=Trung+The", featured: false, description: "Cách điện trung thế độ bền cao." },
+            { id: 11, name: "Bao tay phủ PU trắng", price: null, category: "phu-son", stock: 2800, rating: 4.7, image: "https://placehold.co/400x400/2E7D32/white?text=PU+Trang", featured: true, description: "Phủ bàn PU chống tĩnh điện, êm ái thoáng khí." },
+            { id: 12, name: "Bao tay phủ PU đen", price: null, category: "phu-son", stock: 2400, rating: 4.8, image: "https://placehold.co/400x400/1B5E20/white?text=PU+Den", featured: false, description: "Sử dụng nhiều trong môi trường linh kiện điện tử." }
         ];
 
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         let currentPage = 'home';
 
-        function formatPrice(price) { return price.toLocaleString('vi-VN') + '₫'; }
+        function displayPrice(price) { return price ? price.toLocaleString('vi-VN') + '₫' : 'Liên hệ để được báo giá'; }
         function saveCart() { localStorage.setItem('cart', JSON.stringify(cart)); updateCartUI(); }
         
         function updateCartUI() { 
             let count = cart.reduce((s, i) => s + i.quantity, 0);
-            const cartBadge = document.getElementById('cartCountHeader');
-            if(cartBadge) cartBadge.innerText = count;
+            if(document.getElementById('cartCountHeader')) document.getElementById('cartCountHeader').innerText = count;
             renderCartItems();
         }
 
@@ -301,58 +285,62 @@
             const container = document.getElementById('cartItemsList');
             if(!container) return;
             if(cart.length === 0) { 
-                container.innerHTML = '<div class="text-center text-gray-500 py-8 text-lg">Giỏ hàng trống</div>'; 
-                document.getElementById('cartTotal').innerText = '0₫'; 
+                container.innerHTML = '<div class="text-center text-gray-500 py-8 text-base">Danh sách yêu cầu trống</div>'; 
+                document.getElementById('cartTotal').innerText = 'Liên hệ'; 
                 return; 
             }
-            let total = 0;
             let html = '';
             cart.forEach((item) => {
                 const prod = products.find(p => p.id === item.id);
                 if(!prod) return;
-                const itemTotal = prod.price * item.quantity;
-                total += itemTotal;
-                html += `<div class="flex gap-3 border-b pb-3">
-                            <img src="${prod.image}" class="w-16 h-16 object-cover rounded">
-                            <div class="flex-1"><p class="font-semibold text-base">${prod.name}</p><p class="text-sm text-gray-500">${formatPrice(prod.price)}</p>
-                            <div class="flex items-center gap-2 mt-1">
-                                <button class="cart-qty-minus bg-gray-200 px-2 rounded" data-id="${prod.id}">-</button>
-                                <span class="mx-1 text-sm">${item.quantity}</span>
-                                <button class="cart-qty-plus bg-gray-200 px-2 rounded" data-id="${prod.id}">+</button>
-                                <button class="text-red-500 text-sm ml-2 remove-item" data-id="${prod.id}"><i class="fas fa-trash-alt"></i></button>
-                            </div></div>
-                            <div class="font-bold text-sm">${formatPrice(itemTotal)}</div>
+                let detailsStr = item.subType ? `<p class="text-xs text-[#FF8C00] font-semibold">${item.subType} (${item.weight})</p>` : '';
+                html += `<div class="flex gap-3 border-b pb-3 items-center">
+                            <img src="${prod.image}" class="w-14 h-14 object-cover rounded">
+                            <div class="flex-1">
+                                <p class="font-semibold text-sm leading-tight">${prod.name}</p>
+                                ${detailsStr}
+                                <div class="flex items-center gap-2 mt-1">
+                                    <button class="cart-qty-minus bg-gray-200 px-2 rounded text-xs" data-unique="${item.uniqueId}">-</button>
+                                    <span class="text-xs font-bold">${item.quantity}</span>
+                                    <button class="cart-qty-plus bg-gray-200 px-2 rounded text-xs" data-unique="${item.uniqueId}">+</button>
+                                    <button class="text-red-500 text-xs ml-2 remove-item" data-unique="${item.uniqueId}"><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </div>
+                            <div class="text-xs text-right text-gray-500 font-medium">Yêu cầu báo giá</div>
                         </div>`;
             });
             container.innerHTML = html;
-            document.getElementById('cartTotal').innerText = formatPrice(total);
+            document.getElementById('cartTotal').innerText = 'Liên hệ';
             
-            // Đăng ký sự kiện nút trong giỏ hàng
-            document.querySelectorAll('.cart-qty-minus').forEach(btn => btn.addEventListener('click', () => { adjustQuantity(parseInt(btn.dataset.id), -1); }));
-            document.querySelectorAll('.cart-qty-plus').forEach(btn => btn.addEventListener('click', () => { adjustQuantity(parseInt(btn.dataset.id), 1); }));
-            document.querySelectorAll('.remove-item').forEach(btn => btn.addEventListener('click', () => { let id = parseInt(btn.dataset.id); cart = cart.filter(i => i.id !== id); saveCart(); }));
+            document.querySelectorAll('.cart-qty-minus').forEach(btn => btn.addEventListener('click', () => { adjustQuantityUnique(btn.dataset.unique, -1); }));
+            document.querySelectorAll('.cart-qty-plus').forEach(btn => btn.addEventListener('click', () => { adjustQuantityUnique(btn.dataset.unique, 1); }));
+            document.querySelectorAll('.remove-item').forEach(btn => btn.addEventListener('click', () => { cart = cart.filter(i => i.uniqueId !== btn.dataset.unique); saveCart(); }));
         }
 
-        function adjustQuantity(id, delta) { 
-            let idx = cart.findIndex(i => i.id === id); 
-            if(idx !== -1) { 
-                cart[idx].quantity += delta; 
-                if(cart[idx].quantity <= 0) cart.splice(idx,1); 
-                saveCart(); 
-            } 
+        function adjustQuantityUnique(uniqueId, delta) {
+            let idx = cart.findIndex(i => i.uniqueId === uniqueId);
+            if(idx !== -1) {
+                cart[idx].quantity += delta;
+                if(cart[idx].quantity <= 0) cart.splice(idx, 1);
+                saveCart();
+            }
         }
 
-        function addToCart(id, qty=1) { 
-            let existing = cart.find(i => i.id === id); 
-            if(existing) existing.quantity += qty; 
-            else cart.push({ id, quantity: qty }); 
-            saveCart(); 
-            showToast("✅ Đã thêm vào giỏ!"); 
+        function addToCartSpecial(id, subType = null, weight = null, qty = 1) {
+            let uniqueId = id + (subType ? '-' + subType.replace(/\s+/g, '') : '') + (weight ? '-' + weight : '');
+            let existing = cart.find(i => i.uniqueId === uniqueId);
+            if(existing) {
+                existing.quantity += qty;
+            } else {
+                cart.push({ uniqueId, id, subType, weight, quantity: qty });
+            }
+            saveCart();
+            showToast("✅ Đã thêm vào danh sách yêu cầu báo giá!");
         }
 
         function showToast(msg) { 
             let toast = document.createElement('div'); 
-            toast.className = "fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-5 py-2 rounded-lg z-[1200] text-base shadow-lg"; 
+            toast.className = "fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-5 py-2 rounded-lg z-[1200] text-sm shadow-lg text-center min-w-[250px]"; 
             toast.innerText = msg; 
             document.body.appendChild(toast); 
             setTimeout(()=>toast.remove(),2000); 
@@ -402,7 +390,7 @@
                 <div class="container mx-auto px-4">
                     <h2 class="text-3xl font-bold text-center text-[#0F4C81] mb-10">Danh mục sản phẩm</h2>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-lg transition cursor-pointer filter-cat" data-cat="len"><img src="https://placehold.co/150x150/0F4C81/white?text=Len" class="mx-auto w-28 h-28 object-cover rounded-full"><h3 class="font-bold mt-3">Bao tay len</h3><p class="text-sm text-gray-500">Chống trơn, bền</p></div>
+                        <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-lg transition cursor-pointer filter-cat" data-cat="len"><img src="https://placehold.co/150x150/0F4C81/white?text=Len" class="mx-auto w-28 h-28 object-cover rounded-full"><h3 class="font-bold mt-3">Bao tay len</h3><p class="text-sm text-gray-500">Nhiều chủng loại & số gam</p></div>
                         <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-lg transition cursor-pointer filter-cat" data-cat="phu-son"><img src="https://placehold.co/150x150/FF8C00/white?text=PU" class="mx-auto w-28 h-28 object-cover rounded-full"><h3 class="font-bold mt-3">Bao tay phủ PU</h3><p class="text-sm text-gray-500">Êm tay, thoáng khí</p></div>
                         <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-lg transition cursor-pointer filter-cat" data-cat="chong-cat"><img src="https://placehold.co/150x150/d32f2f/white?text=Chống+cắt" class="mx-auto w-28 h-28 object-cover rounded-full"><h3 class="font-bold mt-3">Bao tay chống cắt</h3><p class="text-sm text-gray-500">An toàn cao</p></div>
                         <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-lg transition cursor-pointer filter-cat" data-cat="chong-giat"><img src="https://placehold.co/150x150/2e7d32/white?text=Chống+giật" class="mx-auto w-28 h-28 object-cover rounded-full"><h3 class="font-bold mt-3">Bao tay chống giật</h3><p class="text-sm text-gray-500">Cách điện an toàn</p></div>
@@ -413,7 +401,7 @@
             <section class="py-16 bg-white">
                 <div class="container mx-auto px-4">
                     <div class="flex justify-between items-center mb-8"><h2 class="text-3xl font-bold text-[#0F4C81]">Sản phẩm nổi bật</h2><a href="#" data-page="products" class="nav-link text-[#FF8C00] text-lg">Xem tất cả →</a></div>
-                    <div class="swiper featuredSwiper overflow-hidden"><div class="swiper-wrapper">${featured.map(p => `<div class="swiper-slide"><div class="bg-gray-50 p-5 rounded-xl shadow text-center"><img src="${p.image}" class="h-44 mx-auto object-cover rounded-lg"><h3 class="font-bold text-base mt-3 line-clamp-1">${p.name}</h3><p class="text-red-600 font-bold text-lg mt-1">${formatPrice(p.price)}</p><button class="btn-add-cart-featured bg-[#0F4C81] text-white px-4 py-2 rounded-full mt-3 w-full text-sm hover:bg-opacity-90" data-id="${p.id}">Mua ngay</button></div></div>`).join('')}</div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                    <div class="swiper featuredSwiper overflow-hidden"><div class="swiper-wrapper">${featured.map(p => `<div class="swiper-slide"><div class="bg-gray-50 p-5 rounded-xl shadow text-center flex flex-col justify-between h-80"><img src="${p.image}" class="h-36 mx-auto object-cover rounded-lg"><h3 class="font-bold text-sm mt-3 line-clamp-1">${p.name}</h3><p class="text-red-600 font-bold text-sm mt-1">${displayPrice(p.price)}</p><button class="view-detail-btn bg-[#0F4C81] text-white px-4 py-2 rounded-full mt-3 w-full text-xs hover:bg-opacity-90" data-id="${p.id}">Chi tiết / Báo giá</button></div></div>`).join('')}</div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
                 </div>
             </section>
 
@@ -426,49 +414,11 @@
                 </div>
             </section>
 
-            <section class="py-16 bg-white">
-                <div class="container mx-auto px-4">
-                    <h2 class="text-3xl font-bold text-center text-[#0F4C81] mb-10">Lý do chọn chúng tôi</h2>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                        <div><i class="fas fa-factory text-5xl text-[#FF8C00]"></i><p class="font-bold text-lg mt-3">Sản xuất trực tiếp</p><p class="text-gray-500 text-sm">Không qua trung gian</p></div>
-                        <div><i class="fas fa-tags text-5xl text-[#FF8C00]"></i><p class="font-bold text-lg mt-3">Giá cạnh tranh</p><p class="text-gray-500 text-sm">Tốt nhất thị trường</p></div>
-                        <div><i class="fas fa-truck-fast text-5xl text-[#FF8C00]"></i><p class="font-bold text-lg mt-3">Giao hàng nhanh</p><p class="text-gray-500 text-sm">Toàn quốc 24-48h</p></div>
-                        <div><i class="fas fa-certificate text-5xl text-[#FF8C00]"></i><p class="font-bold text-lg mt-3">Chất lượng đảm bảo</p><p class="text-gray-500 text-sm">Đạt chuẩn công nghiệp</p></div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="py-16 bg-gray-100">
-                <div class="container mx-auto px-4">
-                    <h2 class="text-3xl font-bold text-center text-[#0F4C81] mb-10">Khách hàng nói gì</h2>
-                    <div class="swiper testimonialSwiper overflow-hidden max-w-3xl mx-auto"><div class="swiper-wrapper"><div class="swiper-slide bg-white p-6 rounded-xl shadow text-center"><i class="fas fa-user-circle text-4xl text-gray-400 mb-3"></i><p class="font-bold">Công ty Xây dựng Hòa Bình</p><p class="mt-2 italic text-gray-600">"Sản phẩm chất lượng, giao hàng đúng hẹn, giá rất cạnh tranh."</p></div><div class="swiper-slide bg-white p-6 rounded-xl shadow text-center"><i class="fas fa-user-circle text-4xl text-gray-400 mb-3"></i><p class="font-bold">Đại lý Bảo hộ An Phát</p><p class="mt-2 italic text-gray-600">"Tôi đặt hàng sỉ thường xuyên, chế độ chăm sóc tốt."</p></div><div class="swiper-slide bg-white p-6 rounded-xl shadow text-center"><i class="fas fa-user-circle text-4xl text-gray-400 mb-3"></i><p class="font-bold">Nhà máy may Đức Thịnh</p><p class="mt-2 italic text-gray-600">"Găng tay chống cắt rất tốt, công nhân hài lòng."</p></div></div><div class="swiper-pagination"></div></div>
-                </div>
-            </section>
-
-            <section class="py-16 bg-white">
-                <div class="container mx-auto px-4">
-                    <h2 class="text-3xl font-bold text-center text-[#0F4C81] mb-10">Tin tức & Blog</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow"><img src="https://placehold.co/400x250/0F4C81/white?text=Hướng+dẫn" class="w-full h-48 object-cover"><div class="p-4"><h3 class="font-bold text-lg">Cách chọn bao tay bảo hộ phù hợp</h3><p class="text-gray-600 mt-1 text-sm">Những lưu ý khi chọn găng tay cho công nhân...</p><a href="#" class="text-[#FF8C00] mt-2 inline-block font-semibold">Đọc tiếp →</a></div></div>
-                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow"><img src="https://placehold.co/400x250/FF8C00/white?text=Tiêu+chuẩn" class="w-full h-48 object-cover"><div class="p-4"><h3 class="font-bold text-lg">Tiêu chuẩn bảo hộ lao động mới</h3><p class="text-gray-600 mt-1 text-sm">Cập nhật các quy định an toàn...</p><a href="#" class="text-[#FF8C00] mt-2 inline-block font-semibold">Đọc tiếp →</a></div></div>
-                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow"><img src="https://placehold.co/400x250/0F4C81/white?text=So+sánh" class="w-full h-48 object-cover"><div class="p-4"><h3 class="font-bold text-lg">So sánh các loại găng tay phủ PU</h3><p class="text-gray-600 mt-1 text-sm">Ưu nhược điểm từng loại...</p><a href="#" class="text-[#FF8C00] mt-2 inline-block font-semibold">Đọc tiếp →</a></div></div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="bg-[#0F4C81] text-white py-16 text-center">
-                <div class="container mx-auto px-4">
-                    <h2 class="text-3xl md:text-4xl font-bold">LIÊN HỆ NHẬN BÁO GIÁ NGAY</h2>
-                    <p class="text-xl mt-3">Gọi ngay 033 444 9494 hoặc Zalo 0981 171 750</p>
-                    <button id="ctaQuoteBtn" class="btn-cta text-white px-8 py-3 rounded-lg font-bold text-lg mt-5 shadow-lg">Nhận báo giá sỉ</button>
-                </div>
-            </section>
-
             <footer class="bg-gray-800 text-gray-300 py-10">
                 <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
                     <div><h4 class="text-xl font-bold text-white mb-3">Bao Tay Thùy Dương</h4><p class="text-sm">Chuyên cung cấp găng tay bảo hộ lao động</p><p class="mt-2 text-sm"><i class="fas fa-phone-alt"></i> 033 444 9494</p><p class="text-sm"><i class="fab fa-zalo"></i> 0981 171 750</p></div>
-                    <div><h4 class="text-lg font-bold text-white mb-3">Danh mục</h4><ul class="space-y-1 text-sm"><li>Bao tay len</li><li>Găng chống cắt</li><li>Phủ hạt nhựa</li><li>Phủ PU</li></ul></div>
-                    <div><h4 class="text-lg font-bold text-white mb-3">Hỗ trợ</h4><div class="space-y-1 text-sm"><p>Chính sách bảo hành</p><p>Hướng dẫn đặt hàng</p><p>Phương thức vận chuyển</p></div></div>
+                    <div><h4 class="text-lg font-bold text-white mb-3">Danh mục</h4><ul class="space-y-1 text-sm"><li>Bao tay len</li><li>Găng chống cắt</li><li>Phủ sơn / PU</li></ul></div>
+                    <div><h4 class="text-lg font-bold text-white mb-3">Hỗ trợ</h4><div class="space-y-1 text-sm"><p>Chính sách bảo hành</p><p>Hướng dẫn đặt hàng</p></div></div>
                     <div><iframe width="100%" height="150" style="border:0" loading="lazy" src="https://maps.google.com/maps?q=Biên+Hòa+Đồng+Nai&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe></div>
                 </div>
                 <div class="text-center text-sm border-t border-gray-700 pt-5 mt-5">© 2026 Bao Tay Thùy Dương - Bảo hộ lao động chuyên nghiệp</div>
@@ -477,17 +427,8 @@
 
         // ---------- TRANG GIỚI THIỆU (ABOUT) ----------
         function renderAbout() {
-            return `
-            <div class="about-banner bg-[#0F4C81] flex items-center justify-center" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1600x700/0F4C81/white?text=GIỚI+THIỆU+CÔNG+TY'); background-size: cover;">
-                <div class="text-center text-white"><h1 class="text-5xl md:text-7xl font-bold">GIỚI THIỆU</h1><p class="text-xl md:text-2xl mt-3">Công ty TNHH Xuân Chương Gloves</p></div>
-            </div>
-            <section class="py-16 bg-white"><div class="container mx-auto px-4 max-w-5xl"><div class="flex flex-col md:flex-row gap-10 items-center"><div><h2 class="text-3xl font-bold text-[#0F4C81]">Công ty TNHH Xuân Chương Gloves</h2><p class="mt-4 text-gray-700 text-lg">Được thành lập năm 2018, chúng tôi tự hào là đơn vị sản xuất và phân phối bao tay bảo hộ lao động hàng đầu khu vực phía Nam. Với dây chuyền hiện đại, nguyên liệu nhập khẩu, sản phẩm của chúng tôi đã có mặt tại nhiều nhà máy, công trình xây dựng và hệ thống đại lý trên toàn quốc.</p></div><div class="w-full md:w-auto flex-shrink-0"><img src="https://placehold.co/400x300/0F4C81/white?text=Giới+thiệu" class="rounded-xl shadow w-full"></div></div></div></section>
-            <section class="py-16 bg-gray-100"><div class="container mx-auto px-4"><div class="grid md:grid-cols-2 gap-8"><div class="bg-white p-6 rounded-xl shadow text-center"><i class="fas fa-eye text-5xl text-[#FF8C00]"></i><h3 class="text-2xl font-bold mt-3">Tầm nhìn</h3><p class="mt-2 text-gray-600">Trở thành thương hiệu bao tay bảo hộ số 1 Việt Nam, hướng đến xuất khẩu.</p></div><div class="bg-white p-6 rounded-xl shadow text-center"><i class="fas fa-bullhorn text-5xl text-[#FF8C00]"></i><h3 class="text-2xl font-bold mt-3">Sứ mệnh</h3><p class="mt-2 text-gray-600">Cung cấp sản phẩm chất lượng cao, giá tốt, đảm bảo an toàn cho người lao động.</p></div></div></div></section>
-            <section class="py-16 bg-white"><div class="container mx-auto px-4"><h2 class="text-3xl font-bold text-center text-[#0F4C81] mb-8">Lịch sử phát triển</h2><div class="relative border-l-4 border-[#FF8C00] ml-4 md:ml-20 space-y-8"><div class="mb-6"><div class="bg-gray-100 p-4 rounded-lg"><span class="font-bold text-[#FF8C00]">2018</span> - Thành lập công ty, xưởng sản xuất 500m²</div></div><div><div class="bg-gray-100 p-4 rounded-lg"><span class="font-bold text-[#FF8C00]">2020</span> - Mở rộng xưởng lên 2000m², tăng gấp 3 công suất</div></div><div><div class="bg-gray-100 p-4 rounded-lg"><span class="font-bold text-[#FF8C00]">2023</span> - Đạt chứng nhận ISO 9001, xuất khẩu sang Campuchia</div></div><div><div class="bg-gray-100 p-4 rounded-lg"><span class="font-bold text-[#FF8C00]">2025</span> - Phân phối toàn quốc, hơn 500 đối tác</div></div></div></div></section>
-            <section class="py-16 bg-gray-100"><div class="container mx-auto px-4"><h2 class="text-3xl font-bold text-center text-[#0F4C81] mb-8">Nhà xưởng & Quy trình</h2><div class="grid grid-cols-2 md:grid-cols-3 gap-4"><img src="https://placehold.co/400x250/0F4C81/white?text=Xưởng+1" class="rounded-xl shadow w-full"><img src="https://placehold.co/400x250/FF8C00/white?text=Xưởng+2" class="rounded-xl shadow w-full"><img src="https://placehold.co/400x250/0F4C81/white?text=Kho+hàng" class="rounded-xl shadow w-full"></div><div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10 text-center"><div><i class="fas fa-tint text-4xl text-[#FF8C00]"></i><p class="font-bold mt-2">Dệt</p></div><div><i class="fas fa-clipboard-list text-4xl text-[#FF8C00]"></i><p class="font-bold mt-2">Kiểm tra</p></div><div><i class="fas fa-box text-4xl text-[#FF8C00]"></i><p class="font-bold mt-2">Đóng gói</p></div><div><i class="fas fa-truck text-4xl text-[#FF8C00]"></i><p class="font-bold mt-2">Giao hàng</p></div></div></div></section>
-            <section class="py-16 bg-white"><div class="container mx-auto px-4 text-center"><h2 class="text-3xl font-bold text-[#0F4C81]">Thành tựu</h2><div class="grid grid-cols-2 gap-8 mt-8"><div><div class="counter-number text-5xl text-[#FF8C00]">10+</div><p class="text-gray-600">Năm kinh nghiệm</p></div><div><div class="counter-number text-5xl text-[#FF8C00]">500+</div><p class="text-gray-600">Đối tác khách hàng</p></div></div></div></section>
-            <section class="py-16 bg-gray-100"><div class="container mx-auto px-4"><h2 class="text-3xl font-bold text-center text-[#0F4C81] mb-8">Chứng nhận & Đội ngũ</h2><div class="flex flex-wrap justify-center gap-6 mb-10"><img src="https://placehold.co/120x120/EEE/0F4C81?text=ISO" class="rounded-full w-24 h-24"><img src="https://placehold.co/120x120/EEE/FF8C00?text=CE" class="rounded-full w-24 h-24"></div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center"><div><img src="https://placehold.co/120x120/0F4C81/white?text=CEO" class="rounded-full w-32 h-32 mx-auto"><h3 class="font-bold mt-2">Nguyễn Văn A</h3><p class="text-gray-500 text-sm">Giám đốc điều hành</p></div><div><img src="https://placehold.co/120x120/FF8C00/white?text=Quản+lý" class="rounded-full w-32 h-32 mx-auto"><h3 class="font-bold mt-2">Trần Thị B</h3><p class="text-gray-500 text-sm">Quản lý sản xuất</p></div><div><img src="https://placehold.co/120x120/0F4C81/white?text=Kỹ+thuật" class="rounded-full w-32 h-32 mx-auto"><h3 class="font-bold mt-2">Lê Văn C</h3><p class="text-gray-500 text-sm">Trưởng phòng kỹ thuật</p></div></div></div></section>
-            <footer class="bg-gray-800 text-gray-300 py-10"><div class="container mx-auto px-4 grid md:grid-cols-4 gap-8"><div><h4 class="text-xl font-bold text-white mb-3">Bao Tay Thùy Dương</h4><p class="text-sm">Chuyên cung cấp găng tay bảo hộ lao động</p><p class="mt-2 text-sm"><i class="fas fa-phone-alt"></i> 033 444 9494</p><p class="text-sm"><i class="fab fa-zalo"></i> 0981 171 750</p></div><div><h4 class="text-lg font-bold text-white mb-3">Danh mục</h4><ul class="space-y-1 text-sm"><li>Bao tay len</li><li>Găng chống cắt</li></ul></div><div><h4 class="text-lg font-bold text-white mb-3">Hỗ trợ</h4><p class="text-sm">Chính sách bảo hành</p><p class="text-sm">Hướng dẫn đặt hàng</p></div><div><iframe width="100%" height="150" style="border:0" loading="lazy" src="https://maps.google.com/maps?q=Biên+Hòa+Đồng+Nai&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe></div></div><div class="text-center text-sm border-t border-gray-700 pt-5 mt-5">© 2026 Bao Tay Thùy Dương - Bảo hộ lao động chuyên nghiệp</div></footer>`;
+            return `<div class="about-banner bg-[#0F4C81] flex items-center justify-center" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1600x700/0F4C81/white?text=GIỚI+THIỆU+CÔNG+TY'); background-size: cover;"><div class="text-center text-white"><h1 class="text-5xl md:text-7xl font-bold">GIỚI THIỆU</h1><p class="text-xl md:text-2xl mt-3">Công ty TNHH Xuân Chương Gloves</p></div></div>
+            <section class="py-16 bg-white"><div class="container mx-auto px-4 max-w-5xl"><div class="flex flex-col md:flex-row gap-10 items-center"><div><h2 class="text-3xl font-bold text-[#0F4C81]">Công ty TNHH Xuân Chương Gloves</h2><p class="mt-4 text-gray-700 text-lg">Được thành lập năm 2018, chúng tôi tự hẳn là đơn vị sản xuất và phân phối bao tay bảo hộ lao động hàng đầu khu vực phía Nam. Với dây chuyền hiện đại sản xuất số lượng lớn, chúng tôi cam kết đáp ứng mọi nhu cầu sỉ.</p></div></div></div></section>`;
         }
 
         // ---------- TRANG SẢN PHẨM ----------
@@ -500,12 +441,9 @@
                                 <select id="categoryFilter" class="w-full border p-3 rounded-lg mb-4 text-sm focus:outline-none focus:border-[#0F4C81]">
                                     <option value="all">Tất cả sản phẩm</option>
                                     <option value="len">Bao tay len</option>
-                                    <option value="hat-nhua">Phủ hạt nhựa</option>
                                     <option value="chong-cat">Chống cắt</option>
                                     <option value="chong-giat">Chống giật</option>
                                     <option value="phu-son">Phủ sơn/PU</option>
-                                    <option value="phu-pu">Phủ PU mỏng</option>
-                                    <option value="cotton">Bao tay cotton</option>
                                 </select>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Từ khóa</label>
                                 <input type="text" id="searchInputFilter" placeholder="Tìm sản phẩm..." class="w-full border p-3 rounded-lg text-sm focus:outline-none focus:border-[#0F4C81]">
@@ -534,32 +472,102 @@
                     <div>
                         <img src="${p.image}" class="w-full h-44 object-cover rounded-lg mb-3">
                         <h3 class="font-bold text-base line-clamp-2 min-h-[3rem] text-gray-800">${p.name}</h3>
-                        <p class="text-red-600 font-bold text-xl mt-1">${formatPrice(p.price)}</p>
+                        <p class="text-red-600 font-bold text-sm mt-1">${displayPrice(p.price)}</p>
                     </div>
-                    <div class="flex gap-2 mt-3">
-                        <button class="btn-add-cart bg-[#0F4C81] text-white px-3 py-2 rounded-full text-xs flex-1 hover:bg-opacity-90" data-id="${p.id}">Mua ngay</button>
-                        <button class="view-detail-btn border border-[#FF8C00] text-[#FF8C00] px-3 py-2 rounded-full text-xs hover:bg-[#FF8C00] hover:text-white transition" data-id="${p.id}">Chi tiết</button>
+                    <div class="flex flex-col gap-2 mt-3">
+                        <button class="view-detail-btn bg-[#0F4C81] text-white px-3 py-2 rounded-full text-xs hover:bg-opacity-90 w-full" data-id="${p.id}">
+                            <i class="fas fa-layer-group mr-1"></i> Xem chi tiết & Tùy chọn
+                        </button>
                     </div>
                 </div>`).join('');
             attachProductEvents();
         }
 
         function attachProductEvents(){
-            document.querySelectorAll('.btn-add-cart').forEach(btn => btn.addEventListener('click', (e) => { 
-                let id = parseInt(btn.dataset.id); 
-                if(id) addToCart(id, 1); 
-            }));
-            document.querySelectorAll('.view-detail-btn').forEach(btn => btn.addEventListener('click', (e) => { 
+            document.querySelectorAll('.view-detail-btn').forEach(btn => btn.addEventListener('click', () => { 
                 showProductDetail(parseInt(btn.dataset.id)); 
             }));
         }
 
+        // CHỨC NĂNG POPUP CHI TIẾT SẢN PHẨM (NÂNG CẤP XỬ LÝ NHÓM BAO TAY LEN)
         function showProductDetail(id){
             const prod = products.find(p => p.id === id);
             if(!prod) return;
+            
             const modalDiv = document.createElement('div');
-            modalDiv.className = "fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[1200] p-4";
-            modalDiv.innerHTML = `
+            modalDiv.className = "fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[1200] p-4 overflow-y-auto";
+            
+            // Xử lý giao diện đặc biệt cho Bao Tay Len
+            if(prod.isLenGroup) {
+                let typesHtml = prod.subTypes.map((type, index) => {
+                    return `
+                    <div class="border p-3 rounded-xl bg-gray-50 flex flex-col justify-between gap-2">
+                        <div>
+                            <span class="text-xs text-gray-400 block">Chủng loại #${index + 1}</span>
+                            <span class="font-bold text-gray-800 text-sm block min-h-[2.5rem] leading-tight">${type}</span>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 mb-1">Trọng lượng:</label>
+                            <select id="weight-${index}" class="w-full text-xs border p-1.5 rounded bg-white focus:outline-none focus:border-[#0F4C81]">
+                                <option value="30g">30g</option>
+                                <option value="40g">40g</option>
+                                <option value="50g">50g</option>
+                                <option value="60g">60g</option>
+                                <option value="70g">70g</option>
+                                <option value="80g">80g</option>
+                            </select>
+                        </div>
+                        <button class="bg-[#FF8C00] text-white text-xs py-1.5 px-2 rounded-lg font-bold mt-1 hover:bg-opacity-90 transition btn-add-sub" data-index="${index}" data-type-name="${type}">
+                            + Thêm loại này
+                        </button>
+                    </div>`;
+                }).join('');
+
+                modalDiv.innerHTML = `
+                <div class="bg-white max-w-4xl w-full rounded-2xl p-6 relative my-8 max-h-[90vh] flex flex-col">
+                    <button class="close-modal text-3xl absolute top-3 right-4 text-gray-500 hover:text-black z-10">&times;</button>
+                    
+                    <div class="overflow-y-auto pr-2 space-y-6">
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-1">
+                                <img src="${prod.image}" class="w-full h-48 object-cover rounded-xl sticky top-0">
+                            </div>
+                            <div class="md:col-span-2">
+                                <h3 class="text-2xl font-bold text-[#0F4C81]">${prod.name}</h3>
+                                <p class="text-xl text-red-600 font-bold mt-1">${displayPrice(prod.price)}</p>
+                                <div class="mt-3 text-sm text-gray-600 border-t pt-2">
+                                    <strong class="text-gray-800">Thông tin sản phẩm:</strong>
+                                    <p class="mt-1 leading-relaxed text-xs">${prod.description}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-gray-800 border-b pb-2 mb-3 text-sm flex items-center gap-2">
+                                <i class="fas fa-boxes text-[#FF8C00]"></i> Danh sách chủng loại sản phẩm & Tùy chọn số Gam (30g - 80g)
+                            </h4>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                ${typesHtml}
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+
+                document.body.appendChild(modalDiv);
+
+                // Gắn sự kiện thêm cho từng loại nhỏ của Bao tay len
+                modalDiv.querySelectorAll('.btn-add-sub').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        let idx = btn.dataset.index;
+                        let typeName = btn.dataset.typeName;
+                        let selectedWeight = modalDiv.querySelector(`#weight-${idx}`).value;
+                        addToCartSpecial(prod.id, typeName, selectedWeight, 1);
+                    });
+                });
+
+            } else {
+                // Giao diện cho các sản phẩm thông thường khác
+                modalDiv.innerHTML = `
                 <div class="bg-white max-w-xl w-full rounded-2xl p-6 relative">
                     <button class="close-modal text-3xl absolute top-3 right-4 text-gray-500 hover:text-black">&times;</button>
                     <h3 class="text-xl font-bold text-[#0F4C81] mb-4 pr-6">${prod.name}</h3>
@@ -567,17 +575,20 @@
                         <img src="${prod.image}" class="w-full h-48 object-cover rounded-xl">
                         <div class="flex flex-col justify-between">
                             <div>
-                                <p class="text-3xl text-[#FF8C00] font-bold">${formatPrice(prod.price)}</p>
-                                <p class="mt-3 text-sm text-gray-600">Trạng thái: <span class="text-green-600 font-semibold">Còn hàng</span></p>
-                                <p class="text-sm text-gray-600 mt-1">Số lượng tồn: ${prod.stock} đôi</p>
+                                <p class="text-xl text-red-600 font-bold">${displayPrice(prod.price)}</p>
+                                <p class="text-xs text-gray-500 mt-2">${prod.description}</p>
                             </div>
-                            <button class="btn-add-cart-modal bg-[#0F4C81] text-white px-6 py-2.5 rounded-full mt-4 font-semibold hover:bg-opacity-90 w-full">Thêm vào giỏ hàng</button>
+                            <button class="btn-add-cart-modal bg-[#0F4C81] text-white px-6 py-2.5 rounded-full mt-4 font-semibold hover:bg-opacity-90 w-full text-xs">
+                                Thêm vào danh sách yêu cầu
+                            </button>
                         </div>
                     </div>
                 </div>`;
-            document.body.appendChild(modalDiv);
+                document.body.appendChild(modalDiv);
+                modalDiv.querySelector('.btn-add-cart-modal').onclick = () => { addToCartSpecial(prod.id, null, null, 1); modalDiv.remove(); };
+            }
+            
             modalDiv.querySelector('.close-modal').onclick = () => modalDiv.remove();
-            modalDiv.querySelector('.btn-add-cart-modal').onclick = () => { addToCart(prod.id, 1); modalDiv.remove(); };
         }
 
         function attachFilterEvents(){
@@ -589,7 +600,7 @@
             refresh();
         }
 
-        function attachHomeEvents(){
+        function attachHomeEvents() {
             document.querySelectorAll('.filter-cat').forEach(el => el.addEventListener('click', () => { 
                 let cat = el.dataset.cat; 
                 loadPage('products'); 
@@ -598,11 +609,10 @@
                     if(catFilter) { catFilter.value = cat; renderProductList(cat, ''); }
                 }, 50); 
             }));
-            document.querySelectorAll('.btn-add-cart-featured').forEach(btn => btn.addEventListener('click', ()=>{ 
-                addToCart(parseInt(btn.dataset.id), 1); 
+            document.querySelectorAll('.view-detail-btn').forEach(btn => btn.addEventListener('click', ()=>{ 
+                showProductDetail(parseInt(btn.dataset.id)); 
             }));
             document.getElementById('getQuoteBtn')?.addEventListener('click', () => showToast("Liên hệ báo giá sỉ: 033 444 9494 hoặc Zalo 0981 171 750"));
-            document.getElementById('ctaQuoteBtn')?.addEventListener('click', () => showToast("Liên hệ báo giá sỉ: 033 444 9494 hoặc Zalo 0981 171 750"));
         }
 
         function initSwiper(){
@@ -619,28 +629,21 @@
             }
         }
 
-        // Tích hợp tìm kiếm Header
         function initHeaderSearch() {
             const searchInput = document.getElementById('headerSearch');
             const searchBtn = document.getElementById('headerSearchBtn');
-            
             const triggerSearch = () => {
                 let query = searchInput.value.trim();
                 loadPage('products');
                 setTimeout(() => {
                     const searchFilter = document.getElementById('searchInputFilter');
-                    if(searchFilter) {
-                        searchFilter.value = query;
-                        renderProductList('all', query);
-                    }
+                    if(searchFilter) { searchFilter.value = query; renderProductList('all', query); }
                 }, 50);
             };
-
             searchBtn?.addEventListener('click', triggerSearch);
             searchInput?.addEventListener('keypress', (e) => { if(e.key === 'Enter') triggerSearch(); });
         }
 
-        // Tích hợp sự kiện cho Mega Menu phân loại mới
         function attachMegaMenuEvents() {
             document.querySelectorAll('.filter-mega').forEach(item => {
                 item.addEventListener('click', (e) => {
@@ -649,10 +652,7 @@
                     loadPage('products');
                     setTimeout(() => {
                         const catFilter = document.getElementById('categoryFilter');
-                        if(catFilter) {
-                            catFilter.value = cat;
-                            renderProductList(cat, '');
-                        }
+                        if(catFilter) { catFilter.value = cat; renderProductList(cat, ''); }
                     }, 50);
                 });
             });
@@ -687,29 +687,24 @@
             if(page) loadPage(page);
         }
 
-        // Khởi tạo các sự kiện tĩnh toàn cục
         document.getElementById('cartIconHeader')?.addEventListener('click', () => document.getElementById('cartDrawer')?.classList.remove('translate-x-full'));
         document.getElementById('closeCartBtn')?.addEventListener('click', () => document.getElementById('cartDrawer')?.classList.add('translate-x-full'));
         document.getElementById('checkoutBtn')?.addEventListener('click', () => {
-            if(cart.length === 0) { showToast("Giỏ hàng của bạn đang trống!"); return; }
+            if(cart.length === 0) { showToast("Vui lòng thêm sản phẩm cần báo giá vào danh sách!"); return; }
             document.getElementById('checkoutModal').style.display = 'flex';
         });
         document.getElementById('closeCheckout')?.addEventListener('click', () => document.getElementById('checkoutModal').style.display = 'none');
         document.getElementById('checkoutForm')?.addEventListener('submit', (e) => { 
             e.preventDefault(); 
-            alert("✅ Đặt hàng thành công! Chúng tôi sẽ liên hệ xác nhận."); 
-            cart = []; 
-            saveCart(); 
+            alert("✅ Gửi yêu cầu thành công! Chúng tôi sẽ tổng hợp danh sách mặt hàng và liên hệ báo giá sỉ sớm nhất."); 
+            cart = []; saveCart(); 
             document.getElementById('checkoutModal').style.display = 'none'; 
             document.getElementById('cartDrawer')?.classList.add('translate-x-full'); 
         });
 
         setTimeout(() => document.getElementById('discountPopup')?.classList.remove('hidden'), 5000);
         document.getElementById('closePopup')?.addEventListener('click', () => document.getElementById('discountPopup')?.classList.add('hidden'));
-        document.getElementById('popupCta')?.addEventListener('click', () => { 
-            document.getElementById('discountPopup')?.classList.add('hidden'); 
-            showToast("Mã THUYDUNG10: giảm 10% đơn hàng đầu"); 
-        });
+        document.getElementById('popupCta')?.addEventListener('click', () => { window.location.href = "tel:0334449494"; });
 
         window.addEventListener('DOMContentLoaded', () => { 
             loadPage('home'); 
