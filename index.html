@@ -164,7 +164,7 @@
                 <div class="relative group">
                     <button class="category-main-btn click-mega-header" data-cat="len"><span>🧤 Bao tay len</span></button>
                     <div class="mega-menu">
-                        <span class="mega-item filter-mega" data-cat="len">Bao tay len tiêu chuẩn</span>
+                        <span class="mega-item filter-mega" data-cat="len">Bao tay len cao cấp</span>
                         <span class="mega-item filter-mega" data-cat="len">Bao tay xám kim 7</span>
                         <span class="mega-item filter-mega" data-cat="len">Bao tay xám kim 10</span>
                         <span class="mega-item filter-mega" data-cat="len">Bao tay kem / Muối tiêu</span>
@@ -240,76 +240,252 @@
     </div>
 
     <script>
-        // MẢNG DỮ LIỆU ĐẦY ĐỦ 100% KỊCH TRẦN CHỨA TOÀN BỘ NỘI DUNG TÀI LIỆU SẢN PHẨM CỦA ANH
+        // MẢNG DỮ LIỆU ĐẦY ĐỦ 100% KỊCH TRẦN NẠP TOÀN BỘ VĂN BẢN MÔ TẢ THEO ĐÚNG CẤU TRÚC ANH GỬI
         const products = [
-            // 1. DỮ LIỆU CÁC BÀI ĐĂNG BAO TAY LEN BẢO HỘ LAO ĐỘNG
+            // 1. NHÓM BAO TAY LEN BẢO HỘ LAO ĐỘNG (5 sản phẩm bài đăng tách biệt hoàn toàn)
             { 
                 id: 1, 
                 name: "Bao tay len bảo hộ lao động tiêu chuẩn", 
                 price: null, category: "len", stock: 5000, 
                 image: "https://placehold.co/500x500/0F4C81/white?text=Bao+Tay+Len+Chinh", 
-                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "TC co giãn bền chắc, phù hợp nhiều kích cỡ tay",
+                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "Co giãn tốt, phù hợp nhiều kích cỡ tay",
                 material: "Sợi cotton, Polyester, TC co giãn bền chắc", 
-                usage: "Công trình xây dựng, Bốc xếp hàng hóa, Kho vận – logistics, Cơ khí nhẹ, Làm vườn – nông nghiệp, Nhà máy sản xuất, Công việc gia đình, Xưởng gỗ – nội thất.",
-                description: "Tên sản phẩm: Bao tay len bảo hộ lao động. Màu sắc: Trắng, Kem, Xám, Đen. Trọng lượng tùy chọn: 30g, 40g, 50g, 60g, 70g, 80g. Kích thước co giãn tốt.",
-                detailedDescription: "⭐ ĐẶC ĐIỂM NỔI BẬT:<br>✔ Chất liệu sợi dệt chắc chắn, chịu ma sát tốt<br>✔ Co giãn linh hoạt, ôm tay vừa vặn<br>✔ Thoáng khí, không gây bí nóng khi sử dụng lâu<br>✔ Hạn chế trầy xước tay trong quá trình lao động<br>✔ Tăng độ bám khi cầm nắm vật dụng<br>✔ Đường may chắc chắn, hạn chế bung chỉ<br>✔ Có thể giặt và tái sử dụng nhiều lần<br>✔ Giá thành hợp lý, phù hợp sử dụng số lượng lớn<br><br>🛡 HƯỚNG DẪN BẢO QUẢN:<br>▪ Bảo quản nơi khô ráo, thoáng mát<br>▪ Tránh tiếp xúc với hóa chất mạnh<br>▪ Có thể giặt sạch và tái sử dụng<br>▪ Không để gần nguồn nhiệt cao<br><br>#baotaylen #baotaybaoholaodong #baotaycongnghiep #baotayxaydung #baotaysi #baotaygiare"
+                usage: "Trắng, Kem, Xám, Đen",
+                infoHtml: `
+                    <p class="mb-1"><strong>Tên sản phẩm:</strong> Bao tay len bảo hộ lao động</p>
+                    <p class="mb-1"><strong>Chất liệu:</strong> Sợi cotton, Polyester, TC co giãn bền chắc</p>
+                    <p class="mb-1"><strong>Màu sắc:</strong> Trắng, Kem, Xám, Đen</p>
+                    <p class="mb-1"><strong>Trọng lượng:</strong> 30g, 40g, 50g, 60g, 70g, 80g</p>
+                    <p class="mb-1"><strong>Kích thước:</strong> Co giãn tốt, phù hợp nhiều kích cỡ tay</p>
+                `,
+                highlightsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Chất liệu sợi dệt chắc chắn, chịu ma sát tốt</li>
+                        <li>✔ Co giãn linh hoạt, ôm tay vừa vặn</li>
+                        <li>✔ Thoáng khí, không gây bí nóng khi sử dụng lâu</li>
+                        <li>✔ Hạn chế trầy xước tay trong quá trình lao động</li>
+                        <li>✔ Tăng độ bám khi cầm nắm vật dụng</li>
+                        <li>✔ Đường may chắc chắn, hạn chế bung chỉ</li>
+                        <li>✔ Có thể giặt và tái sử dụng nhiều lần</li>
+                        <li>✔ Giá thành hợp lý, phù hợp sử dụng số lượng lớn</li>
+                    </ul>
+                `,
+                appsHtml: `
+                    <p class="mb-2">Bao tay phù hợp sử dụng trong nhiều lĩnh vực:</p>
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Công trình xây dựng</li>
+                        <li>✔ Bốc xếp hàng hóa</li>
+                        <li>✔ Kho vận – logistics</li>
+                        <li>✔ Cơ khí nhẹ</li>
+                        <li>✔ Làm vườn – nông nghiệp</li>
+                        <li>✔ Nhà máy sản xuất</li>
+                        <li>✔ Công việc gia đình</li>
+                        <li>✔ Xưởng gỗ – nội thất</li>
+                    </ul>
+                `,
+                storageHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>▪ Bảo quản nơi khô ráo, thoáng mát</li>
+                        <li>▪ Tránh tiếp xúc với hóa chất mạnh</li>
+                        <li>▪ Có thể giặt sạch và tái sử dụng</li>
+                        <li>▪ Không để gần nguồn nhiệt cao</li>
+                    </ul>
+                    <p class="text-xs text-gray-400 mt-4 font-normal">#baotaylen #baotaybaoholaodong #baotaycongnghiep #baotayxaydung #baotaysi #baotaygiare</p>
+                `
             },
             { 
                 id: 2, 
                 name: "Bao tay len Xám kim 7 bảo hộ lao động", 
                 price: null, category: "len", stock: 4500, 
                 image: "https://placehold.co/500x500/555555/white?text=Xam+Kim+7", 
-                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "TC co giãn bền chắc",
-                material: "Sợi cotton dệt kim 7 dày dặn", usage: "Công trình xây dựng, bốc xếp hàng hóa thô ráp nặng.",
-                description: "Tên sản phẩm: Bao tay len Xám kim 7. Sợi cotton ma sát tốt, dệt kim chắc chắn bảo vệ tối đa.",
-                detailedDescription: "⭐ ĐẶC ĐIỂM NỔI BẬT:<br>✔ Chất liệu sợi dệt chắc chắn, chịu ma sát tốt<br>✔ Co giãn linh hoạt, ôm tay vừa vặn<br>✔ Đường dệt kim 7 dày chịu va quệt cơ học tốt<br><br>🛡 HƯỚNG DẪN BẢO QUẢN:<br>▪ Bảo quản nơi khô ráo, thoáng mát<br>▪ Tránh nguồn nhiệt quá cao."
+                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "Co giãn tốt, phù hợp nhiều kích cỡ tay",
+                material: "Sợi cotton dệt máy kim 7 dày dặn", usage: "Xám",
+                infoHtml: `
+                    <p class="mb-1"><strong>Tên sản phẩm:</strong> Bao tay len Xám kim 7 bảo hộ lao động</p>
+                    <p class="mb-1"><strong>Chất liệu:</strong> Sợi cotton, Polyester dệt dày</p>
+                    <p class="mb-1"><strong>Màu sắc:</strong> Xám</p>
+                    <p class="mb-1"><strong>Trọng lượng:</strong> 50g, 60g, 70g, 80g</p>
+                    <p class="mb-1"><strong>Kích thước:</strong> Co giãn tốt, phù hợp nhiều kích cỡ tay</p>
+                `,
+                highlightsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Chất liệu sợi dệt dày dặn chắc chắn, chịu ma sát tốt</li>
+                        <li>✔ Kết cấu dệt kim 7 chịu va quệt cơ học công trình cực tốt</li>
+                        <li>✔ Thoáng khí, không gây bí nóng khi sử dụng lâu dài</li>
+                    </ul>
+                `,
+                appsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Công trình xây dựng nặng</li>
+                        <li>✔ Bốc xếp hàng hóa cồng kềnh</li>
+                        <li>✔ Cơ khí công nghiệp nhẹ</li>
+                    </ul>
+                `,
+                storageHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>▪ Bảo quản nơi khô ráo, thoáng mát</li>
+                        <li>▪ Không để gần nguồn nhiệt cao</li>
+                    </ul>
+                `
             },
             { 
                 id: 3, 
                 name: "Bao tay len Xám kim 10 dệt máy khít mịn", 
                 price: null, category: "len", stock: 4200, 
                 image: "https://placehold.co/500x500/777777/white?text=Xam+Kim+10", 
-                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "TC co giãn bền chắc",
-                material: "Sợi cotton pha Polyester dệt kim 10 mật độ cao", usage: "Cơ khí nhẹ, nhà máy sản xuất, thao tác công cụ cần chính xác.",
-                description: "Tên sản phẩm: Bao tay len Xám kim 10. Đan khít mịn màng, co giãn ôm sát cổ tay linh hoạt.",
-                detailedDescription: "⭐ ĐẶC ĐIỂM NỔI BẬT:<br>✔ Thoáng khí, không gây bí nóng khi sử dụng lâu<br>✔ Đường may chắc chắn, hạn chế tối đa việc bung xổ chỉ sợi<br><br>🛡 HƯỚNG DẪN BẢO QUẢN:<br>▪ Giặt sạch phơi ráo sau khi sử dụng."
+                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "Co giãn tốt, phù hợp nhiều kích cỡ tay",
+                material: "Sợi dệt kim 10 mật độ cao mật độ dày khít", usage: "Xám",
+                infoHtml: `
+                    <p class="mb-1"><strong>Tên sản phẩm:</strong> Bao tay len Xám kim 10 khít mịn</p>
+                    <p class="mb-1"><strong>Chất liệu:</strong> Sợi cotton pha Poly đan khít</p>
+                    <p class="mb-1"><strong>Màu sắc:</strong> Xám</p>
+                    <p class="mb-1"><strong>Trọng lượng:</strong> 40g, 50g, 60g</p>
+                    <p class="mb-1"><strong>Kích thước:</strong> Co giãn tốt, ôm sát bàn tay</p>
+                `,
+                highlightsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Đường dệt khít mịn đẹp, độ co dãn ôm sát tay hoàn hảo</li>
+                        <li>✔ Giúp thao tác cử động thật tay chuẩn xác cơ học tinh vi</li>
+                        <li>✔ Đường may cổ tay vắt sổ chắc chắn hạn chế bung xổ chỉ</li>
+                    </ul>
+                `,
+                appsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Nhà máy sản xuất linh kiện nhẹ</li>
+                        <li>✔ Kho vận đóng gói phân loại</li>
+                        <li>✔ Sửa chữa lắp ráp chi tiết dụng cụ</li>
+                    </ul>
+                `,
+                storageHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>▪ Giặt sạch phơi ráo sau sử dụng</li>
+                        <li>▪ Tránh xa hóa chất dung môi axit mạnh</li>
+                    </ul>
+                `
             },
             { 
                 id: 4, 
-                name: "Bao tay len Kem dệt máy chất lượng cao", 
+                name: "Bao tay len màu Kem cotton tự nhiên", 
                 price: null, category: "len", stock: 4800, 
                 image: "https://placehold.co/500x500/F5F5DC/333333?text=Bao+Tay+Kem", 
-                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "TC co giãn bền chắc",
-                material: "Sợi cotton cao cấp màu kem dệt tự động", usage: "Kho bãi Logistics, vận chuyển, đóng gói thành phẩm, kiểm hàng sạch.",
-                description: "Tên sản phẩm: Bao tay len màu kem dệt mịn. Chất sợi cotton an toàn không xơ bụi vải.",
-                detailedDescription: "⭐ ĐẶC ĐIỂM NỔI BẬT:<br>✔ Sợi màu kem tự nhiên sạch đẹp tính mỹ thuật cao<br>✔ Tăng độ bám dính khi mang vác cấu kiện hàng hóa sạch<br><br>🛡 HƯỚNG DẪN BẢO QUẢN:<br>▪ Không giặt ngâm chung với chất tẩy rửa hóa chất mạnh."
+                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "Co giãn tốt, phù hợp nhiều kích cỡ tay",
+                material: "Sợi bông cotton nguyên bản dệt tự động máy đồng đều", usage: "Kem",
+                infoHtml: `
+                    <p class="mb-1"><strong>Tên sản phẩm:</strong> Bao tay len màu Kem cotton</p>
+                    <p class="mb-1"><strong>Chất liệu:</strong> 100% sợi len cotton tự nhiên</p>
+                    <p class="mb-1"><strong>Màu sắc:</strong> Kem trắng sáng sạch sẽ</p>
+                    <p class="mb-1"><strong>Trọng lượng:</strong> 30g, 40g, 50g, 60g, 70g, 80g</p>
+                    <p class="mb-1"><strong>Kích thước:</strong> Co giãn tốt, ôm tay chắc chắn</p>
+                `,
+                highlightsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Chất bông cotton mềm mại tinh khiết không bụi xơ vải</li>
+                        <li>✔ Tính mỹ thuật cao sáng sạch phù hợp đóng gói thành phẩm</li>
+                        <li>✔ Co dãn đàn hồi linh hoạt, giặt tái sử dụng kinh tế nhiều lần</li>
+                    </ul>
+                `,
+                appsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Xưởng gỗ nội thất cao cấp</li>
+                        <li>✔ Đóng gói, phân loại hàng hóa sạch</li>
+                        <li>✔ Kiểm hàng kho logistics thiết bị</li>
+                    </ul>
+                `,
+                storageHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>▪ Bảo quản kho ráo thoáng mát</li>
+                        <li>▪ Không ngâm chung chất tẩy trắng mạnh gây mục sợi vải</li>
+                    </ul>
+                `
             },
             { 
                 id: 5, 
-                name: "Bao tay len Muối tiêu công trình", 
+                name: "Bao tay len màu Muối tiêu sỉ công trình", 
                 price: null, category: "len", stock: 3900, 
                 image: "https://placehold.co/500x500/808080/white?text=Muoi+Tieu", 
-                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "TC co giãn bền chắc",
-                material: "Sợi dệt pha phối màu muối tiêu bền bỉ", usage: "Khuân vác vật liệu xây dựng gạch đá, bốc dỡ kho bãi ngoài trời.",
-                description: "Tên sản phẩm: Găng tay muối tiêu công trình. Màu phối thông minh lâu cũ, chống mài mòn tốt.",
-                detailedDescription: "⭐ ĐẶC ĐIỂM NỔI BẬT:<br>✔ Hạn chế trầy xước tay tối đa trước các tác nhân thô ráp công trường<br>✔ Độ co giãn ôm sát đàn hồi cao<br><br>🛡 HƯỚNG DẪN BẢO QUẢN:<br>▪ Giặt sạch phơi khô ráo tại nơi thoáng gió."
+                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "Co giãn tốt, phù hợp nhiều kích cỡ tay",
+                material: "Sợi dệt pha màu phối kết hợp muối tiêu công nghiệp", usage: "Đen",
+                infoHtml: `
+                    <p class="mb-1"><strong>Tên sản phẩm:</strong> Bao tay len Muối tiêu</p>
+                    <p class="mb-1"><strong>Chất liệu:</strong> Sợi len phối màu muối tiêu bền bỉ</p>
+                    <p class="mb-1"><strong>Màu sắc:</strong> Muối tiêu (Xám đen đan xen)</p>
+                    <p class="mb-1"><strong>Trọng lượng:</strong> 40g, 50g, 60g, 70g, 80g</p>
+                    <p class="mb-1"><strong>Kích thước:</strong> Co giãn tốt chắc tay</p>
+                `,
+                highlightsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Phối màu muối tiêu thông minh giúp hạn chế tối đa vết bẩn lộ diện</li>
+                        <li>✔ Kết cấu sợi len dày dặn chịu lực căng kéo lực mài mòn cao</li>
+                        <li>✔ Tăng hiệu quả bám dính khi khuân vác bốc dỡ vật liệu thô</li>
+                    </ul>
+                `,
+                appsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Bốc vác gạch đá bê tông cốt thép</li>
+                        <li>✔ Công trường thi công thô xây dựng</li>
+                        <li>✔ Khuân vác bãi tàu bãi bốc kho vận</li>
+                    </ul>
+                `,
+                storageHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>▪ Vệ sinh giặt sạch phơi ráo gió sau ca làm việc</li>
+                        <li>▪ Tránh nguồn nhiệt tiếp xúc trực tiếp cao độ</li>
+                    </ul>
+                `
             },
-            { id: 6, name: "[Sản phẩm bao tay len trống 1]", price: null, category: "len", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+1", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu dệt sau.", detailedDescription: "Trống." },
-            { id: 7, name: "[Sản phẩm bao tay len trống 2]", price: null, category: "len", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+2", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu dệt sau.", detailedDescription: "Trống." },
-            { id: 13, name: "[Sản phẩm bao tay len trống 3]", price: null, category: "len", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+3", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu dệt sau.", detailedDescription: "Trống." },
-            { id: 14, name: "[Sản phẩm bao tay len trống 4]", price: null, category: "len", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+4", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu dệt sau.", detailedDescription: "Trống." },
+            { id: 6, name: "[Sản phẩm bao tay len trống 1]", price: null, category: "len", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+1", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu.", detailedDescription: "Nội dung trống." },
+            { id: 7, name: "[Sản phẩm bao tay len trống 2]", price: null, category: "len", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+2", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu.", detailedDescription: "Nội dung trống." },
+            { id: 13, name: "[Sản phẩm bao tay len trống 3]", price: null, category: "len", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+3", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu.", detailedDescription: "Nội dung trống." },
+            { id: 14, name: "[Sản phẩm bao tay len trống 4]", price: null, category: "len", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+4", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu.", detailedDescription: "Nội dung trống." },
 
-            // 2. NHÓM BAO TAY POLY / POLYESTER (Sửa đổi tên gọi chuẩn xác)
+            // 2. DỮ LIỆU SẢN PHẨM BAO TAY POLY / POLYESTER (Tách biệt 3 mã màu độc lập)
             {
                 id: 21,
                 name: "Bao tay Poly bảo hộ lao động màu Trắng",
                 price: null, category: "poly", stock: 3000,
                 image: "https://placehold.co/500x500/eeeeee/333333?text=Poly+Trang",
-                featured: true, brand: "Thùy Dương", standard: "Thiết kế ôm tay, co giãn linh hoạt phù hợp nhiều kích cỡ",
-                material: "Polyester cao cấp, Sợi Poly co giãn, Nylon tổng hợp",
-                usage: "Lắp ráp linh kiện điện tử, Nhà máy điện tử, Phòng sạch, Kho vận nhẹ, Đóng gói sản phẩm, Kiểm hàng, Sản xuất công nghiệp nhẹ.",
-                description: "Tên sản phẩm: Bao tay Poly bảo hộ lao động màu trắng. Màu sắc: Trắng. Trọng lượng tùy chọn: 30g, 40g, 50g.",
-                detailedDescription: "⭐ ĐẶC ĐIỂM NỔI BẬT:<br>✔ Chất liệu mềm nhẹ, tạo cảm giác thoải mái<br>✔ Không bám bụi vải khi sử dụng<br>✔ Độ đàn hồi cao, thao tác linh hoạt<br>✔ Phù hợp công việc cần độ chính xác<br>✔ Thoáng khí, hạn chế đổ mồ hôi tay<br>✔ Chống trầy xước nhẹ khi thao tác<br>✔ Đường dệt mịn đẹp, độ bền cao<br>✔ Có thể sử dụng liên tục trong thời gian dài<br><br>🛡 HƯỚNG DẪN BẢO QUẢN:<br>▪ Giặt sạch sau khi sử dụng<br>▪ Bảo quản nơi thoáng mát<br>▪ Tránh tiếp xúc nhiệt độ cao<br>▪ Không dùng với hóa chất mạnh<br><br>#baotaypoly #baotaypolyester #baotayphongsach #baotaylaprap #baotaylaodong"
+                featured: true, brand: "Thùy Dương", standard: "Thiết kế ôm tay, co giãn linh hoạt",
+                material: "Polyester cao cấp, Sợi Poly co giãn, Nylon tổng hợp", 
+                usage: "Trắng",
+                infoHtml: `
+                    <p class="mb-1"><strong>Tên sản phẩm:</strong> Găng tay Poly bảo hộ lao động</p>
+                    <p class="mb-1"><strong>Chất liệu:</strong> Polyester cao cấp, Sợi Poly co giãn, Nylon tổng hợp</p>
+                    <p class="mb-1"><strong>Màu sắc:</strong> Trắng</p>
+                    <p class="mb-1"><strong>Trọng lượng:</strong> 30g, 40g, 50g</p>
+                    <p class="mb-1"><strong>Kích thước:</strong> Thiết kế ôm tay, co giãn linh hoạt</p>
+                `,
+                highlightsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Chất liệu mềm nhẹ, tạo cảm giác thoải mái</li>
+                        <li>✔ Không bám bụi vải khi sử dụng</li>
+                        <li>✔ Độ đàn hồi cao, thao tác linh hoạt</li>
+                        <li>✔ Phù hợp công việc cần độ chính xác</li>
+                        <li>✔ Thoáng khí, hạn chế đổ mồ hôi tay</li>
+                        <li>✔ Chống trầy xước nhẹ khi thao tác</li>
+                        <li>✔ Đường dệt mịn đẹp, độ bền cao</li>
+                        <li>✔ Có thể sử dụng liên tục trong thời gian dài</li>
+                    </ul>
+                `,
+                appsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Lắp ráp linh kiện điện tử</li>
+                        <li>✔ Nhà máy điện tử</li>
+                        <li>✔ Phòng sạch</li>
+                        <li>✔ Kho vận nhẹ</li>
+                        <li>✔ Đóng gói sản phẩm</li>
+                        <li>✔ Kiểm hàng</li>
+                        <li>✔ Sản xuất công nghiệp nhẹ</li>
+                    </ul>
+                `,
+                storageHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>▪ Giặt sạch sau khi sử dụng</li>
+                        <li>▪ Bảo quản nơi thoáng mát</li>
+                        <li>▪ Tránh tiếp xúc nhiệt độ cao</li>
+                        <li>▪ Không dùng với hóa chất mạnh</li>
+                    </ul>
+                    <p class="text-xs text-gray-400 mt-4 font-normal">#baotaypoly #baotaypolyester #baotayphongsach #baotaylaprap #baotaycongnghiep</p>
+                `
             },
             {
                 id: 22,
@@ -317,10 +493,30 @@
                 price: null, category: "poly", stock: 2500,
                 image: "https://placehold.co/500x500/999999/white?text=Poly+Xam",
                 featured: false, brand: "Thùy Dương", standard: "Thiết kế ôm tay, co giãn linh hoạt",
-                material: "Polyester cao cấp, Sợi Poly màu xám kháng bẩn",
-                usage: "Nhà máy điện tử, kiểm hàng cấu kiện sạch, đóng gói công nghiệp nhẹ.",
-                description: "Tên sản phẩm: Bao tay Poly bảo hộ màu xám. Sợi dệt tổng hợp không bụi vải, ôm khít bàn tay.",
-                detailedDescription: "⭐ ĐẶC ĐIỂM NỔI BẬT:<br>✔ Mềm mại thoáng khí đàn hồi tốt<br>✔ Màu xám tối sạch lâu chống dơ<br><br>🛡 HƯỚNG DẪN BẢO QUẢN:<br>▪ Giặt sạch phơi ráo thoáng mát."
+                material: "Polyester cao cấp sợi Poly co dãn mịn màng", usage: "Xám",
+                infoHtml: `
+                    <p class="mb-1"><strong>Tên sản phẩm:</strong> Găng tay Poly bảo hộ màu Xám</p>
+                    <p class="mb-1"><strong>Chất liệu:</strong> Polyester co giãn tổng hợp</p>
+                    <p class="mb-1"><strong>Màu sắc:</strong> Xám</p>
+                    <p class="mb-1"><strong>Trọng lượng:</strong> 30g, 40g, 50g</p>
+                    <p class="mb-1"><strong>Kích thước:</strong> Thiết kế ôm tay linh hoạt</p>
+                `,
+                highlightsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Sợi vải bền nhẹ, màu xám sạch sẽ lâu cũ sờn</li>
+                        <li>✔ Đàn hồi co dãn cao thao tác tinh vi tỉ mỉ</li>
+                    </ul>
+                `,
+                appsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Lắp ráp chi tiết linh kiện cơ điện tử</li>
+                        <li>✔ Đóng gói và phân hàng hóa kiểm soát chất lượng</li>
+                    </ul>
+                `,
+                storageHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>▪ Giặt sạch sau sử dụng phơi khô thoáng</li>
+                    </ul>`
             },
             {
                 id: 23,
@@ -328,97 +524,276 @@
                 price: null, category: "poly", stock: 2400,
                 image: "https://placehold.co/500x500/222222/white?text=Poly+Den",
                 featured: false, brand: "Thùy Dương", standard: "Thiết kế ôm tay, co giãn linh hoạt",
-                material: "Sợi dệt Polyester tổng hợp nhuộm đen",
-                usage: "Lắp ráp kỹ thuật nhà xưởng dây chuyền cơ khí nhẹ, phòng sạch bán dẫn.",
-                description: "Tên sản phẩm: Bao tay Poly bảo hộ màu đen. Mịn đẹp dẻo dai tuyệt đối không xơ xù sợi lông.",
-                detailedDescription: "⭐ ĐẶC ĐIỂM NỔI BẬT:<br>✔ Sợi poly đen tăng tính chuyên nghiệp sạch sẽ<br>✔ Thao tác cầm nắm công cụ chuẩn xác<br><br>🛡 HƯỚNG DẪN BẢO QUẢN:<br>▪ Không để tiếp xúc gần các nguồn nhiệt độ quá áp cao."
+                material: "Polyester cao cấp nhuộm đen bền màu", usage: "Đen",
+                infoHtml: `
+                    <p class="mb-1"><strong>Tên sản phẩm:</strong> Găng tay Poly bảo hộ màu Đen</p>
+                    <p class="mb-1"><strong>Chất liệu:</strong> Sợi tổng hợp Poly đen co giãn</p>
+                    <p class="mb-1"><strong>Màu sắc:</strong> Đen</p>
+                    <p class="mb-1"><strong>Trọng lượng:</strong> 30g, 40g, 50g</p>
+                `,
+                highlightsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Sợi đan dệt khít mịn đẹp, tuyệt đối không ra xơ bông bụi vải</li>
+                    </ul>
+                `,
+                appsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Dây chuyền sản xuất lắp ráp cơ khí nhẹ</li>
+                    </ul>
+                `,
+                storageHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>▪ Tránh gần nguồn lửa nhiệt độ quá cao</li>
+                    </ul>`
             },
-            { id: 25, name: "[Sản phẩm bao tay Poly trống 1]", price: null, category: "poly", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Poly+Trong+1", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu.", detailedDescription: "Trống chờ bổ sung." },
-            { id: 26, name: "[Sản phẩm bao tay Poly trống 2]", price: null, category: "poly", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Poly+Trong+2", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu.", detailedDescription: "Trống chờ bổ sung." },
-            { id: 27, name: "[Sản phẩm bao tay Poly trống 3]", price: null, category: "poly", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Poly+Trong+3", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu.", detailedDescription: "Trống chờ bổ sung." },
-            { id: 28, name: "[Sản phẩm bao tay Poly trống 4]", price: null, category: "poly", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Poly+Trong+4", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 25, name: "[Sản phẩm bao tay Poly trống 1]", price: null, category: "poly", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Poly+Trong+1", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 26, name: "[Sản phẩm bao tay Poly trống 2]", price: null, category: "poly", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Poly+Trong+2", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 27, name: "[Sản phẩm bao tay Poly trống 3]", price: null, category: "poly", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Poly+Trong+3", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 28, name: "[Sản phẩm bao tay Poly trống 4]", price: null, category: "poly", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Poly+Trong+4", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung.", detailedDescription: "Trống chờ bổ sung." },
 
-            // 3. NHÓM BAO TAY PHỦ PU (Thuộc mục phủ sơn nhựa)
+            // 3. NHÓM BAO TAY PHỦ PU (Cập nhật văn bản kịch trần)
             {
                 id: 31,
-                name: "Bao tay phủ PU chống trơn trượt lòng bàn tay",
+                name: "Bao tay phủ PU chống trơn lòng bàn tay",
                 price: null, category: "phu-son", stock: 3500,
                 image: "https://placehold.co/500x500/2E7D32/white?text=Phu+PU",
-                featured: true, brand: "Thùy Dương / Nhập khẩu", standard: "Ôm sát bàn tay, co giãn đàn hồi tốt",
-                material: "Sợi polyester dệt mịn, Phủ PU lòng bàn tay",
-                usage: "Nhà máy điện tử, Kho hàng, Lắp ráp linh kiện, Cơ khí chính xác, Đóng gói sản phẩm, Sản xuất công nghiệp, Công việc cần chống trơn.",
-                description: "Tên sản phẩm: Bao tay phủ PU chống trơn. Màu sắc: Xám phủ đen, Trắng phủ PU, Đen phủ PU. Trọng lượng tùy chọn: 40g, 50g, 60g.",
-                detailedDescription: "⭐ ĐẶC ĐIỂM NỔI BẬT:<br>✔ Lớp phủ PU tăng độ bám khi cầm nắm<br>✔ Hạn chế trơn trượt khi thao tác<br>✔ Thiết kế ôm tay, thao tác dễ dàng<br>✔ Chống mài mòn tốt<br>✔ Chất liệu mềm mại, thoải mái khi đeo<br>✔ Độ bền cao, sử dụng lâu dài<br>✔ Không gây cộm tay khi làm việc<br>✔ Phù hợp công việc cần độ chính xác cao<br><br>🛡 HƯỚNG DẪN BẢO QUẢN:<br>▪ Không phơi trực tiếp dưới nắng gắt<br>▪ Tránh tiếp xúc dầu hóa chất mạnh<br>▪ Giặt nhẹ sau khi sử dụng<br>▪ Bảo quản nơi khô ráo<br><br>#baotayPU #baotayphuPU #baotaychongtron #baotaylaprap #baotaycongnghiep"
+                featured: true, brand: "Thùy Dương / Nhập khẩu", standard: "Ôm sát bàn tay, co giãn tốt",
+                material: "Sợi polyester, Phủ PU lòng bàn tay", 
+                usage: "Xám phủ đen, Trắng phủ PU, Đen phủ PU",
+                infoHtml: `
+                    <p class="mb-1"><strong>Tên sản phẩm:</strong> Bao tay phủ PU chống trơn</p>
+                    <p class="mb-1"><strong>Chất liệu:</strong> Sợi polyester, Phủ PU lòng bàn tay</p>
+                    <p class="mb-1"><strong>Màu sắc:</strong> Xám phủ đen, Trắng phủ PU, Đen phủ PU</p>
+                    <p class="mb-1"><strong>Trọng lượng:</strong> 40g, 50g, 60g</p>
+                    <p class="mb-1"><strong>Kích thước:</strong> Ôm sát bàn tay, co giãn tốt</p>
+                `,
+                highlightsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Lớp phủ PU tăng độ bám khi cầm nắm</li>
+                        <li>✔ Hạn chế trơn trượt khi thao tác</li>
+                        <li>✔ Thiết kế ôm tay, thao tác dễ dàng</li>
+                        <li>✔ Chống mài mòn tốt</li>
+                        <li>✔ Chất liệu mềm mại, thoải mái khi đeo</li>
+                        <li>✔ Độ bền cao, sử dụng lâu dài</li>
+                        <li>✔ Không gây cộm tay khi làm việc</li>
+                        <li>✔ Phù hợp công việc cần độ chính xác cao</li>
+                    </ul>
+                `,
+                appsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Nhà máy điện tử</li>
+                        <li>✔ Kho hàng</li>
+                        <li>✔ Lắp ráp linh kiện</li>
+                        <li>✔ Cơ khí chính xác</li>
+                        <li>✔ Đóng gói sản phẩm</li>
+                        <li>✔ Sản xuất công nghiệp</li>
+                        <li>✔ Công việc cần chống trơn</li>
+                    </ul>
+                `,
+                storageHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>▪ Không phơi trực tiếp dưới nắng gắt</li>
+                        <li>▪ Tránh tiếp xúc dầu hóa chất mạnh</li>
+                        <li>▪ Giặt nhẹ sau khi sử dụng</li>
+                        <li>▪ Bảo quản nơi khô ráo</li>
+                    </ul>
+                    <p class="text-xs text-gray-400 mt-4 font-normal">#baotayPU #baotayphuPU #baotaychongtron #baotaylaprap #baotaycongnghiep</p>
+                `
             },
 
-            // 4. NHÓM BAO TAY PHỦ SƠN
+            // 4. NHÓM BAO TAY PHỦ SƠN (Cập nhật văn bản kịch trần)
             {
                 id: 41,
-                name: "Bao tay phủ sơn nhám bám dính công trình",
+                name: "Bao tay phủ sơn nhám bám dính siêu bền",
                 price: null, category: "phu-son", stock: 2900,
                 image: "https://placehold.co/500x500/1B5E20/white?text=Phu+Son+Nham",
                 featured: true, brand: "Thùy Dương", standard: "Co giãn tốt, ôm tay chắc chắn",
-                material: "Len cotton dệt máy, Cao su latex nhúng, Phủ sơn nhám lòng bàn tay",
-                usage: "Công trình xây dựng, Cơ khí, Xưởng gỗ, Sắt thép, Kho vận, Bốc xếp hàng hóa, Nhà máy sản xuất, Công việc ngoài trời.",
-                description: "Tên sản phẩm: Bao tay phủ sơn chống trơn. Màu sắc: Xám phủ xanh, Đen phủ đen, Kem phủ cam. Trọng lượng: 50g, 60g, 70g, 80g.",
-                detailedDescription: "⭐ ĐẶC ĐIỂM NỔI BẬT:<br>✔ Lớp phủ nhám tăng độ ma sát cực tốt<br>✔ Chống trơn trượt hiệu quả<br>✔ Hạn chế trầy xước khi lao động<br>✔ Chống mài mòn cao<br>✔ Cầm nắm vật nặng chắc tay hơn<br>✔ Chất liệu dày dặn, độ bền cao<br>✔ Phù hợp môi trường làm việc khắc nghiệt<br>✔ Sử dụng được trong môi trường dầu nhẹ<br><br>🛡 HƯỚNG DẪN BẢO QUẢN:<br>▪ Tránh tiếp xúc nhiệt độ quá cao<br>▪ Bảo quản nơi thoáng mát<br>▪ Vệ sinh sau khi sử dụng<br>▪ Không ngâm hóa chất mạnh<br><br>#baotayphuson #baotaychongtron #baotaycongtrinh #baotayxaydung #baotaycokhi"
+                material: "Len cotton, Cao su latex, Phủ sơn nhám lòng bàn tay", 
+                usage: "Xám phủ xanh, Đen phủ đen, Kem phủ cam",
+                infoHtml: `
+                    <p class="mb-1"><strong>Tên sản phẩm:</strong> Bao tay phủ sơn chống trơn</p>
+                    <p class="mb-1"><strong>Chất liệu:</strong> Len cotton, Cao su latex, Phủ sơn nhám lòng bàn tay</p>
+                    <p class="mb-1"><strong>Màu sắc:</strong> Xám phủ xanh, Đen phủ đen, Kem phủ cam</p>
+                    <p class="mb-1"><strong>Trọng lượng:</strong> 50g, 60g, 70g, 80g</p>
+                    <p class="mb-1"><strong>Kích thước:</strong> Co giãn tốt, ôm tay chắc chắn</p>
+                `,
+                highlightsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Lớp phủ nhám tăng độ ma sát cực tốt</li>
+                        <li>✔ Chống trơn trượt hiệu quả</li>
+                        <li>✔ Hạn chế trầy xước khi lao động</li>
+                        <li>✔ Chống mài mòn cao</li>
+                        <li>✔ Cầm nắm vật nặng chắc tay hơn</li>
+                        <li>✔ Chất liệu dày dặn, độ bền cao</li>
+                        <li>✔ Phù hợp môi trường làm việc khắc nghiệt</li>
+                        <li>✔ Sử dụng được trong môi trường dầu nhẹ</li>
+                    </ul>
+                `,
+                appsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Công trình xây dựng</li>
+                        <li>✔ Cơ khí</li>
+                        <li>✔ Xưởng gỗ</li>
+                        <li>✔ Sắt thép</li>
+                        <li>✔ Kho vận</li>
+                        <li>✔ Bốc xếp hàng hóa</li>
+                        <li>✔ Nhà máy sản xuất</li>
+                        <li>✔ Công việc ngoài trời</li>
+                    </ul>
+                `,
+                storageHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>▪ Tránh tiếp xúc nhiệt độ quá cao</li>
+                        <li>▪ Bảo quản nơi thoáng mát</li>
+                        <li>▪ Vệ sinh sau khi sử dụng</li>
+                        <li>▪ Không ngâm hóa chất mạnh</li>
+                    </ul>
+                    <p class="text-xs text-gray-400 mt-4 font-normal">#baotayphuson #baotaychongtron #baotaycongtrinh #baotayxaydung #baotaycokhi</p>
+                `
             },
 
-            // 7. NHÓM BAO TAY NITRILE KHÁNG DẦU NHỚT (Gộp chung luồng phủ sơn/PU/Nitrile)
+            // 7. NHÓM BAO TAY NITRILE KHÁNG DẦU (Nạp văn bản kịch trần)
             {
                 id: 71,
-                name: "Bao tay Nitrile chống dầu bảo hộ lao động",
+                name: "Bao tay Nitrile chống dầu mỡ công nghiệp",
                 price: null, category: "phu-son", stock: 4000,
                 image: "https://placehold.co/500x500/0288D1/white?text=Nitrile+Chong+Dau",
-                featured: true, brand: "Nhập khẩu cao cấp", standard: "Tiêu chuẩn kiểm định chống dầu nhớt ma sát",
-                material: "Nitrile Rubber cao cấp, Cao su tổng hợp chống dầu mỡ",
-                usage: "Gara ô tô, Sửa chữa xe máy, Cơ khí dầu nhớt, Nhà máy công nghiệp, Chế biến thực phẩm, Phòng thí nghiệm, Sơn – hóa chất nhẹ, Vệ sinh công nghiệp, Kho vận – sản xuất.",
-                description: "Tên sản phẩm: Găng tay Nitrile chống dầu. Màu sắc: Xanh, Đen, Tím, Cam. Độ dày chọn lọc: Mỏng, Trung bình, Dày công nghiệp.",
-                detailedDescription: "⭐ ĐẶC ĐIỂM NỔI BẬT:<br>✔ Khả năng chống dầu và chống nhớt hiệu quả<br>✔ Hạn chế thấm hóa chất nhẹ khi làm việc<br>✔ Chất liệu co giãn tốt, ôm sát bàn tay<br>✔ Không gây kích ứng da tay khi sử dụng lâu<br>✔ Bề mặt tăng độ bám khi cầm nắm, chống rách thủng tốt<br><br>🛡 HƯỚNG DẪN BẢO QUẢN:<br>▪ Bảo quản nơi khô ráo thoáng mát, tránh nhiệt độ quá cao và vật sắc nhọn.<br><br>#baotaynitrile #baotaychongdau #baotaycokhi #baotaygara"
+                featured: true, brand: "Nhập khẩu chính hãng", standard: "Kháng đâm xuyên cơ học cao",
+                material: "Nitrile Rubber cao cấp, Cao su tổng hợp chống dầu", 
+                usage: "Xanh, Đen, Tím, Cam",
+                infoHtml: `
+                    <p class="mb-1"><strong>Tên sản phẩm:</strong> Bao tay Nitrile chống dầu bảo hộ lao động</p>
+                    <p class="mb-1"><strong>Chất liệu:</strong> Nitrile Rubber cao cấp, Cao su tổng hợp chống dầu</p>
+                    <p class="mb-1"><strong>Màu sắc:</strong> Xanh, Đen, Tím, Cam</p>
+                    <p class="mb-1"><strong>Độ dày:</strong> Mỏng, Trung bình, Dày công nghiệp</p>
+                    <p class="mb-1"><strong>Kích thước:</strong> S, M, L, XL</p>
+                `,
+                highlightsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Khả năng chống dầu và chống nhớt hiệu quả</li>
+                        <li>✔ Hạn chế thấm hóa chất nhẹ khi làm việc</li>
+                        <li>✔ Chất liệu co giãn tốt, ôm sát bàn tay</li>
+                        <li>✔ Không gây kích ứng da tay khi sử dụng lâu</li>
+                        <li>✔ Bề mặt tăng độ bám khi cầm nắm</li>
+                        <li>✔ Chống rách và chống thủng tốt</li>
+                        <li>✔ Độ đàn hồi cao, thao tác linh hoạt</li>
+                        <li>✔ Phù hợp môi trường làm việc dầu mỡ công nghiệp</li>
+                        <li>✔ Thiết kế hiện đại, chuyên nghiệp</li>
+                        <li>✔ Có thể sử dụng trong thời gian dài</li>
+                    </ul>
+                `,
+                appsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Gara ô tô, Sửa chữa xe máy, Cơ khí dầu nhớt</li>
+                        <li>✔ Nhà máy công nghiệp, Chế biến thực phẩm, Phòng thí nghiệm</li>
+                        <li>✔ Sơn – hóa chất nhẹ, Vệ sinh công nghiệp, Kho vận – sản xuất</li>
+                    </ul>
+                `,
+                storageHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>▪ Bảo quản nơi khô ráo thoáng mát</li>
+                        <li>▪ Tránh tiếp xúc nhiệt độ quá cao, không gần vật sắc nhọn</li>
+                        <li>▪ Thay mới khi có dấu hiệu rách thủng</li>
+                    </ul>
+                    <p class="text-xs text-gray-400 mt-4 font-normal">#baotaynitrile #baotaychongdau #baotaycokhi #baotayhoachat</p>
+                `
             },
-            { id: 73, name: "[Sản phẩm phủ sơn/PU/Nitrile trống 1]", price: null, category: "phu-son", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu sau.", detailedDescription: "Trống chờ bổ sung." },
-            { id: 74, name: "[Sản phẩm phủ sơn/PU/Nitrile trống 2]", price: null, category: "phu-son", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu sau.", detailedDescription: "Trống chờ bổ sung." },
-            { id: 75, name: "[Sản phẩm phủ sơn/PU/Nitrile trống 3]", price: null, category: "phu-son", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu sau.", detailedDescription: "Trống chờ bổ sung." },
-            { id: 76, name: "[Sản phẩm phủ sơn/PU/Nitrile trống 4]", price: null, category: "phu-son", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu sau.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 73, name: "[Sản phẩm phủ sơn/PU trống 1]", price: null, category: "phu-son", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Phu+Son+Trong+1", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung.", detailedDescription: "Trống." },
+            { id: 74, name: "[Sản phẩm phủ sơn trống 2]", price: null, category: "phu-son", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Phu+Son+Trong+2", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung.", detailedDescription: "Trống." },
+            { id: 75, name: "[Sản phẩm phủ sơn trống 3]", price: null, category: "phu-son", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Phu+Son+Trong+3", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung.", detailedDescription: "Trống." },
+            { id: 76, name: "[Sản phẩm phủ sơn trống 4]", price: null, category: "phu-son", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Phu+Son+Trong+4", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung.", detailedDescription: "Trống." },
 
-            // 5 & 6. SỬA ĐỔI DANH MỤC: BAO TAY CHỐNG CẮT / CHỐNG GIẬT (Cập nhật tài liệu văn bản đầy đủ)
+            // 5 & 6. NHÓM BAO TAY CHỐNG CẮT / CHỐNG GIẬT (Cập nhật văn bản kịch trần)
             {
                 id: 51,
-                name: "Bao tay chống cắt bảo hộ lao động Level 5",
+                name: "Bao tay chống cắt chuyên dụng siêu bền",
                 price: null, category: "chong-cat-giat", stock: 800,
                 image: "https://placehold.co/500x500/b71c1c/white?text=Chong+Cat+Lvl5",
-                featured: true, brand: "Delta Plus / Nhập khẩu chính hãng", standard: "Co giãn tốt, ôm sát bàn tay - Cấp độ Level 3, Level 5",
-                material: "HPPE cao cấp, Sợi chống cắt, Sợi thủy tinh gia cường siêu bền chắc",
-                usage: "Cơ khí, Gia công kim loại, Xưởng kính, Dao cắt công nghiệp, Chế biến thực phẩm, Sắt thép, Nhà máy sản xuất, Công trình kỹ thuật.",
-                description: "Tên sản phẩm: Bao tay chống cắt bảo hộ lao động. Màu sắc: Xám, Đen, Xám phủ PU. Ôm sát bảo vệ đôi tay.",
-                detailedDescription: "⭐ ĐẶC ĐIỂM NỔI BẬT:<br>✔ Khả năng chống cắt vượt trội trước lưỡi dao kính tấm thép sắc bén<br>✔ Chất liệu bền chắc, chịu ma sát mài mòn cơ học cực cao<br>✔ Co giãn tốt, dễ dàng thao tác kỹ thuật cơ cấu linh hoạt<br>✔ Hạn chế đâm xuyên và trầy xước cơ bản, giảm bí nóng thoáng khí.<br><br>🛡 HƯỚNG DẪN BẢO QUẢN:<br>▪ Không dùng với nhiệt độ quá cao. Giặt sạch phơi ráo nơi khô thoáng.<br><br>#baotaychongcat #gangtaychongcat #baotaycokhi #baotayantoan"
+                featured: true, brand: "Delta Plus / Nhập khẩu", standard: "Co giãn tốt, ôm sát bàn tay",
+                material: "HPPE cao cấp, Sợi chống cắt, Sợi thủy tinh gia cường", 
+                usage: "Xám, Đen, Xám phủ PU",
+                infoHtml: `
+                    <p class="mb-1"><strong>Tên sản phẩm:</strong> Bao tay chống cắt bảo hộ lao động</p>
+                    <p class="mb-1"><strong>Chất liệu:</strong> HPPE cao cấp, Sợi chống cắt, Sợi thủy tinh gia cường</p>
+                    <p class="mb-1"><strong>Màu sắc:</strong> Xám, Đen, Xám phủ PU</p>
+                    <p class="mb-1"><strong>Cấp độ chống cắt:</strong> Level 3, Level 5</p>
+                    <p class="mb-1"><strong>Kích thước:</strong> Co giãn tốt, ôm sát bàn tay</p>
+                `,
+                highlightsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Khả năng chống cắt vượt trội</li>
+                        <li>✔ Bảo vệ tay khi thao tác vật sắc bén</li>
+                        <li>✔ Chất liệu bền chắc, chịu ma sát cao</li>
+                        <li>✔ Co giãn tốt, thao tác linh hoạt</li>
+                        <li>✔ Hạn chế đâm xuyên và trầy xước</li>
+                        <li>✔ Độ bám tốt khi cầm nắm</li>
+                        <li>✔ Thoáng khí, giảm bí nóng tay</li>
+                        <li>✔ Phù hợp môi trường công nghiệp nặng</li>
+                    </ul>
+                `,
+                appsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Cơ khí, Gia gia công kim loại, Sắt thép</li>
+                        <li>✔ Xưởng kính, Dao cắt công nghiệp, Nhà máy sản xuất</li>
+                        <li>✔ Chế biến thực phẩm, Công trình kỹ thuật</li>
+                    </ul>
+                `,
+                storageHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>▪ Không dùng với nhiệt độ quá cao</li>
+                        <li>▪ Giặt sạch sau khi sử dụng, bảo quản nơi khô ráo</li>
+                        <li>▪ Kiểm tra kỹ bề mặt trước khi sử dụng lại</li>
+                    </ul>
+                    <p class="text-xs text-gray-400 mt-4 font-normal">#baotaychongcat #gangtaychongcat #baotaycokhi #baotaybaoholaodong</p>
+                `
             },
             {
                 id: 61,
-                name: "Bao tay chống giật cách điện hạ thế an toàn",
+                name: "Bao tay chống giật cách điện an toàn",
                 price: null, category: "chong-cat-giat", stock: 400,
                 image: "https://placehold.co/500x500/EF6C00/white?text=Cach+Dien+Ha+The",
-                featured: true, brand: "Kiểm định ngành điện lực an toàn điện", standard: "Thiết kế vừa tay, linh hoạt khi thao tác kỹ sư",
-                material: "Cao sau cách điện cao cấp, Latex chuyên dụng siêu dẻo dai",
-                usage: "Điện lực, Sửa chữa điện dân dụng, Thi công điện công trình, Nhà máy điện, Kỹ thuật điện công nghiệp, Bảo trì hệ thống điện, Công trình năng lượng.",
-                description: "Tên sản phẩm: Bao tay chống giật cách điện. Màu sắc: Cam, Đỏ, Vàng. Điện áp sử dụng an toàn: 500V, 1kV.",
-                detailedDescription: "⭐ ĐẶC ĐIỂM NỔI BẬT:<br>✔ Khả năng cách điện an toàn dòng hạ thế cực kỳ cao<br>✔ Hạn chế tối đa rủi ro rò rỉ điện giật khi làm việc trực tiếp đấu nối<br>✔ Chất liệu cao su đàn hồi kéo dãn tốt, chống trượt cầm dụng cụ điện<br><br>🛡 HƯỚNG DẪN BẢO QUẢN:<br>▪ Không để gần vật sắc nhọn đâm thủng. Kiểm tra kỹ khí rách trước khi mang. Tránh nắng gắt lâu ngày làm hư hỏng chất cao su cách điện.<br><br>#baotaychonggiat #baotaycachdien #baotaydiendien #baotayantoandien"
+                featured: true, brand: "Kiểm định an toàn ngành điện", standard: "Thiết kế vừa tay, linh hoạt khi thao tác",
+                material: "Cao su cách điện cao cấp, Latex chuyên dụng", 
+                usage: "Cam, Đỏ, Vàng",
+                infoHtml: `
+                    <p class="mb-1"><strong>Tên sản phẩm:</strong> Bao tay chống giật cách điện</p>
+                    <p class="mb-1"><strong>Chất liệu:</strong> Cao su cách điện cao cấp, Latex chuyên dụng</p>
+                    <p class="mb-1"><strong>Màu sắc:</strong> Cam, Đỏ, Vàng</p>
+                    <p class="mb-1"><strong>Điện áp sử dụng:</strong> 500V, 1kV, 7kV, 22kV</p>
+                    <p class="mb-1"><strong>Kích thước:</strong> Thiết kế vừa tay, linh hoạt khi thao tác</p>
+                `,
+                highlightsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Khả năng cách điện an toàn cao</li>
+                        <li>✔ Hạn chế rò rỉ điện khi làm việc</li>
+                        <li>✔ Chất liệu cao su đàn hồi tốt</li>
+                        <li>✔ Độ bền cao, chịu môi trường công nghiệp</li>
+                        <li>✔ Thiết kế ôm tay dễ thao tác</li>
+                        <li>✔ Bề mặt chống trơn khi cầm nắm dụng cụ</li>
+                        <li>✔ Đạt tiêu chuẩn an toàn điện lao động</li>
+                        <li>✔ Phù hợp kỹ thuật điện chuyên nghiệp</li>
+                    </ul>
+                `,
+                appsHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>✔ Điện lực, Nhà máy điện, Trạm năng lượng</li>
+                        <li>✔ Sửa chữa điện dân dụng, công nghiệp</li>
+                        <li>✔ Thi công bảo trì điện lưới công trình</li>
+                    </ul>
+                `,
+                storageHtml: `
+                    <ul class="list-none space-y-1 pl-1">
+                        <li>▪ Không để gần vật sắc nhọn gây thủng rách</li>
+                        <li>▪ Kiểm tra kỹ rò rỉ khí trước khi vận hành</li>
+                        <li>▪ Tránh ánh nắng trực tiếp lâu ngày, bảo quản khô ráo</li>
+                    </ul>
+                    <p class="text-xs text-gray-400 mt-4 font-normal">#baotaychonggiat #baotaycachdien #baotaydiendien #baotayantoandien</p>
+                `
             },
-            {
-                id: 62,
-                name: "Bao tay chống giật cách điện trung thế chuyên dụng",
-                price: null, category: "chong-cat-giat", stock: 200,
-                image: "https://placehold.co/500x500/D84315/white?text=Trung+The+Cach+Dien",
-                featured: false, brand: "Nhập khẩu kiểm định chất lượng điện lực", standard: "Đạt chuẩn cách điện thiết bị cao áp an toàn lao động",
-                material: "Cao su cách điện dày dặn chuyên dụng, xử lý cách điện áp cao",
-                usage: "Thao tác đấu lưới điện trạm trung thế 7kV, 22kV, trạm biến áp, trạm phân phối điện tổng công nghiệp nặng.",
-                description: "Tên sản phẩm: Bao tay cách điện trung thế đặc chủng. Điện áp sử dụng: 7kV, 22kV. Cách điện an toàn tối cao.",
-                detailedDescription: "⭐ ĐẶC ĐIỂM NỔI BẬT:<br>✔ Chịu điện áp cao tốt bền vững bền bỉ theo thời gian công nghiệp<br>✔ Chiều dài tay áo bảo vệ rộng rãi đến khuỷu tay kỹ sư<br><br>🛡 HƯỚNG DẪN BẢO QUẢN:<br>▪ Bảo quản hộp tối râm mát khô ráo, cuộn thổi kiểm tra định kỳ."
-            },
-            { id: 64, name: "[Sản phẩm chống cắt / chống giật trống 1]", price: null, category: "chong-cat-giat", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ điền dữ liệu sau này.", detailedDescription: "Trống chờ bổ sung." },
-            { id: 65, name: "[Sản phẩm chống cắt / chống giật trống 2]", price: null, category: "chong-cat-giat", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ điền dữ liệu sau này.", detailedDescription: "Trống chờ bổ sung." },
-            { id: 66, name: "[Sản phẩm chống cắt / chống giật trống 3]", price: null, category: "chong-cat-giat", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ điền dữ liệu sau này.", detailedDescription: "Trống chờ bổ sung." },
-            { id: 67, name: "[Sản phẩm chống cắt / chống giật trống 4]", price: null, category: "chong-cat-giat", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ điền dữ liệu sau này.", detailedDescription: "Trống chờ bổ sung." }
+            { id: 64, name: "[Sản phẩm chống cắt / chống giật trống 1]", price: null, category: "chong-cat-giat", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 65, name: "[Sản phẩm chống cắt / chống giật trống 2]", price: null, category: "chong-cat-giat", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 66, name: "[Sản phẩm chống cắt / chống giật trống 3]", price: null, category: "chong-cat-giat", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 67, name: "[Sản phẩm chống cắt / chống giật trống 4]", price: null, category: "chong-cat-giat", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung.", detailedDescription: "Trống chờ bổ sung." }
         ];
 
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -642,7 +1017,7 @@
             });
         }
 
-        // HÀM HIỂN THỊ CHI TIẾT TRÀN TRANG CHỦ HOÀN CHỈNH KÈM TÙY CHỌN SỐ GAM ĐỒNG BỘ
+        // TRANG CHI TIẾT SẢN PHẨM: ĐỔI GIAO DIỆN THEO ĐÚNG CẤU TRÚC VĂN BẢN VÀ DANH SÁCH ANH CUNG CẤP CỰC KỲ ĐẸP MẮT
         function showProductDetail(id){
             const prod = products.find(p => p.id === id);
             if(!prod) return;
@@ -707,7 +1082,6 @@
                     <div class="space-y-8">
                         
                         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-                            
                             <div class="md:col-span-5 w-full">
                                 <img id="detail-main-img" src="${prod.image}" class="w-full h-auto object-cover rounded-2xl border border-gray-100 shadow-sm mx-auto">
                             </div>
@@ -723,7 +1097,7 @@
                                     <p><span class="text-[#FF8C00] mr-1.5">▪</span><strong class="text-gray-800">Thương hiệu:</strong> ${prod.brand || 'Thùy Dương / Xuân Chương'}</p>
                                     <p><span class="text-[#FF8C00] mr-1.5">▪</span><strong class="text-gray-800">Tiêu chuẩn:</strong> ${prod.standard || 'Đạt chuẩn bảo hộ ngành'}</p>
                                     <p><span class="text-[#FF8C00] mr-1.5">▪</span><strong class="text-gray-800">Chất liệu:</strong> ${prod.material || 'Vải sợi cao cấp chọn lọc'}</p>
-                                    <p><span class="text-[#FF8C00] mr-1.5">▪</span><strong class="text-gray-800">Công dụng:</strong> ${prod.usage || 'Bảo hộ đôi tay người lao động'}</p>
+                                    <p><span class="text-[#FF8C00] mr-1.5">▪</span><strong class="text-gray-800">Phân loại / Màu sắc chính:</strong> ${prod.usage || 'Bảo hộ đôi tay người lao động'}</p>
                                 </div>
 
                                 <div class="pt-2 border-t border-dashed border-gray-200">
@@ -747,13 +1121,26 @@
                                     MÔ TẢ CHI TIẾT SẢN PHẨM
                                 </span>
                             </div>
-                            <div class="p-5 border border-t-0 border-gray-200 rounded-b-xl bg-white space-y-4 shadow-sm">
-                                <h4 class="font-bold text-gray-800 text-base">${prod.name}</h4>
-                                <div class="text-sm text-gray-600 leading-relaxed space-y-4">
-                                    <p class="font-semibold text-gray-800 text-sm">📌 THÔNG TIN CHI TIẾT SẢN PHẨM:</p>
-                                    <p class="pl-2">${prod.description}</p>
-                                    <p class="font-semibold text-gray-800 text-sm">💡 ĐẶC TÍNH KỸ THUẬT & HƯỚNG DẪN:</p>
-                                    <p class="pl-2">${prod.detailedDescription}</p>
+                            <div class="p-6 border border-t-0 border-gray-200 rounded-b-xl bg-white grid grid-cols-1 md:grid-cols-2 gap-8 shadow-sm text-sm text-gray-700">
+                                <div class="space-y-4 border-b md:border-b-0 md:border-r border-gray-200 pb-6 md:pb-0 md:pr-6">
+                                    <div>
+                                        <h4 class="font-bold text-base text-[#0F4C81] border-b pb-1 mb-2">📌 THÔNG TIN SẢN PHẨM</h4>
+                                        <div class="space-y-1 leading-relaxed">${prod.infoHtml}</div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-base text-[#0F4C81] border-b pb-1 mb-2">⭐ ĐẶC ĐIỂM NỔI BẬT</h4>
+                                        <div class="space-y-1 leading-relaxed">${prod.highlightsHtml}</div>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div>
+                                        <h4 class="font-bold text-base text-[#0F4C81] border-b pb-1 mb-2">🔧 ỨNG DỤNG THỰC TẾ</h4>
+                                        <div class="space-y-1 leading-relaxed">${prod.appsHtml}</div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-base text-[#0F4C81] border-b pb-1 mb-2">🛡 HƯỚNG DẪN BẢO QUẢN</h4>
+                                        <div class="space-y-1 leading-relaxed">${prod.storageHtml}</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
