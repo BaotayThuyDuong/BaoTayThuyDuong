@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Bao Tay Thủy Dương - Găng Tay Bảo Hộ</title>
-    <meta name="description" content="Bao tay len bảo hộ lao động, găng tay chống cắt, phủ nhựa. Sản xuất trực tiếp, giá sỉ. LH 033 444 9494 hoặc Zalo 0981 171 750">
-    <meta name="keywords" content="bao tay bảo hộ, bao tay len, găng tay Thủy Dương">
-    <meta name="author" content="Bao Tay Thủy Dương">
+    <title>Bao Tay Thùy Dương - Găng Tay Bảo Hộ Chất Lượng</title>
+    <meta name="description" content="Bao tay len bảo hộ lao động, găng tay chống cắt, phủ nhựa. Sản xuất trực tiếp, giá xưởng. LH 033 444 9494 hoặc Zalo 0981 171 750">
+    <meta name="keywords" content="bao tay bảo hộ, bao tay len, găng tay Thùy Dương">
+    <meta name="author" content="Bao Tay Thùy Dương">
     <link rel="canonical" href="https://baotaythuydung.github.io/BaoTayThuyDuong/">
-    <meta property="og:title" content="Bao Tay Thủy Dương - Bảo Hộ Lao Động">
+    <meta property="og:title" content="Bao Tay Thùy Dương - Bảo Hộ Lao Động">
     <meta property="og:description" content="Chuyên cung cấp bao tay len, găng tay chống cắt, giá xưởng. Giao nhanh toàn quốc.">
-    <meta property="og:image" content="https://placehold.co/1200x630/0F4C81/white?text=Bao+Tay+Thủy+Dương">
+    <meta property="og:image" content="https://placehold.co/1200x630/0F4C81/white?text=Bao+Tay+Thùy+Dương">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -23,58 +23,60 @@
         .product-card { transition: all 0.2s; border-radius: 20px; }
         .product-card:hover { box-shadow: 0 20px 25px -12px rgba(0,0,0,0.15); transform: translateY(-4px); }
         .cart-badge { top: -8px; right: -8px; }
-        .nav-link { cursor: pointer; transition: color 0.2s; }
-        .phone-item { white-space: nowrap; }
+        .nav-link { cursor: pointer; transition: color 0.2s; font-weight: 500; }
+        .hero-full { min-height: 100vh; display: flex; align-items: center; }
+        .about-banner { height: 70vh; background-size: cover; background-position: center; }
+        .counter-number { font-size: 3rem; font-weight: bold; }
         @media (max-width: 768px) {
-            .header-main { flex-direction: column; text-align: center; gap: 1rem; }
-            .phone-area { flex-direction: row !important; justify-content: center; gap: 1.5rem; }
+            .hero-full { min-height: 80vh; }
+            .about-banner { height: 40vh; }
+            .phone-area { flex-direction: row !important; flex-wrap: wrap; justify-content: center; }
             .menu-bar { flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
-            .phone-item { white-space: normal; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER: Logo & Slogan căn giữa, Menu căn giữa, Số điện thoại bên phải (không xuống dòng) -->
+    <!-- HEADER chung -->
     <header class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4">
-            <!-- Hàng trên: Logo trung tâm, số điện thoại bên phải (không bị xuống dòng) -->
-            <div class="header-main flex flex-wrap items-center justify-between gap-4">
-                <!-- Khoảng trống bên trái để cân bằng -->
-                <div class="w-16 md:w-24"></div>
-                
-                <!-- Logo và slogan ở giữa -->
-                <div class="text-center flex-1">
-                    <div class="text-4xl md:text-5xl font-bold">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <!-- Logo + Slogan (căn trái trên mobile, nhưng vẫn rõ) -->
+                <div class="flex-1 text-left md:text-center md:flex-none">
+                    <div class="text-2xl md:text-3xl font-bold">
                         <span class="text-[#FF8C00]">Bao Tay</span>
-                        <span class="text-[#0F4C81]"> Thủy Dương</span>
+                        <span class="text-[#0F4C81]"> Thùy Dương</span>
                     </div>
-                    <div class="text-lg md:text-xl text-gray-600 mt-2 font-medium">Bao Tay an toàn - Giá cả hợp lý</div>
+                    <div class="text-sm text-gray-500">Bao Tay an toàn - Giá cả hợp lý</div>
                 </div>
-
-                <!-- 2 số điện thoại bên phải, mỗi số nằm trên 1 dòng nhưng không cách quá xa, có khoảng cách đều -->
-                <div class="phone-area flex flex-col items-end space-y-2 w-auto">
-                    <div class="phone-item flex items-center gap-2">
-                        <a href="tel:0334449494" class="text-[#0F4C81] font-bold text-base md:text-lg"><i class="fas fa-phone-alt mr-1"></i> 033 444 9494</a>
-                        <a href="https://zalo.me/0981171750" class="text-[#0068FF] text-xl"><i class="fab fa-zalo"></i></a>
+                <!-- Số điện thoại + Zalo + giỏ hàng -->
+                <div class="phone-area flex items-center gap-4">
+                    <div class="flex flex-col items-end gap-1">
+                        <div class="flex items-center gap-2">
+                            <a href="tel:0334449494" class="text-[#0F4C81] font-semibold text-sm md:text-base"><i class="fas fa-phone-alt mr-1"></i> 033 444 9494</a>
+                            <a href="https://zalo.me/0981171750" class="text-[#0068FF] text-lg"><i class="fab fa-zalo"></i></a>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <a href="tel:0981171750" class="text-[#0F4C81] font-semibold text-sm md:text-base"><i class="fas fa-phone-alt mr-1"></i> 0981 171 750</a>
+                            <a href="https://zalo.me/0981171750" class="text-[#0068FF] text-lg"><i class="fab fa-zalo"></i></a>
+                        </div>
                     </div>
-                    <div class="phone-item flex items-center gap-2">
-                        <a href="tel:0981171750" class="text-[#0F4C81] font-bold text-base md:text-lg"><i class="fas fa-phone-alt mr-1"></i> 0981 171 750</a>
-                        <a href="https://zalo.me/0981171750" class="text-[#0068FF] text-xl"><i class="fab fa-zalo"></i></a>
+                    <div class="relative cursor-pointer" id="cartIconHeader">
+                        <i class="fas fa-shopping-cart text-2xl text-gray-700"></i>
+                        <span id="cartCountHeader" class="absolute cart-badge bg-[#FF8C00] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Thanh menu ngang căn giữa, chữ to, đã có cursor pointer và sự kiện -->
+        <!-- Menu ngang -->
         <div class="bg-gray-50 border-t border-gray-200">
             <div class="container mx-auto px-4">
-                <nav class="menu-bar flex justify-center space-x-6 md:space-x-10 py-4 text-base md:text-lg font-semibold">
+                <nav class="menu-bar flex justify-center space-x-4 md:space-x-8 py-3 text-sm md:text-base font-semibold">
                     <a href="#" data-page="home" class="nav-link text-gray-700 hover:text-[#FF8C00]">Trang chủ</a>
+                    <a href="#" data-page="about" class="nav-link text-gray-700 hover:text-[#FF8C00]">Giới thiệu</a>
                     <a href="#" data-page="products" class="nav-link text-gray-700 hover:text-[#FF8C00]">Sản phẩm</a>
                     <a href="#" data-page="quote" class="nav-link text-gray-700 hover:text-[#FF8C00]">Báo giá sỉ</a>
                     <a href="#" data-page="news" class="nav-link text-gray-700 hover:text-[#FF8C00]">Tin tức</a>
-                    <a href="#" data-page="about" class="nav-link text-gray-700 hover:text-[#FF8C00]">Giới thiệu</a>
                     <a href="#" data-page="contact" class="nav-link text-gray-700 hover:text-[#FF8C00]">Liên hệ</a>
                 </nav>
             </div>
@@ -83,7 +85,7 @@
 
     <main id="appContent" class="min-h-screen"></main>
 
-    <!-- GIỎ HÀNG DRAWER -->
+    <!-- Giỏ hàng Drawer -->
     <div id="cartDrawer" class="fixed top-0 right-0 w-full md:w-96 h-full bg-white shadow-2xl z-[1000] transform translate-x-full transition-transform duration-300 flex flex-col">
         <div class="p-4 border-b flex justify-between items-center bg-[#0F4C81] text-white">
             <h3 class="text-xl font-bold"><i class="fas fa-shopping-cart mr-2"></i> Giỏ hàng</h3>
@@ -121,14 +123,14 @@
         <button id="popupCta" class="mt-2 bg-[#FF8C00] text-white text-sm px-3 py-1 rounded">Nhận ngay</button>
     </div>
 
-    <!-- Floating Zalo + Phone (bỏ Messenger) -->
+    <!-- Floating Zalo + Phone -->
     <div class="fixed bottom-6 right-4 flex flex-col gap-3 z-50">
         <a href="https://zalo.me/0981171750" class="bg-[#0068FF] text-white p-3 rounded-full shadow-lg text-2xl w-12 h-12 flex items-center justify-center"><i class="fab fa-zalo"></i></a>
         <a href="tel:0334449494" class="bg-[#0F4C81] text-white p-3 rounded-full shadow-lg text-2xl w-12 h-12 flex items-center justify-center"><i class="fas fa-phone-alt"></i></a>
     </div>
 
     <script>
-        // Dữ liệu sản phẩm mẫu
+        // DANH SÁCH SẢN PHẨM MẪU
         const products = [
             { id: 1, name: "Bao tay len 40g - Cao cấp", price: 8500, category: "len", stock: 1500, image: "https://placehold.co/400x400/0F4C81/white?text=Len+40g", rating: 4.8, featured: true },
             { id: 2, name: "Bao tay phủ hạt nhựa", price: 15900, category: "hat-nhua", stock: 890, image: "https://placehold.co/400x400/FF8C00/white?text=Phủ+Hạt+Nhựa", rating: 4.9, featured: true },
@@ -144,7 +146,7 @@
         function saveCart() { localStorage.setItem('cart', JSON.stringify(cart)); updateCartUI(); }
         function updateCartUI() { 
             let count = cart.reduce((s, i) => s + i.quantity, 0);
-            if(document.getElementById('cartCount')) document.getElementById('cartCount').innerText = count;
+            document.getElementById('cartCountHeader').innerText = count;
             renderCartItems();
         }
         function renderCartItems() {
@@ -175,96 +177,211 @@
         function addToCart(id, qty=1) { let existing = cart.find(i => i.id === id); if(existing) existing.quantity += qty; else cart.push({ id, quantity: qty }); saveCart(); showToast("✅ Đã thêm vào giỏ!"); }
         function showToast(msg) { let toast = document.createElement('div'); toast.className = "fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-5 py-2 rounded-lg z-[1200] text-base"; toast.innerText = msg; document.body.appendChild(toast); setTimeout(()=>toast.remove(),2000); }
 
+        // ---------- TRANG CHỦ (HOME) với cấu trúc mới ----------
+        function renderHome() {
+            const featured = products.filter(p => p.featured);
+            return `
+            <!-- Hero full màn hình -->
+            <section class="hero-full bg-gradient-to-r from-[#0F4C81] to-[#0b3a62] text-white flex items-center">
+                <div class="container mx-auto px-4 py-12 md:py-0">
+                    <div class="flex flex-col md:flex-row items-center gap-12">
+                        <div class="md:w-1/2 text-center md:text-left">
+                            <h1 class="text-4xl md:text-6xl font-bold leading-tight">BAO TAY LEN BẢO HỘ LAO ĐỘNG</h1>
+                            <p class="text-2xl text-[#FF8C00] font-semibold mt-3">Chất lượng cao – Giá tận xưởng – Giao hàng toàn quốc</p>
+                            <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
+                                <a href="#" data-page="products" class="btn-cta text-white px-8 py-3 rounded-lg font-bold text-lg">Xem sản phẩm</a>
+                                <button id="getQuoteBtn" class="border-2 border-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-[#0F4C81] transition">Liên hệ báo giá</button>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2">
+                            <img src="https://placehold.co/600x500/FFFFFF/0F4C81?text=Găng+tay+Thùy+Dương" alt="Banner" class="rounded-2xl shadow-2xl">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Giới thiệu ngắn công ty -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-col md:flex-row items-center gap-10">
+                        <div class="md:w-1/2">
+                            <img src="https://placehold.co/500x400/0F4C81/white?text=Nhà+máy+Thùy+Dương" alt="Công ty" class="rounded-2xl shadow-lg w-full">
+                        </div>
+                        <div class="md:w-1/2">
+                            <h2 class="text-3xl font-bold text-[#0F4C81]">CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</h2>
+                            <p class="mt-4 text-gray-700 text-lg">Chuyên sản xuất và phân phối bao tay len bảo hộ lao động phục vụ công trình, nhà máy và đại lý trên toàn quốc.</p>
+                            <p class="mt-3 text-gray-600"><i class="fas fa-map-marker-alt text-[#FF8C00] mr-2"></i> Số 68, tổ 4, Khu phố 4, Phường Trảng Dài, TP. Biên Hòa, Đồng Nai</p>
+                            <div class="mt-6">
+                                <a href="#" data-page="about" class="inline-block bg-[#0F4C81] text-white px-6 py-2 rounded-lg hover:bg-[#0a3a62]">Xem chi tiết →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Danh mục sản phẩm (grid 4 cột) -->
+            <section class="py-16 bg-gray-50">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center text-[#0F4C81] mb-10">Danh mục sản phẩm</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-lg transition cursor-pointer filter-cat" data-cat="len"><img src="https://placehold.co/150x150/0F4C81/white?text=Len" class="mx-auto w-28 h-28 object-cover rounded-full"><h3 class="font-bold mt-3">Bao tay len</h3><p class="text-sm text-gray-500">Chống trơn, bền</p></div>
+                        <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-lg transition cursor-pointer filter-cat" data-cat="phu-pu"><img src="https://placehold.co/150x150/FF8C00/white?text=PU" class="mx-auto w-28 h-28 object-cover rounded-full"><h3 class="font-bold mt-3">Bao tay phủ PU</h3><p class="text-sm text-gray-500">Êm tay, thoáng khí</p></div>
+                        <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-lg transition cursor-pointer filter-cat" data-cat="chong-cat"><img src="https://placehold.co/150x150/d32f2f/white?text=Chống+cắt" class="mx-auto w-28 h-28 object-cover rounded-full"><h3 class="font-bold mt-3">Bao tay chống cắt</h3><p class="text-sm text-gray-500">An toàn cao</p></div>
+                        <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-lg transition cursor-pointer filter-cat" data-cat="hat-nhua"><img src="https://placehold.co/150x150/2e7d32/white?text=Hạt+nhựa" class="mx-auto w-28 h-28 object-cover rounded-full"><h3 class="font-bold mt-3">Bao tay phủ hạt nhựa</h3><p class="text-sm text-gray-500">Chống trơn trượt</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sản phẩm nổi bật (slider) -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="flex justify-between items-center mb-8"><h2 class="text-3xl font-bold text-[#0F4C81]">Sản phẩm nổi bật</h2><a href="#" data-page="products" class="text-[#FF8C00] text-lg">Xem tất cả →</a></div>
+                    <div class="swiper featuredSwiper overflow-hidden"><div class="swiper-wrapper">${featured.map(p => `<div class="swiper-slide"><div class="bg-gray-50 p-5 rounded-xl shadow"><img src="${p.image}" class="h-44 mx-auto object-cover"><h3 class="font-bold text-xl mt-3">${p.name}</h3><p class="text-red-600 font-bold text-xl">${formatPrice(p.price)}</p><button class="btn-add-cart-featured bg-[#0F4C81] text-white px-4 py-2 rounded-full mt-3 w-full" data-id="${p.id}">Mua ngay</button></div></div>`).join('')}</div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                </div>
+            </section>
+
+            <!-- Video nhà máy full width -->
+            <section class="py-16 bg-gray-900 text-white">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-3xl font-bold mb-6">Nhà máy sản xuất hiện đại</h2>
+                    <div class="max-w-4xl mx-auto">
+                        <iframe width="100%" height="450" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0" title="Nhà máy" frameborder="0" allowfullscreen class="rounded-2xl shadow-2xl"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lý do chọn chúng tôi (4 box) -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center text-[#0F4C81] mb-10">Lý do chọn chúng tôi</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                        <div><i class="fas fa-factory text-5xl text-[#FF8C00]"></i><p class="font-bold text-lg mt-3">Sản xuất trực tiếp</p><p class="text-gray-500">Không qua trung gian</p></div>
+                        <div><i class="fas fa-tags text-5xl text-[#FF8C00]"></i><p class="font-bold text-lg mt-3">Giá cạnh tranh</p><p class="text-gray-500">Tốt nhất thị trường</p></div>
+                        <div><i class="fas fa-truck-fast text-5xl text-[#FF8C00]"></i><p class="font-bold text-lg mt-3">Giao hàng nhanh</p><p class="text-gray-500">Toàn quốc 24-48h</p></div>
+                        <div><i class="fas fa-certificate text-5xl text-[#FF8C00]"></i><p class="font-bold text-lg mt-3">Chất lượng đảm bảo</p><p class="text-gray-500">Đạt chuẩn công nghiệp</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feedback khách hàng (slider) -->
+            <section class="py-16 bg-gray-100">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center text-[#0F4C81] mb-10">Khách hàng nói gì</h2>
+                    <div class="swiper testimonialSwiper overflow-hidden max-w-3xl mx-auto"><div class="swiper-wrapper"><div class="swiper-slide bg-white p-6 rounded-xl shadow text-center"><i class="fas fa-user-circle text-4xl text-gray-400 mb-3"></i><p class="font-bold">Công ty Xây dựng Hòa Bình</p><p class="mt-2 italic">"Sản phẩm chất lượng, giao hàng đúng hẹn, giá rất cạnh tranh."</p></div><div class="swiper-slide bg-white p-6 rounded-xl shadow text-center"><i class="fas fa-user-circle text-4xl text-gray-400 mb-3"></i><p class="font-bold">Đại lý Bảo hộ An Phát</p><p class="mt-2 italic">"Tôi đặt hàng sỉ thường xuyên, chế độ chăm sóc tốt."</p></div><div class="swiper-slide bg-white p-6 rounded-xl shadow text-center"><i class="fas fa-user-circle text-4xl text-gray-400 mb-3"></i><p class="font-bold">Nhà máy may Đức Thịnh</p><p class="mt-2 italic">"Găng tay chống cắt rất tốt, công nhân hài lòng."</p></div></div><div class="swiper-pagination"></div></div>
+                </div>
+            </section>
+
+            <!-- Blog / Tin tức (grid 3 cột giả) -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center text-[#0F4C81] mb-10">Tin tức & Blog</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow"><img src="https://placehold.co/400x250/0F4C81/white?text=Hướng+dẫn" class="w-full h-48 object-cover"><div class="p-4"><h3 class="font-bold text-lg">Cách chọn bao tay bảo hộ phù hợp</h3><p class="text-gray-600 mt-1">Những lưu ý khi chọn găng tay cho công nhân...</p><a href="#" class="text-[#FF8C00] mt-2 inline-block">Đọc tiếp →</a></div></div>
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow"><img src="https://placehold.co/400x250/FF8C00/white?text=Tiêu+chuẩn" class="w-full h-48 object-cover"><div class="p-4"><h3 class="font-bold text-lg">Tiêu chuẩn bảo hộ lao động mới</h3><p class="text-gray-600 mt-1">Cập nhật các quy định an toàn...</p><a href="#" class="text-[#FF8C00] mt-2 inline-block">Đọc tiếp →</a></div></div>
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow"><img src="https://placehold.co/400x250/0F4C81/white?text=So+sánh" class="w-full h-48 object-cover"><div class="p-4"><h3 class="font-bold text-lg">So sánh các loại găng tay phủ PU</h3><p class="text-gray-600 mt-1">Ưu nhược điểm từng loại...</p><a href="#" class="text-[#FF8C00] mt-2 inline-block">Đọc tiếp →</a></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA cuối trang -->
+            <section class="bg-[#0F4C81] text-white py-16 text-center">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl md:text-4xl font-bold">LIÊN HỆ NHẬN BÁO GIÁ NGAY</h2>
+                    <p class="text-xl mt-3">Gọi ngay 033 444 9494 hoặc Zalo 0981 171 750</p>
+                    <button id="ctaQuoteBtn" class="btn-cta text-white px-8 py-3 rounded-lg font-bold text-lg mt-5">Nhận báo giá sỉ</button>
+                </div>
+            </section>
+
+            <footer class="bg-gray-800 text-gray-300 py-10">
+                <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
+                    <div><h4 class="text-xl font-bold text-white">Bao Tay Thùy Dương</h4><p class="mt-2">Chuyên cung cấp găng tay bảo hộ lao động</p><p class="mt-2"><i class="fas fa-phone-alt"></i> 033 444 9494</p><p><i class="fab fa-zalo"></i> 0981 171 750</p></div>
+                    <div><h4 class="text-lg font-bold">Danh mục</h4><ul class="mt-2 space-y-1"><li>Bao tay len</li><li>Găng chống cắt</li><li>Phủ hạt nhựa</li><li>Phủ PU</li></ul></div>
+                    <div><h4 class="text-lg font-bold">Hỗ trợ</h4><p>Chính sách bảo hành</p><p>Hướng dẫn đặt hàng</p><p>Phương thức vận chuyển</p></div>
+                    <div><iframe width="100%" height="150" style="border:0" loading="lazy" src="https://maps.google.com/maps?q=Biên+Hòa+Đồng+Nai&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe></div>
+                </div>
+                <div class="text-center text-sm border-t border-gray-700 pt-5 mt-5">© 2025 Bao Tay Thùy Dương - Bảo hộ lao động chuyên nghiệp</div>
+            </footer>`;
+        }
+
+        // ---------- TRANG GIỚI THIỆU (ABOUT) chi tiết ----------
+        function renderAbout() {
+            return `
+            <div class="about-banner bg-[#0F4C81] flex items-center justify-center" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1600x700/0F4C81/white?text=GIỚI+THIỆU+CÔNG+TY'); background-size: cover;">
+                <div class="text-center text-white"><h1 class="text-5xl md:text-7xl font-bold">GIỚI THIỆU</h1><p class="text-xl md:text-2xl mt-3">Công ty TNHH Xuân Chương Gloves</p></div>
+            </div>
+            <section class="py-16 bg-white"><div class="container mx-auto px-4 max-w-5xl"><div class="flex flex-col md:flex-row gap-10"><div><h2 class="text-3xl font-bold text-[#0F4C81]">Công ty TNHH Xuân Chương Gloves</h2><p class="mt-4 text-gray-700 text-lg">Được thành lập năm 2018, chúng tôi tự hào là đơn vị sản xuất và phân phối bao tay bảo hộ lao động hàng đầu khu vực phía Nam. Với dây chuyền hiện đại, nguyên liệu nhập khẩu, sản phẩm của chúng tôi đã có mặt tại nhiều nhà máy, công trình xây dựng và hệ thống đại lý trên toàn quốc.</p></div><div><img src="https://placehold.co/400x300/0F4C81/white?text=Giới+thiệu" class="rounded-xl shadow"></div></div></div></section>
+            <section class="py-16 bg-gray-100"><div class="container mx-auto px-4"><div class="grid md:grid-cols-2 gap-8"><div class="bg-white p-6 rounded-xl shadow text-center"><i class="fas fa-eye text-5xl text-[#FF8C00]"></i><h3 class="text-2xl font-bold mt-3">Tầm nhìn</h3><p class="mt-2">Trở thành thương hiệu bao tay bảo hộ số 1 Việt Nam, hướng đến xuất khẩu.</p></div><div class="bg-white p-6 rounded-xl shadow text-center"><i class="fas fa-bullhorn text-5xl text-[#FF8C00]"></i><h3 class="text-2xl font-bold mt-3">Sứ mệnh</h3><p class="mt-2">Cung cấp sản phẩm chất lượng cao, giá tốt, đảm bảo an toàn cho người lao động.</p></div></div></div></section>
+            <section class="py-16 bg-white"><div class="container mx-auto px-4"><h2 class="text-3xl font-bold text-center text-[#0F4C81] mb-8">Lịch sử phát triển</h2><div class="relative border-l-4 border-[#FF8C00] ml-4 md:ml-20 space-y-8"><div class="mb-6"><div class="bg-gray-100 p-4 rounded-lg"><span class="font-bold text-[#FF8C00]">2018</span> - Thành lập công ty, xưởng sản xuất 500m²</div></div><div><div class="bg-gray-100 p-4 rounded-lg"><span class="font-bold text-[#FF8C00]">2020</span> - Mở rộng xưởng lên 2000m², tăng gấp 3 công suất</div></div><div><div class="bg-gray-100 p-4 rounded-lg"><span class="font-bold text-[#FF8C00]">2023</span> - Đạt chứng nhận ISO 9001, xuất khẩu sang Campuchia</div></div><div><div class="bg-gray-100 p-4 rounded-lg"><span class="font-bold text-[#FF8C00]">2025</span> - Phân phối toàn quốc, hơn 500 đối tác</div></div></div></div></section>
+            <section class="py-16 bg-gray-100"><div class="container mx-auto px-4"><h2 class="text-3xl font-bold text-center text-[#0F4C81] mb-8">Nhà xưởng & Quy trình</h2><div class="grid grid-cols-2 md:grid-cols-3 gap-4"><img src="https://placehold.co/400x250/0F4C81/white?text=Xưởng+1" class="rounded-xl shadow"><img src="https://placehold.co/400x250/FF8C00/white?text=Xưởng+2" class="rounded-xl shadow"><img src="https://placehold.co/400x250/0F4C81/white?text=Kho+hàng" class="rounded-xl shadow"></div><div class="grid md:grid-cols-4 gap-6 mt-10 text-center"><div><i class="fas fa-tint text-4xl text-[#FF8C00]"></i><p class="font-bold mt-2">Dệt</p></div><div><i class="fas fa-clipboard-list text-4xl text-[#FF8C00]"></i><p class="font-bold mt-2">Kiểm tra</p></div><div><i class="fas fa-box text-4xl text-[#FF8C00]"></i><p class="font-bold mt-2">Đóng gói</p></div><div><i class="fas fa-truck text-4xl text-[#FF8C00]"></i><p class="font-bold mt-2">Giao hàng</p></div></div></div></section>
+            <section class="py-16 bg-white"><div class="container mx-auto px-4 text-center"><h2 class="text-3xl font-bold text-[#0F4C81]">Thành tựu</h2><div class="grid md:grid-cols-2 gap-8 mt-8"><div><div class="counter-number text-5xl text-[#FF8C00]">10+</div><p>Năm kinh nghiệm</p></div><div><div class="counter-number text-5xl text-[#FF8C00]">500+</div><p>Đối tác khách hàng</p></div></div></div></section>
+            <section class="py-16 bg-gray-100"><div class="container mx-auto px-4"><h2 class="text-3xl font-bold text-center text-[#0F4C81] mb-8">Chứng nhận & Đội ngũ</h2><div class="flex flex-wrap justify-center gap-6 mb-10"><img src="https://placehold.co/120x120/EEE/0F4C81?text=ISO" class="rounded-full w-24 h-24"><img src="https://placehold.co/120x120/EEE/FF8C00?text=CE" class="rounded-full w-24 h-24"></div><div class="grid md:grid-cols-3 gap-6 text-center"><div><img src="https://placehold.co/120x120/0F4C81/white?text=CEO" class="rounded-full w-32 h-32 mx-auto"><h3 class="font-bold mt-2">Nguyễn Văn A</h3><p>Giám đốc điều hành</p></div><div><img src="https://placehold.co/120x120/FF8C00/white?text=Quản+lý" class="rounded-full w-32 h-32 mx-auto"><h3 class="font-bold mt-2">Trần Thị B</h3><p>Quản lý sản xuất</p></div><div><img src="https://placehold.co/120x120/0F4C81/white?text=Kỹ+thuật" class="rounded-full w-32 h-32 mx-auto"><h3 class="font-bold mt-2">Lê Văn C</h3><p>Trưởng phòng kỹ thuật</p></div></div></div></section>
+            <section class="py-16 bg-white"><div class="container mx-auto px-4 text-center"><h2 class="text-3xl font-bold">Video doanh nghiệp</h2><div class="max-w-3xl mx-auto mt-6"><iframe width="100%" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen class="rounded-xl shadow"></iframe></div></div></section>
+            <footer class="bg-gray-800 text-gray-300 py-10"><div class="container mx-auto px-4 grid md:grid-cols-4 gap-8"><div><h4 class="text-xl font-bold text-white">Bao Tay Thùy Dương</h4><p class="mt-2">Chuyên cung cấp găng tay bảo hộ lao động</p><p class="mt-2"><i class="fas fa-phone-alt"></i> 033 444 9494</p><p><i class="fab fa-zalo"></i> 0981 171 750</p></div><div><h4 class="text-lg font-bold">Danh mục</h4><ul class="mt-2 space-y-1"><li>Bao tay len</li><li>Găng chống cắt</li></ul></div><div><h4 class="text-lg font-bold">Hỗ trợ</h4><p>Chính sách bảo hành</p><p>Hướng dẫn đặt hàng</p></div><div><iframe width="100%" height="150" style="border:0" loading="lazy" src="https://maps.google.com/maps?q=Biên+Hòa+Đồng+Nai&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe></div></div><div class="text-center text-sm border-t border-gray-700 pt-5 mt-5">© 2025 Bao Tay Thùy Dương - Bảo hộ lao động chuyên nghiệp</div></footer>`;
+        }
+
+        // Trang sản phẩm (giữ nguyên)
+        function renderProductsPage(){
+            return `<div class="container mx-auto px-4 py-10"><div class="flex flex-col md:flex-row gap-8"><div class="md:w-1/4 bg-white p-5 rounded-xl shadow"><h3 class="font-bold text-2xl mb-4">Bộ lọc</h3><select id="categoryFilter" class="w-full border p-3 rounded mb-4"><option value="all">Tất cả</option><option value="len">Bao tay len</option><option value="hat-nhua">Phủ hạt nhựa</option><option value="chong-cat">Chống cắt</option><option value="phu-pu">Phủ PU</option></select><input type="text" id="searchInputFilter" placeholder="Tìm sản phẩm..." class="w-full border p-3 rounded"></div><div class="md:w-3/4"><div class="grid grid-cols-2 md:grid-cols-3 gap-6" id="productGridContainer"></div></div></div></div>`;
+        }
+        function renderSimplePage(title, content) {
+            return `<div class="container mx-auto px-4 py-20 text-center"><h2 class="text-3xl font-bold text-[#0F4C81]">${title}</h2><p class="text-lg mt-4">${content}</p><div class="mt-6"><a href="#" data-page="home" class="btn-cta text-white px-6 py-3 rounded-lg">Về trang chủ</a></div></div>`;
+        }
+
         function renderProductList(filterCategory = "all", searchQuery = "") {
             let filtered = products.filter(p => (filterCategory === "all" || p.category === filterCategory) && p.name.toLowerCase().includes(searchQuery.toLowerCase()));
             const container = document.getElementById('productGridContainer');
             if(!container) return;
-            if(filtered.length===0) { container.innerHTML = '<div class="col-span-full text-center py-12 text-lg">Không tìm thấy sản phẩm</div>'; return;}
-            container.innerHTML = filtered.map(p => `
-                <div class="product-card bg-white rounded-xl shadow-md p-4 hover:shadow-lg">
-                    <img src="${p.image}" class="w-full h-48 object-cover rounded-lg mb-3" loading="lazy">
-                    <h3 class="font-bold text-xl text-[#0F4C81]">${p.name}</h3>
-                    <div class="flex items-center gap-1 text-yellow-500 text-sm"><i class="fas fa-star"></i> ${p.rating}</div>
-                    <p class="text-red-600 font-bold text-2xl mt-1">${formatPrice(p.price)}</p>
-                    <div class="flex gap-2 mt-3"><button class="btn-add-cart bg-[#0F4C81] text-white px-3 py-2 rounded-full text-sm flex-1"><i class="fas fa-cart-plus"></i> Mua ngay</button><button class="view-detail-btn border border-[#FF8C00] text-[#FF8C00] px-3 py-2 rounded-full text-sm" data-id="${p.id}">Chi tiết</button></div>
-                </div>
-            `).join('');
+            if(filtered.length===0) { container.innerHTML = '<div class="col-span-full text-center py-12">Không tìm thấy sản phẩm</div>'; return;}
+            container.innerHTML = filtered.map(p => `<div class="product-card bg-white rounded-xl shadow-md p-4"><img src="${p.image}" class="w-full h-48 object-cover rounded-lg mb-3"><h3 class="font-bold text-xl">${p.name}</h3><p class="text-red-600 font-bold text-2xl">${formatPrice(p.price)}</p><div class="flex gap-2 mt-3"><button class="btn-add-cart bg-[#0F4C81] text-white px-3 py-2 rounded-full text-sm flex-1" data-id="${p.id}">Mua ngay</button><button class="view-detail-btn border border-[#FF8C00] text-[#FF8C00] px-3 py-2 rounded-full text-sm" data-id="${p.id}">Chi tiết</button></div></div>`).join('');
+            attachProductEvents();
+        }
+        function attachProductEvents(){
             document.querySelectorAll('.btn-add-cart').forEach(btn => btn.addEventListener('click', (e) => { let id = parseInt(btn.closest('.product-card')?.querySelector('.view-detail-btn')?.dataset.id); if(id) addToCart(id,1); }));
             document.querySelectorAll('.view-detail-btn').forEach(btn => btn.addEventListener('click', (e) => { showProductDetail(parseInt(btn.dataset.id)); }));
         }
-
-        function showProductDetail(productId){
-            const prod = products.find(p => p.id === productId);
+        function showProductDetail(id){
+            const prod = products.find(p => p.id === id);
             if(!prod) return;
             const modalDiv = document.createElement('div');
             modalDiv.className = "fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[1200] p-4";
-            modalDiv.innerHTML = `<div class="bg-white max-w-3xl w-full rounded-2xl overflow-auto max-h-[90vh]">
-                <div class="sticky top-0 bg-white p-4 border-b flex justify-between items-center"><h3 class="font-bold text-2xl">${prod.name}</h3><button class="close-modal text-3xl">&times;</button></div>
-                <div class="p-5 grid md:grid-cols-2 gap-5">
-                    <img src="${prod.image}" class="rounded-lg w-full">
-                    <div><p class="text-3xl font-bold text-[#FF8C00]">${formatPrice(prod.price)}</p><p class="text-sm text-green-600">✔ Tồn kho: ${prod.stock}+</p><div class="mt-4 flex gap-3"><button class="btn-add-cart-modal bg-[#0F4C81] text-white px-6 py-2 rounded-full text-lg">Mua ngay</button><button onclick="window.location.href='tel:0334449494'" class="bg-[#FF8C00] text-white px-6 py-2 rounded-full text-lg">Gọi báo giá</button></div><div class="mt-4"><p class="font-semibold text-base">Sản phẩm chất lượng công nghiệp, bảo hành 30 ngày.</p></div></div>
-                </div>
-            </div>`;
+            modalDiv.innerHTML = `<div class="bg-white max-w-3xl w-full rounded-2xl p-5"><div class="flex justify-between"><h3 class="text-2xl font-bold">${prod.name}</h3><button class="close-modal text-3xl">&times;</button></div><div class="grid md:grid-cols-2 gap-4 mt-3"><img src="${prod.image}"><div><p class="text-3xl text-[#FF8C00] font-bold">${formatPrice(prod.price)}</p><p class="mt-2">Tồn kho: ${prod.stock}</p><button class="btn-add-cart-modal bg-[#0F4C81] text-white px-6 py-2 rounded-full mt-3">Mua ngay</button></div></div></div>`;
             document.body.appendChild(modalDiv);
             modalDiv.querySelector('.close-modal').onclick = () => modalDiv.remove();
-            modalDiv.querySelector('.btn-add-cart-modal').onclick = () => { addToCart(prod.id, 1); modalDiv.remove(); };
+            modalDiv.querySelector('.btn-add-cart-modal').onclick = () => { addToCart(prod.id,1); modalDiv.remove(); };
         }
 
-        // Trang chủ đã bỏ video và testimonial
-        function renderHome() {
-            const featured = products.filter(p => p.featured);
-            return `
-            <section class="bg-gradient-to-r from-[#0F4C81] to-[#0b3a62] text-white py-16 md:py-24">
-                <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
-                    <div class="md:w-1/2"><h1 class="text-4xl md:text-6xl font-bold leading-tight">BAO TAY LEN BẢO HỘ LAO ĐỘNG<br><span class="text-[#FF8C00]">Chống trơn – Êm tay – Giá xưởng</span></h1><p class="mt-4 text-xl">Sản xuất trực tiếp, giá sỉ toàn quốc, nhận OEM. Giao hàng nhanh.</p><div class="mt-8 flex gap-4"><a href="#" data-page="products" class="btn-cta text-white px-8 py-4 rounded-lg font-bold text-lg">Xem sản phẩm</a><button id="getQuoteBtn" class="border-2 border-white px-8 py-4 rounded-lg font-bold text-lg">Nhận báo giá sỉ</button></div></div>
-                    <div class="md:w-1/2"><img src="https://placehold.co/600x400/FFFFFF/0F4C81?text=Găng+tay+Thủy+Dương" alt="Bao tay Thủy Dương" class="rounded-2xl shadow-xl"></div>
-                </div>
-            </section>
-            <div class="bg-white py-10 shadow-sm"><div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center"><div><i class="fas fa-truck-fast text-4xl text-[#0F4C81]"></i><p class="font-bold text-lg mt-2">Giao hàng toàn quốc</p></div><div><i class="fas fa-factory text-4xl text-[#0F4C81]"></i><p class="font-bold text-lg mt-2">Sản xuất trực tiếp</p></div><div><i class="fas fa-tags text-4xl text-[#0F4C81]"></i><p class="font-bold text-lg mt-2">Giá sỉ cạnh tranh</p></div><div><i class="fas fa-certificate text-4xl text-[#0F4C81]"></i><p class="font-bold text-lg mt-2">Chất lượng chuẩn</p></div></div></div>
-            <div class="container mx-auto px-4 py-12"><h2 class="text-3xl font-bold border-l-4 border-[#FF8C00] pl-4 mb-8">Danh mục nổi bật</h2><div class="grid grid-cols-2 md:grid-cols-5 gap-5">${['len','hat-nhua','chong-cat','phu-pu','cotton'].map(cat => `<div class="bg-white rounded-xl shadow p-4 text-center cursor-pointer filter-cat hover:shadow-lg transition" data-cat="${cat}"><img src="https://placehold.co/120x120/0F4C81/white?text=${cat}" class="mx-auto w-24 h-24 object-cover rounded-full"><p class="mt-3 font-medium text-lg capitalize">${cat.replace('-',' ')}</p></div>`).join('')}</div></div>
-            <div class="container mx-auto px-4 py-8"><div class="flex justify-between items-center"><h2 class="text-3xl font-bold">Sản phẩm bán chạy</h2><a href="#" data-page="products" class="text-[#FF8C00] text-lg">Xem tất cả →</a></div><div class="swiper featuredSwiper mt-8 overflow-hidden"><div class="swiper-wrapper">${featured.map(p => `<div class="swiper-slide"><div class="bg-white p-5 rounded-xl shadow hover:shadow-lg"><img src="${p.image}" class="h-44 mx-auto object-cover"><h3 class="font-bold text-xl mt-2">${p.name}</h3><p class="text-red-600 font-bold text-xl">${formatPrice(p.price)}</p><button class="btn-add-cart-featured bg-[#0F4C81] text-white px-4 py-2 rounded-full mt-3 w-full text-lg" data-id="${p.id}">Mua ngay</button></div></div>`).join('')}</div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div></div>
-            <footer class="bg-[#0F4C81] text-white py-10 mt-8"><div class="container mx-auto grid md:grid-cols-4 gap-8 px-4"><div><h4 class="font-bold text-xl">Bao Tay Thủy Dương</h4><p class="mt-2">Chuyên cung cấp găng tay bảo hộ lao động</p><p class="mt-2"><i class="fas fa-phone-alt"></i> 033 444 9494</p><p><i class="fab fa-zalo"></i> 0981 171 750</p></div><div><h4 class="font-bold text-lg">Danh mục</h4><ul class="mt-2 space-y-1"><li>Bao tay len</li><li>Găng chống cắt</li><li>Phủ hạt nhựa</li></ul></div><div><h4 class="font-bold text-lg">Chính sách</h4><p>Bảo hành 30 ngày, đổi trả miễn phí</p></div><div><iframe width="100%" height="180" style="border:0" loading="lazy" src="https://maps.google.com/maps?q=Hanoi&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe></div></div><div class="text-center text-sm border-t border-white/20 pt-5 mt-5">© 2025 Bao Tay Thủy Dương - Bảo hộ lao động chuyên nghiệp</div></footer>`;
+        function attachFilterEvents(){
+            const catFilter = document.getElementById('categoryFilter');
+            const searchFilter = document.getElementById('searchInputFilter');
+            const refresh = () => renderProductList(catFilter?.value || 'all', searchFilter?.value || '');
+            if(catFilter) catFilter.addEventListener('change', refresh);
+            if(searchFilter) searchFilter.addEventListener('input', refresh);
+            refresh();
         }
-
-        function renderProductsPage(){
-            return `<div class="container mx-auto px-4 py-10"><div class="flex flex-col md:flex-row gap-8"><div class="md:w-1/4 bg-white p-5 rounded-xl shadow"><h3 class="font-bold text-2xl mb-4">Bộ lọc</h3><select id="categoryFilter" class="w-full border p-3 rounded mb-4 text-base"><option value="all">Tất cả</option><option value="len">Bao tay len</option><option value="hat-nhua">Phủ hạt nhựa</option><option value="chong-cat">Chống cắt</option><option value="phu-pu">Phủ PU</option></select><input type="text" id="searchInputFilter" placeholder="Tìm sản phẩm..." class="w-full border p-3 rounded text-base"></div><div class="md:w-3/4"><div class="grid grid-cols-2 md:grid-cols-3 gap-6" id="productGridContainer"></div></div></div></div>`;
+        function attachHomeEvents(){
+            document.querySelectorAll('.filter-cat').forEach(el => el.addEventListener('click', (e) => { let cat = el.dataset.cat; loadPage('products'); setTimeout(()=>{ document.getElementById('categoryFilter').value = cat; renderProductList(cat,''); },50); }));
+            document.querySelectorAll('.btn-add-cart-featured').forEach(btn => btn.addEventListener('click', (e)=>{ addToCart(parseInt(btn.dataset.id),1); }));
+            document.getElementById('getQuoteBtn')?.addEventListener('click', () => showToast("Liên hệ báo giá sỉ: 033 444 9494 hoặc Zalo 0981 171 750"));
+            document.getElementById('ctaQuoteBtn')?.addEventListener('click', () => showToast("Liên hệ báo giá sỉ: 033 444 9494 hoặc Zalo 0981 171 750"));
         }
-
-        function renderSimplePage(title, content) {
-            return `<div class="container mx-auto px-4 py-20 text-center"><h2 class="text-3xl font-bold text-[#0F4C81]">${title}</h2><p class="text-lg mt-4">${content}</p><div class="mt-6"><a href="#" data-page="home" class="btn-cta text-white px-6 py-3 rounded-lg">Về trang chủ</a></div></div>`;
+        function initSwiper(){
+            if(document.querySelector('.featuredSwiper')) new Swiper('.featuredSwiper', { slidesPerView: 2, spaceBetween: 20, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, breakpoints: { 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } } });
+            if(document.querySelector('.testimonialSwiper')) new Swiper('.testimonialSwiper', { slidesPerView: 1, pagination: { el: '.swiper-pagination', clickable: true } });
         }
 
         function loadPage(page) {
             currentPage = page;
             const main = document.getElementById('appContent');
             if(page === 'home') { main.innerHTML = renderHome(); attachHomeEvents(); initSwiper(); }
+            else if(page === 'about') { main.innerHTML = renderAbout(); }
             else if(page === 'products') { main.innerHTML = renderProductsPage(); renderProductList('all',''); attachFilterEvents(); }
             else if(page === 'quote') main.innerHTML = renderSimplePage("Báo giá sỉ", "Quý khách vui lòng liên hệ hotline 033 444 9494 hoặc Zalo 0981 171 750 để nhận báo giá tốt nhất.");
             else if(page === 'news') main.innerHTML = renderSimplePage("Tin tức", "Cập nhật các bài viết về bảo hộ lao động sắp ra mắt.");
-            else if(page === 'about') main.innerHTML = renderSimplePage("Giới thiệu", "Bao Tay Thủy Dương - 10 năm kinh nghiệm sản xuất găng tay bảo hộ chất lượng cao.");
             else if(page === 'contact') main.innerHTML = renderSimplePage("Liên hệ", "📞 033 444 9494 - 📱 Zalo 0981 171 750 - 📧 baotay@thuydung.com");
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0 });
         }
 
-        function attachFilterEvents(){
-            const catFilter = document.getElementById('categoryFilter');
-            const searchFilter = document.getElementById('searchInputFilter');
-            function refresh(){ renderProductList(catFilter?.value || 'all', searchFilter?.value || ''); }
-            if(catFilter) catFilter.addEventListener('change', refresh);
-            if(searchFilter) searchFilter.addEventListener('input', refresh);
-            refresh();
-        }
-        function attachHomeEvents(){
-            document.querySelectorAll('.filter-cat').forEach(el => el.addEventListener('click', (e) => { let cat = el.dataset.cat; loadPage('products'); setTimeout(()=>{ let filter = document.getElementById('categoryFilter'); if(filter) filter.value=cat; renderProductList(cat,''); }, 50); }));
-            document.querySelectorAll('.btn-add-cart-featured').forEach(btn => btn.addEventListener('click', (e)=>{ addToCart(parseInt(btn.dataset.id),1); }));
-            const quoteBtn = document.getElementById('getQuoteBtn');
-            if(quoteBtn) quoteBtn.onclick = () => { showToast("Liên hệ báo giá sỉ: 033 444 9494 hoặc Zalo 0981 171 750"); };
-        }
-        function initSwiper(){
-            if(document.querySelector('.featuredSwiper')) new Swiper('.featuredSwiper', { slidesPerView: 2, spaceBetween: 20, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, breakpoints: { 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } } });
-        }
-
-        // Sự kiện DOM - ĐẢM BẢO MENU HOẠT ĐỘNG
+        // Xử lý sự kiện menu
         function bindMenuEvents() {
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.removeEventListener('click', handleNavClick);
@@ -276,24 +393,15 @@
             const page = e.currentTarget.getAttribute('data-page');
             if(page) loadPage(page);
         }
-        // Các sự kiện khác
         document.getElementById('cartIconHeader')?.addEventListener('click', () => document.getElementById('cartDrawer')?.classList.remove('translate-x-full'));
         document.getElementById('closeCartBtn')?.addEventListener('click', () => document.getElementById('cartDrawer')?.classList.add('translate-x-full'));
-        document.getElementById('checkoutBtn')?.addEventListener('click', () => { document.getElementById('checkoutModal').style.display = 'flex'; });
+        document.getElementById('checkoutBtn')?.addEventListener('click', () => document.getElementById('checkoutModal').style.display = 'flex');
         document.getElementById('closeCheckout')?.addEventListener('click', () => document.getElementById('checkoutModal').style.display = 'none');
-        document.getElementById('checkoutForm')?.addEventListener('submit', (e) => { e.preventDefault(); alert("✅ Đặt hàng thành công! Chúng tôi sẽ liên hệ xác nhận trong ít phút."); cart = []; saveCart(); document.getElementById('checkoutModal').style.display = 'none'; document.getElementById('cartDrawer')?.classList.add('translate-x-full'); });
-        
-        // Popup
-        setTimeout(() => { document.getElementById('discountPopup')?.classList.remove('hidden'); }, 5000);
+        document.getElementById('checkoutForm')?.addEventListener('submit', (e) => { e.preventDefault(); alert("✅ Đặt hàng thành công! Chúng tôi sẽ liên hệ xác nhận."); cart = []; saveCart(); document.getElementById('checkoutModal').style.display = 'none'; document.getElementById('cartDrawer')?.classList.add('translate-x-full'); });
+        setTimeout(() => document.getElementById('discountPopup')?.classList.remove('hidden'), 5000);
         document.getElementById('closePopup')?.onclick = () => document.getElementById('discountPopup')?.classList.add('hidden');
         document.getElementById('popupCta')?.onclick = () => { document.getElementById('discountPopup')?.classList.add('hidden'); showToast("Mã THUYDUNG10: giảm 10% đơn hàng đầu"); };
-        
-        // Khởi tạo
-        window.addEventListener('load', () => {
-            loadPage('home');
-            updateCartUI();
-            bindMenuEvents(); // gắn sự kiện cho menu sau khi load
-        });
+        window.addEventListener('load', () => { loadPage('home'); updateCartUI(); bindMenuEvents(); });
     </script>
 </body>
 </html>
