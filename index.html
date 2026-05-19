@@ -34,7 +34,7 @@
             .menu-bar { flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
         }
 
-        /* CATEGORY MENU NÂNG CẤP */
+        /* CATEGORY MENU */
         .category-main-btn {
             background: #f3f4f6;
             padding: 12px 22px;
@@ -152,6 +152,7 @@
                     <a href="#" data-page="home" class="nav-link text-gray-700 hover:text-[#FF8C00]">Trang chủ</a>
                     <a href="#" data-page="about" class="nav-link text-gray-700 hover:text-[#FF8C00]">Giới thiệu</a>
                     <a href="#" data-page="products" class="nav-link text-gray-700 hover:text-[#FF8C00]">Sản phẩm</a>
+                    <a href="#" data-page="quote" class="nav-link text-gray-700 hover:text-[#FF8C00]">Báo giá sỉ</a>
                     <a href="#" data-page="news" class="nav-link text-gray-700 hover:text-[#FF8C00]">Tin tức</a>
                     <a href="#" data-page="contact" class="nav-link text-gray-700 hover:text-[#FF8C00]">Liên hệ</a>
                 </nav>
@@ -163,7 +164,7 @@
                 <div class="relative group">
                     <button class="category-main-btn click-mega-header" data-cat="len"><span>🧤 Bao tay len</span></button>
                     <div class="mega-menu">
-                        <span class="mega-item filter-mega" data-cat="len">Bao tay len tiêu chuẩn</span>
+                        <span class="mega-item filter-mega" data-cat="len">Bao tay len cao cấp</span>
                         <span class="mega-item filter-mega" data-cat="len">Bao tay xám kim 7</span>
                         <span class="mega-item filter-mega" data-cat="len">Bao tay xám kim 10</span>
                         <span class="mega-item filter-mega" data-cat="len">Bao tay kem / Muối tiêu</span>
@@ -178,7 +179,7 @@
                     </div>
                 </div>
                 <div class="relative group">
-                    <button class="category-main-btn click-mega-header" data-cat="chong-cat-giat"><span>⚔️ Găng tay chống cắt / chống giật</span></button>
+                    <button class="category-main-btn click-mega-header" data-cat="chong-cat-giat"><span>⚔️ Bao tay chống cắt / chống giật</span></button>
                     <div class="mega-menu">
                         <span class="mega-item filter-mega" data-cat="chong-cat-giat">Bao tay chống cắt Level 5</span>
                         <span class="mega-item filter-mega" data-cat="chong-cat-giat">Bao tay cách điện hạ thế</span>
@@ -186,7 +187,7 @@
                     </div>
                 </div>
                 <div class="relative group">
-                    <button class="category-main-btn click-mega-header" data-cat="phu-son"><span>🎨 Găng tay phủ sơn/PU</span></button>
+                    <button class="category-main-btn click-mega-header" data-cat="phu-son"><span>🎨 Găng tay phủ sơn/PU/Nitrile</span></button>
                     <div class="mega-menu">
                         <span class="mega-item filter-mega" data-cat="phu-son">Bao tay phủ PU chống trơn</span>
                         <span class="mega-item filter-mega" data-cat="phu-son">Bao tay phủ sơn nhám</span>
@@ -227,244 +228,78 @@
         </div>
     </div>
 
-    <div id="discountPopup" class="fixed bottom-5 left-5 bg-white p-4 rounded-xl shadow-2xl border-l-4 border-l-[#FF8C00] hidden z-[1100]">
-        <div class="flex justify-between gap-4"><span class="font-bold text-[#0F4C81] text-lg"><i class="fas fa-gift"></i> Nhận báo giá sỉ</span><button id="closePopup" class="text-gray-400 text-xl">×</button></div>
-        <p class="text-sm mt-1">Liên hệ trực tiếp để có chiết khấu nhà máy tốt nhất.</p>
-        <button id="popupCta" class="mt-2 bg-[#FF8C00] text-white text-sm px-3 py-1 rounded">Gọi ngay</button>
-    </div>
-
-    <div class="fixed bottom-6 right-4 flex flex-col gap-3 z-50">
-        <a href="https://zalo.me/0981171750" target="_blank" class="bg-[#0068FF] text-white p-3 rounded-full shadow-lg text-2xl w-12 h-12 flex items-center justify-center"><i class="fab fa-zalo"></i></a>
-        <a href="tel:0334449494" class="bg-[#0F4C81] text-white p-3 rounded-full shadow-lg text-2xl w-12 h-12 flex items-center justify-center"><i class="fas fa-phone-alt"></i></a>
-    </div>
-
     <script>
-        // MẢNG DỮ LIỆU ĐẦY ĐỦ 100% KỊCH TRẦN CHỨA TOÀN BỘ VĂN BẢN MÔ TẢ THEO ĐÚNG CẤU TRÚC ĐẸP MẮT ANH GỬI
+        // MẢNG DỮ LIỆU ĐẦY ĐỦ 100% KỊCH TRẦN THEO TÀI LIỆU CỦA ANH
         const products = [
-            // 1. BAO TAY LEN BẢO HỘ LAO ĐỘNG (5 sản phẩm bài đăng tách biệt hoàn toàn)
+            // 1. NHÓM BAO TAY LEN BẢO HỘ LAO ĐỘNG (5 sản phẩm độc lập bài đăng)
             { 
                 id: 1, 
-                name: "Bao tay len bảo hộ lao động tiêu chuẩn", 
+                name: "Bao tay len bảo hộ lao động cao cấp", 
                 price: null, category: "len", stock: 5000, 
                 image: "https://placehold.co/500x500/0F4C81/white?text=Bao+Tay+Len+Chinh", 
-                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "Co giãn tốt, phù hợp nhiều kích cỡ tay",
-                material: "Sợi cotton, Polyester, TC co giãn bền chắc", usage: "Trắng, Kem, Xám, Đen",
-                infoHtml: `
-                    <p class="mb-1">Tên sản phẩm: Bao tay len bảo hộ lao động</p>
-                    <p class="mb-1">Chất liệu:<br>▫ Sợi cotton<br>▫ Polyester<br>▫ TC co giãn bền chắc</p>
-                    <p class="mb-1">Màu sắc:<br>▫ Trắng<br>▫ Kem<br>▫ Xám<br>▫ Đen</p>
-                    <p class="mb-1">Trọng lượng:<br>▫ 30g<br>▫ 40g<br>▫ 50g<br>▫ 60g<br>▫ 70g<br>▫ 80g</p>
-                    <p class="mb-1">Kích thước: Co giãn tốt, phù hợp nhiều kích cỡ tay</p>
-                `,
-                highlightsHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Chất liệu sợi dệt chắc chắn, chịu ma sát tốt</li>
-                        <li>✔ Co giãn linh hoạt, ôm tay vừa vặn</li>
-                        <li>✔ Thoáng khí, không gây bí nóng khi sử dụng lâu</li>
-                        <li>✔ Hạn chế trầy xước tay trong quá trình lao động</li>
-                        <li>✔ Tăng độ bám khi cầm nắm vật dụng</li>
-                        <li>✔ Đường may chắc chắn, hạn chế bung chỉ</li>
-                        <li>✔ Có thể giặt và tái sử dụng nhiều lần</li>
-                        <li>✔ Giá thành hợp lý, phù hợp sử dụng số lượng lớn</li>
-                    </ul>
-                `,
-                appsHtml: `
-                    <p class="mb-2">Bao tay phù hợp sử dụng trong nhiều lĩnh vực:</p>
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Công trình xây dựng</li>
-                        <li>✔ Bốc xếp hàng hóa</li>
-                        <li>✔ Kho vận – logistics</li>
-                        <li>✔ Cơ khí nhẹ</li>
-                        <li>✔ Làm vườn – nông nghiệp</li>
-                        <li>✔ Nhà máy sản xuất</li>
-                        <li>✔ Công việc gia đình</li>
-                        <li>✔ Xưởng gỗ – nội thất</li>
-                    </ul>
-                `,
-                storageHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>▫ Bảo quản nơi khô ráo, thoáng mát</li>
-                        <li>▫ Tránh tiếp xúc với hóa chất mạnh</li>
-                        <li>▫ Có thể giặt sạch và tái sử dụng</li>
-                        <li>▫ Không để gần nguồn nhiệt cao</li>
-                    </ul>
-                    <p class="text-xs text-gray-400 mt-4 font-normal">#baotaylen #baotaybaoholaodong #baotaycongnghiep #baotayxaydung #baotaygiare</p>
-                `
+                featured: true, brand: "Thùy Dương / Xuân Chương",
+                standard: "TCVN co giãn bền chắc",
+                material: "Sợi cotton, Polyester, TC co giãn bền chắc dệt máy",
+                usage: "Công trình xây dựng, bốc xếp hàng hóa, kho vận – logistics, cơ khí nhẹ, làm vườn – nông nghiệp, nhà máy sản xuất, xưởng gỗ – nội thất, công việc gia đình.",
+                description: "Chất liệu sợi dệt chắc chắn, chịu ma sát tốt. Co giãn linh hoạt, ôm tay vừa vặn. Thoáng khí, không gây bí nóng khi sử dụng lâu. Hạn chế trầy xước tay trong quá trình lao động. Tăng độ bám khi cầm nắm vật dụng. Đường may chắc chắn, hạn chế bung chỉ. Có thể giặt và tái sử dụng nhiều lần. Giá thành hợp lý, phù hợp sử dụng số lượng lớn.",
+                detailedDescription: "Bảo quản nơi khô ráo, thoáng mát. Tránh tiếp xúc với hóa chất mạnh. Có thể giặt sạch và tái sử dụng. Không để gần nguồn nhiệt cao. Các hashtag liên quan: #baotaylen #baotaybaoholaodong #baotaycongnghiep #baotayxaydung #baotaysi #baotaygiare"
             },
             { 
                 id: 2, 
-                name: "Bao tay len Xám kim 7 bảo hộ lao động", 
+                name: "Bao tay len màu Xám dệt kim 7 dày dặn", 
                 price: null, category: "len", stock: 4500, 
                 image: "https://placehold.co/500x500/555555/white?text=Xam+Kim+7", 
-                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "Co giãn tốt, phù hợp nhiều kích cỡ tay",
-                material: "Sợi cotton dệt dày", usage: "Xám",
-                infoHtml: `
-                    <p class="mb-1">Tên sản phẩm: Bao tay len Xám kim 7 bảo hộ lao động</p>
-                    <p class="mb-1">Chất liệu: Sợi cotton dệt thô kim 7 dày dặn</p>
-                    <p class="mb-1">Màu sắc: Xám</p>
-                    <p class="mb-1">Trọng lượng: 50g, 60g, 70g, 80g</p>
-                    <p class="mb-1">Kích thước: Co giãn tốt, phù hợp nhiều kích cỡ tay</p>
-                `,
-                highlightsHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Thiết kế kết cấu dệt thô chịu va quệt cơ học tốt</li>
-                        <li>✔ Chất sợi chịu ma sát cao bảo vệ tay hoàn hảo</li>
-                    </ul>
-                `,
-                appsHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Thi công thô công trình xây dựng</li>
-                        <li>✔ Vác bốc dỡ hàng hóa vật liệu xây dựng nặng</li>
-                    </ul>
-                `,
-                storageHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>▫ Bảo quản nơi khô ráo, thoáng mát sạch sẽ</li>
-                    </ul>
-                `
+                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "TCVN co giãn bền chắc",
+                material: "Sợi cotton dệt máy kim 7 dày dặn", usage: "Công trình xây dựng, bốc xếp hàng hóa nặng, cơ khí, nông nghiệp thô.",
+                description: "Chất dệt kim 7 dày dặn chịu ma sát tốt, ôm tay vừa vặn chống bẩn tối ưu.",
+                detailedDescription: "Bảo quản nơi khô ráo, thoáng mát. Tránh tiếp xúc với hóa chất mạnh. Có thể giặt sạch và tái sử dụng. Không để gần nguồn nhiệt cao."
             },
             { 
                 id: 3, 
-                name: "Bao tay len Xám kim 10 dệt máy khít mịn", 
+                name: "Bao tay len màu Xám dệt kim 10 mịn đẹp", 
                 price: null, category: "len", stock: 4200, 
                 image: "https://placehold.co/500x500/777777/white?text=Xam+Kim+10", 
-                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "Co giãn tốt, phù hợp nhiều kích cỡ tay",
-                material: "Sợi cotton pha Polyester đan khít", usage: "Xám",
-                infoHtml: `
-                    <p class="mb-1">Tên sản phẩm: Bao tay len Xám kim 10 khít mịn</p>
-                    <p class="mb-1">Chất liệu: Sợi dệt kim 10 mật độ cao</p>
-                    <p class="mb-1">Màu sắc: Xám</p>
-                    <p class="mb-1">Trọng lượng: 40g, 50g, 60g</p>
-                `,
-                highlightsHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Đường chỉ khít đều mịn màng tạo độ thật tay cao khi cầm nắm</li>
-                        <li>✔ Cổ tay vắt sổ bo chắc chắn không bị xổ chỉ sợi len</li>
-                    </ul>
-                `,
-                appsHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Lắp ráp cơ khí chi tiết nhẹ nhà xưởng</li>
-                        <li>✔ Kiểm kho hàng, phân loại hàng hóa đóng gói</li>
-                    </ul>
-                `,
-                storageHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>▫ Giặt sạch phơi ráo thoáng mát sau mỗi ca</li>
-                    </ul>
-                `
+                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "TCVN co giãn bền chắc",
+                material: "Sợi cotton đan Polyester kim 10 khít mịn", usage: "Cầm nắm công cụ kỹ thuật nhẹ, kho vận, đóng gói bao bì sản phẩm.",
+                description: "Mật độ dệt cao mịn đẹp, co giãn tốt cử động thật tay không gây cản trở thao tác.",
+                detailedDescription: "Bảo quản nơi khô ráo, thoáng mát. Tránh tiếp xúc với hóa chất mạnh. Có thể giặt sạch và tái sử dụng. Không để gần nguồn nhiệt cao."
             },
             { 
                 id: 4, 
-                name: "Bao tay len Kem dệt máy chất lượng cao", 
+                name: "Bao tay len màu Kem cotton tự nhiên", 
                 price: null, category: "len", stock: 4800, 
                 image: "https://placehold.co/500x500/F5F5DC/333333?text=Bao+Tay+Kem", 
-                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "Co giãn tốt, phù hợp nhiều kích cỡ tay",
-                material: "100% sợi len cotton tự nhiên màu kem sáng", usage: "Kem",
-                infoHtml: `
-                    <p class="mb-1">Tên sản phẩm: Bao tay len màu Kem dệt mịn</p>
-                    <p class="mb-1">Chất liệu: Sợi cotton dệt tự động đồng đều</p>
-                    <p class="mb-1">Màu sắc: Kem sáng thẩm mỹ</p>
-                    <p class="mb-1">Trọng lượng: 30g, 40g, 50g, 60g, 70g, 80g</p>
-                `,
-                highlightsHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Sợi bông trắng sạch cao cấp hạn chế tối đa bụi vải bám dính</li>
-                    </ul>
-                `,
-                appsHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Đóng gói cấu kiện sản phẩm, khu sản xuất sạch</li>
-                        <li>✔ Xưởng gỗ nội thất mỹ nghệ cao cấp</li>
-                    </ul>
-                `,
-                storageHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>▫ Không ngâm chung thuốc tẩy rửa axit ăn mòn mục sợi dệt</li>
-                    </ul>
-                `
+                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "TCVN bảo hộ an toàn công xưởng",
+                material: "Sợi cotton tự nhiên màu kem sáng sạch sẽ", usage: "Đóng gói, kho bãi logistics, kiểm hàng, xưởng gỗ nội thất sạch.",
+                description: "Sợi bông cotton kem cao cấp mềm mại thoáng khí, bảo vệ tay toàn diện khỏi trầy xước.",
+                detailedDescription: "Bảo quản nơi khô ráo, thoáng mát. Tránh tiếp xúc với hóa chất mạnh. Có thể giặt sạch và tái sử dụng. Không để gần nguồn nhiệt cao."
             },
             { 
                 id: 5, 
-                name: "Bao tay len Muối tiêu công trình", 
+                name: "Bao tay len màu Muối tiêu chống lộ bẩn", 
                 price: null, category: "len", stock: 3900, 
                 image: "https://placehold.co/500x500/808080/white?text=Muoi+Tieu", 
-                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "Co giãn tốt, phù hợp nhiều kích cỡ tay",
-                material: "Sợi len dệt phối màu muối tiêu", usage: "Muối tiêu",
-                infoHtml: `
-                    <p class="mb-1">Tên sản phẩm: Găng tay len muối tiêu công trình</p>
-                    <p class="mb-1">Chất liệu: Sợi dệt đan phối tối màu bền bỉ</p>
-                    <p class="mb-1">Màu sắc: Muối tiêu xám đen</p>
-                `,
-                highlightsHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Phối màu thông minh giúp hạn chế lộ vết bẩn sình lầy bùn đất</li>
-                        <li>✔ Sợi dệt kết cấu dày dặn chống mài mòn hoàn hảo</li>
-                    </ul>
-                `,
-                appsHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Khuân vác bê tông cốt thép gạch đá công trình lớn</li>
-                    </ul>
-                `,
-                storageHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>▫ Vệ sinh giặt giũ sạch sẽ phơi nơi thông thoáng gió</li>
-                    </ul>
-                `
+                featured: true, brand: "Thùy Dương / Xuân Chương", standard: "TCVN công trình xây dựng",
+                material: "Sợi dệt pha màu muối tiêu công nghiệp", usage: "Bốc dỡ vật liệu xây dựng gạch đá, khuân vác kho bãi thô ráp.",
+                description: "Màu muối tiêu sạch lâu không lộ vết bẩn, chất len bền bỉ dẻo dai tăng ma sát cầm nắm.",
+                detailedDescription: "Bảo quản nơi khô ráo, thoáng mát. Tránh tiếp xúc với hóa chất mạnh. Có thể giặt sạch và tái sử dụng. Không để gần nguồn nhiệt cao."
             },
-            { id: 6, name: "[Sản phẩm bao tay len trống 1]", price: null, category: "len", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+1", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ điền thông tin sau.", detailedDescription: "Trống." },
-            { id: 7, name: "[Sản phẩm bao tay len trống 2]", price: null, category: "len", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+2", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ điền thông tin sau.", detailedDescription: "Trống." },
-            { id: 13, name: "[Sản phẩm bao tay len trống 3]", price: null, category: "len", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+3", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ điền thông tin sau.", detailedDescription: "Trống." },
-            { id: 14, name: "[Sản phẩm bao tay len trống 4]", price: null, category: "len", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+4", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ điền thông tin sau.", detailedDescription: "Trống." },
+            { id: 6, name: "[Sản phẩm bao tay len trống 1]", price: null, category: "len", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+1", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Sản phẩm trống chờ bổ sung dữ liệu sau.", detailedDescription: "Nội dung chi tiết trống." },
+            { id: 7, name: "[Sản phẩm bao tay len trống 2]", price: null, category: "len", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+2", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Sản phẩm trống chờ bổ sung dữ liệu sau.", detailedDescription: "Nội dung chi tiết trống." },
+            { id: 13, name: "[Sản phẩm bao tay len trống 3]", price: null, category: "len", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+3", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Sản phẩm trống chờ bổ sung dữ liệu sau.", detailedDescription: "Nội dung chi tiết trống." },
+            { id: 14, name: "[Sản phẩm bao tay len trống 4]", price: null, category: "len", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Len+Trong+4", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Sản phẩm trống chờ bổ sung dữ liệu sau.", detailedDescription: "Nội dung chi tiết trống." },
 
-            // 2. NHÓM BAO TAY POLY / POLYESTER (3 bài đăng màu độc lập)
+            // 2. NHÓM BAO TAY POLY / POLYESTER (4 sản phẩm độc lập bài đăng)
             {
                 id: 21,
                 name: "Bao tay Poly bảo hộ lao động màu Trắng",
                 price: null, category: "poly", stock: 3000,
                 image: "https://placehold.co/500x500/eeeeee/333333?text=Poly+Trang",
                 featured: true, brand: "Thùy Dương", standard: "Thiết kế ôm tay, co giãn linh hoạt",
-                material: "Polyester cao cấp, Sợi Poly co giãn, Nylon tổng hợp", usage: "Trắng",
-                infoHtml: `
-                    <p class="mb-1">Tên sản phẩm: Bao tay Poly bảo hộ lao động</p>
-                    <p class="mb-1">Chất liệu:<br>▫ Polyester cao cấp<br>▫ Sợi Poly co giãn<br>▫ Nylon tổng hợp</p>
-                    <p class="mb-1">Màu sắc:<br>▫ Trắng<br>▫ Xám<br>▫ Đen</p>
-                    <p class="mb-1">Trọng lượng:<br>▫ 30g<br>▫ 40g<br>▫ 50g</p>
-                    <p class="mb-1">Kích thước: Thiết kế ôm tay, co giãn linh hoạt</p>
-                `,
-                highlightsHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Chất liệu mềm nhẹ, tạo cảm giác thoải mái</li>
-                        <li>✔ Không bám bụi vải khi sử dụng</li>
-                        <li>✔ Độ đàn hồi cao, thao tác linh hoạt</li>
-                        <li>✔ Phù hợp công việc cần độ chính xác</li>
-                        <li>✔ Thoáng khí, hạn chế đổ mồ hôi tay</li>
-                        <li>✔ Chống trầy xước nhẹ khi thao tác</li>
-                        <li>✔ Đường dệt mịn đẹp, độ bền cao</li>
-                        <li>✔ Có thể sử dụng liên tục trong thời gian dài</li>
-                    </ul>
-                `,
-                appsHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Lắp ráp linh kiện điện tử</li>
-                        <li>✔ Nhà máy điện tử</li>
-                        <li>✔ Phòng sạch</li>
-                        <li>✔ Kho vận nhẹ</li>
-                        <li>✔ Đóng gói sản phẩm</li>
-                        <li>✔ Kiểm hàng</li>
-                        <li>✔ Sản xuất công nghiệp nhẹ</li>
-                    </ul>
-                `,
-                storageHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>▪ Giặt sạch sau khi sử dụng</li>
-                        <li>▪ Bảo quản nơi thoáng mát</li>
-                        <li>▪ Tránh tiếp xúc nhiệt độ cao</li>
-                        <li>▪ Không dùng với hóa chất mạnh</li>
-                    </ul>
-                    <p class="text-xs text-gray-400 mt-4 font-normal">#baotaypoly #baotaypolyester #baotayphongsach #baotaylaprap #baotaylaodong</p>
-                `
+                material: "Polyester cao cấp, sợi Poly co giãn, Nylon tổng hợp",
+                usage: "Lắp ráp linh kiện điện tử, nhà máy điện tử, phòng sạch, kho vận nhẹ, đóng gói sản phẩm, kiểm hàng, sản xuất công nghiệp nhẹ.",
+                description: "Chất liệu mềm nhẹ, tạo cảm giác thoải mái. Không bám bụi vải khi sử dụng. Độ đàn hồi cao, thao tác linh hoạt. Phù hợp công việc cần độ chính xác. Thoáng khí, hạn chế đổ mồ hôi tay. Chống trầy xước nhẹ khi thao tác. Đường dệt mịn đẹp, độ bền cao. Có thể sử dụng liên tục trong thời gian dài.",
+                detailedDescription: "Giặt sạch sau khi sử dụng. Bảo quản nơi thoáng mát. Tránh tiếp xúc nhiệt độ cao. Không dùng với hóa chất mạnh. Các hashtag liên quan: #baotaypoly #baotaypolyester #baotayphongsach #baotaylaprap #baotaylaodong"
             },
             {
                 id: 22,
@@ -472,28 +307,10 @@
                 price: null, category: "poly", stock: 2500,
                 image: "https://placehold.co/500x500/999999/white?text=Poly+Xam",
                 featured: false, brand: "Thùy Dương", standard: "Thiết kế ôm tay, co giãn linh hoạt",
-                material: "Polyester co giãn cao mịn sọc xám", usage: "Xám",
-                infoHtml: `
-                    <p class="mb-1">Tên sản phẩm: Bao tay Poly màu Xám</p>
-                    <p class="mb-1">Chất liệu: Polyester co giãn, nylon mịn</p>
-                    <p class="mb-1">Màu sắc: Xám sạch chống dơ</p>
-                    <p class="mb-1">Trọng lượng: 30g, 40g, 50g</p>
-                `,
-                highlightsHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Sợi đan khít không bụi vải xơ lông ảnh hưởng linh kiện</li>
-                        <li>✔ Độ dẻo dai đàn dẻo co dãn hoàn hảo bám sát tay</li>
-                    </ul>
-                `,
-                appsHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Kiểm hàng vi mạch bán dẫn, đóng gói cấu kiện</li>
-                    </ul>
-                `,
-                storageHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>▪ Vệ sinh sạch phơi khô ráo bóng râm mát</li>
-                    </ul>`
+                material: "Polyester cao cấp, sợi Poly màu xám",
+                usage: "Nhà máy điện tử, kiểm hàng, đóng gói cấu kiện cơ khí nhẹ.",
+                description: "Chất liệu co giãn linh hoạt mềm mại, màu xám sạch sẽ lâu cũ, không để lại xơ bụi vải sợi bông.",
+                detailedDescription: "Giặt sạch sau khi sử dụng. Bảo quản nơi thoáng mát thoáng khí. Tránh xa các nguồn nhiệt độ quá cao."
             },
             {
                 id: 23,
@@ -501,58 +318,603 @@
                 price: null, category: "poly", stock: 2400,
                 image: "https://placehold.co/500x500/222222/white?text=Poly+Den",
                 featured: false, brand: "Thùy Dương", standard: "Thiết kế ôm tay, co giãn linh hoạt",
-                material: "Sợi dệt Polyester tổng hợp đen cao cấp", usage: "Đen",
-                infoHtml: `
-                    <p class="mb-1">Tên sản phẩm: Bao tay Poly màu Đen</p>
-                    <p class="mb-1">Chất liệu: Sợi vải dệt poly đen dẻo dai</p>
-                    <p class="mb-1">Màu sắc: Đen chuyên nghiệp</p>
-                `,
-                highlightsHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Sợi dai kết cấu bền bỉ, sử dụng liên tục không phai nhão</li>
-                    </ul>
-                `,
-                appsHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Lắp ráp cơ khí điện tử dây chuyền nhà máy sạch</li>
-                    </ul>
-                `,
-                storageHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>▪ Tránh tiếp xúc trực tiếp dung môi axit ăn mòn</li>
-                    </ul>`
+                material: "Sợi nylon tổng hợp Polyester cao cấp nhuộm đen chống bẩn",
+                usage: "Thao tác linh kiện cơ khí nhẹ, lắp ráp kỹ thuật nhà xưởng dây chuyền.",
+                description: "Độ đàn hồi đàn dẻo dẻo cực tốt bám khít lòng tay, tối ưu cho công việc cần chính xác tuyệt đối.",
+                detailedDescription: "Vệ sinh giặt sạch phơi khô sau khi thao tác làm việc. Không ngâm chung dung môi hóa chất ăn mòn mạnh."
             },
-            { id: 25, name: "[Sản phẩm bao tay Poly trống 1]", price: null, category: "poly", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Poly+Trong+1", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống.", detailedDescription: "Trống." },
-            { id: 26, name: "[Sản phẩm bao tay Poly trống 2]", price: null, category: "poly", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Poly+Trong+2", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống.", detailedDescription: "Trống." },
-            { id: 27, name: "[Sản phẩm bao tay Poly trống 3]", price: null, category: "poly", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Poly+Trong+3", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống.", detailedDescription: "Trống." },
-            { id: 28, name: "[Sản phẩm bao tay Poly trống 4]", price: null, category: "poly", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Poly+Trong+4", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống.", detailedDescription: "Trống." },
+            { id: 25, name: "[Sản phẩm bao tay Poly trống 1]", price: null, category: "poly", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Poly+Trong+1", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu sau.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 26, name: "[Sản phẩm bao tay Poly trống 2]", price: null, category: "poly", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Poly+Trong+2", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu sau.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 27, name: "[Sản phẩm bao tay Poly trống 3]", price: null, category: "poly", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Poly+Trong+3", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu sau.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 28, name: "[Sản phẩm bao tay Poly trống 4]", price: null, category: "poly", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Poly+Trong+4", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu sau.", detailedDescription: "Trống chờ bổ sung." },
 
-            // 3. NHÓM BAO TAY PHỦ PU (Thuộc danh mục phủ sơn nhựa)
+            // 3. NHÓM BAO TAY PHỦ PU (Thuộc mục phủ sơn)
             {
                 id: 31,
-                name: "Bao tay phủ PU chống trơn ma sát bàn tay",
+                name: "Bao tay phủ PU chống trơn lòng bàn tay",
                 price: null, category: "phu-son", stock: 3500,
                 image: "https://placehold.co/500x500/2E7D32/white?text=Phu+PU",
                 featured: true, brand: "Thùy Dương / Nhập khẩu", standard: "Ôm sát bàn tay, co giãn tốt",
-                material: "Sợi polyester, Phủ PU lòng bàn tay", usage: "Xám phủ đen, Trắng phủ PU, Đen phủ PU",
-                infoHtml: `
-                    <p class="mb-1">Tên sản phẩm: Bao tay phủ PU chống trơn</p>
-                    <p class="mb-1">Chất liệu:<br>▫ Sợi polyester<br>▫ Phủ PU lòng bàn tay</p>
-                    <p class="mb-1">Màu sắc:<br>▫ Xám phủ đen<br>▫ Trắng phủ PU<br>▫ Đen phủ PU</p>
-                    <p class="mb-1">Trọng lượng:<br>▫ 40g<br>▫ 50g<br>▫ 60g</p>
-                    <p class="mb-1">Kích thước: Ôm sát bàn tay, co giãn tốt</p>
-                `,
-                highlightsHtml: `
-                    <ul class="list-none space-y-1 pl-1">
-                        <li>✔ Lớp phủ PU tăng độ bám khi cầm nắm</li>
-                        <li>✔ Hạn chế trơn trượt khi thao tác</li>
-                        <li>✔ Thiết kế ôm tay, thao tác dễ dàng</li>
-                        <li>✔ Chống mài mòn tốt</li>
-                        <li>✔ Chất liệu mềm mại, thoải mái khi đeo</li>
-                        <li>✔ Độ bền cao, sử dụng lâu dài</li>
-                        <li>✔ Không gây cộm tay khi làm việc</li>
-                        <li>✔ Phù hợp công việc cần độ chính xác cao</li>
-                    </ul>
-                `,
-                appsHtml: `
-                    <ul class="list-none space-y-1
+                material: "Sợi polyester mỏng nhẹ mịn, phủ nhựa PU lòng bàn tay",
+                usage: "Nhà máy điện tử, kho hàng đóng gói, lắp ráp linh kiện, cơ khí chính xác, đóng gói sản phẩm, sản xuất công nghiệp, công việc cần chống trơn.",
+                description: "Lớp phủ PU tăng độ bám khi cầm nắm, hạn chế trơn trượt khi thao tác. Thiết kế ôm tay, thao tác dễ dàng. Chống mài mòn tốt. Chất liệu mềm mại, thoải mái khi đeo. Độ bền cao, sử dụng lâu dài. Không gây cộm tay khi làm việc. Phù hợp công việc cần độ chính xác cao.",
+                detailedDescription: "Không phơi trực tiếp dưới nắng gắt. Tránh tiếp xúc dầu hóa chất mạnh. Giặt nhẹ sau khi sử dụng. Bảo quản nơi khô ráo. Các hashtag liên quan: #baotayPU #baotayphuPU #baotaychongtron #baotaylaprap #baotaycongnghiep"
+            },
+
+            // 4. NHÓM BAO TAY PHỦ SƠN
+            {
+                id: 41,
+                name: "Bao tay phủ sơn nhám chống trơn công nghiệp",
+                price: null, category: "phu-son", stock: 2900,
+                image: "https://placehold.co/500x500/1B5E20/white?text=Phu+Son+Nham",
+                featured: true, brand: "Thùy Dương", standard: "Co giãn tốt, ôm tay chắc chắn",
+                material: "Len cotton dệt máy, cao su latex phủ sơn nhám lòng bàn tay",
+                usage: "Công trình xây dựng, cơ khí bảo trì, xưởng gỗ nặng, sắt thép công nghiệp, kho vận khuân vác, bốc xếp hàng hóa, nhà máy sản xuất, công việc ngoài trời.",
+                description: "Lớp phủ nhám tăng độ ma sát cực tốt, chống trơn trượt hiệu quả. Hạn chế trầy xước khi lao động. Chống mài mòn cao. Cầm nắm vật nặng chắc tay hơn. Chất liệu dày dặn, đội bền cao. Phù hợp môi trường làm việc khắc nghiệt. Sử dụng được trong môi trường dầu nhẹ.",
+                detailedDescription: "Tránh tiếp xúc nhiệt độ quá cao. Bảo quản nơi thoáng mát. Vệ sinh sau khi sử dụng. Không ngâm hóa chất mạnh. Các hashtag liên quan: #baotayphuson #baotaychongtron #baotaycongtrinh #baotayxaydung #baotaycokhi"
+            },
+
+            // 7. NHÓM BAO TAY NITRILE (Gộp vào mục phủ sơn/PU/Nitrile)
+            {
+                id: 71,
+                name: "Bao tay Nitrile chống sỉ dầu nhớt công nghiệp",
+                price: null, category: "phu-son", stock: 4000,
+                image: "https://placehold.co/500x500/0288D1/white?text=Nitrile+Chong+Dau",
+                featured: true, brand: "Nhập khẩu chính hãng", standard: "Kháng đâm thủng mài mòn hóa chất nhẹ",
+                material: "Nitrile Rubber cao cấp, cao su tổng hợp chống thấm dầu mỡ nhớt chuyên dụng",
+                usage: "Gara ô tô, sửa chữa xe máy, cơ khí dầu nhớt, nhà máy công nghiệp, chế biến thực phẩm, phòng thí nghiệm, sơn – hóa chất nhẹ, vệ sinh công nghiệp, kho vận – sản xuất.",
+                description: "Khả năng chống dầu và chống nhớt hiệu quả. Hạn chế thấm hóa chất nhẹ khi làm việc. Chất liệu co giãn tốt, ôm sát bàn tay. Không gây kích ứng da tay khi sử dụng lâu. Bề mặt tăng độ bám khi cầm nắm. Chống rách và chống thủng tốt. Độ đàn hồi cao, thao tác linh hoạt. Phù hợp môi trường làm việc dầu mỡ công nghiệp. Thiết kế hiện đại, chuyên nghiệp. Có thể sử dụng trong thời gian dài.",
+                detailedDescription: "Bảo quản nơi khô ráo thoáng mát. Tránh tiếp xúc nhiệt độ quá cao. Không để gần vật sắc nhọn. Thay mới khi có dấu hiệu rách thủng. Các hashtag liên quan: #baotaynitrile #baotaychongdau #baotaycokhi #baotaygara #baotayhoachat #baotayantoan"
+            },
+            { id: 73, name: "[Sản phẩm phủ sơn/PU/Nitrile trống 1]", price: null, category: "phu-son", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu sau.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 74, name: "[Sản phẩm phủ sơn/PU/Nitrile trống 2]", price: null, category: "phu-son", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu sau.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 75, name: "[Sản phẩm phủ sơn/PU/Nitrile trống 3]", price: null, category: "phu-son", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu sau.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 76, name: "[Sản phẩm phủ sơn/PU/Nitrile trống 4]", price: null, category: "phu-son", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ bổ sung dữ liệu sau.", detailedDescription: "Trống chờ bổ sung." },
+
+            // 5 & 6. NHÓM BAO TAY CHỐNG CẮT / CHỐNG GIẬT CÁCH ĐIỆN (Gộp chung mảng độc lập)
+            {
+                id: 51,
+                name: "Găng tay bảo hộ chống cắt sợi HPPE Level 5",
+                price: null, category: "chong-cat-giat", stock: 800,
+                image: "https://placehold.co/500x500/b71c1c/white?text=Chong+Cat+Lvl5",
+                featured: true, brand: "Delta Plus / Nhập khẩu", standard: "Co giãn tốt, ôm sát bàn tay - Chống cắt Level 3, Level 5",
+                material: "HPPE cao cấp, sợi chống cắt chuyên dụng, sợi thủy tinh gia cường dày đặc",
+                usage: "Cơ khí chế tạo cơ khí công nghiệp nặng, gia công tấm kim loại kim loại, xưởng kính, dao cắt công nghiệp, chế biến thực phẩm, sắt thép tấm lớn sắc nhọn, nhà máy sản xuất, công trình kỹ thuật.",
+                description: "Khả năng chống cắt vượt trội, bảo vệ tay tuyệt đối khi thao tác vật sắc bén cạnh rìa tôn thép. Chất liệu bền chắc chịu ma sát mài mòn cực tốt, dẻo dai đàn hồi.",
+                detailedDescription: "Không dùng với môi trường nhiệt độ quá cao. Giặt sạch phơi ráo sau khi sử dụng bảo quản nơi khô thoáng khô ráo. Kiểm tra kỹ lưỡng lỗi đứt sợi trước khi dùng lại. Các hashtag liên quan: #baotaychongcat #gangtaychongcat #baotaycokhi #baotaygiare"
+            },
+            {
+                id: 61,
+                name: "Bao tay cách điện chống giật điện lực hạ thế",
+                price: null, category: "chong-cat-giat", stock: 400,
+                image: "https://placehold.co/500x500/EF6C00/white?text=Cach+Dien+Ha+The",
+                featured: true, brand: "Nhập khẩu cách điện chính hãng", standard: "Thiết kế vừa tay, linh hoạt khi thao tác - Điện áp cách điện 500V, 1kV",
+                material: "Cao su cách điện áp cao cấp, cao su Latex chuyên dụng kiểm định chặt chẽ",
+                usage: "Ngành điện lực hạ thế, thi công lắp đặt bảo trì lưới sửa chữa điện dân dụng gia đình, kỹ thuật điện công trình, nhà máy tủ tổng hệ thống.",
+                description: "Khả năng cách điện an toàn tuyệt đối cao, hạn chế triệt để nguy cơ rò rỉ điện giật nguy hiểm khi thao tác kỹ thuật, kết cấu dẻo dai đàn dẻo đàn hồi tốt cầm dụng cụ bám tay.",
+                detailedDescription: "Tuyệt đối không để gần các vật dụng sắc nhọn đâm xuyên thủng. Phải cuộn kiểm tra kín khí đâm rách trước khi mang thao tác. Tránh xa ánh nắng mặt trời trực tiếp phá hủy cao su. Các hashtag liên quan: #baotaychonggiat #baotaycachdien #baotaydiendien #baotayantoandien"
+            },
+            {
+                id: 62,
+                name: "Bao tay cách điện chống giật cao thế trung thế",
+                price: null, category: "chong-cat-giat", stock: 200,
+                image: "https://placehold.co/500x500/D84315/white?text=Trung+The+Cach+Dien",
+                featured: false, brand: "Nhập khẩu kiểm định điện lực lớn", standard: "Cách điện an toàn dòng cao áp trung thế - Điện áp cách điện 7kV, 22kV",
+                material: "Cao su tự nhiên tinh khiết dày dặn kết cấu cách điện áp đặc chủng",
+                usage: "Thao tác trên đường dây lưới điện trung thế ngoài trời, trạm biến áp trung cao áp, nhà máy điện trạm phân phối lớn tải.",
+                description: "Kết cấu cao su dày siêu bền đạt chuẩn quốc tế bảo vệ tính mạng tối cao, chiều dài bao trọn cánh tay chống phóng điện rò rỉ.",
+                detailedDescription: "Bảo quản nguyên vẹn nơi khô ráo râm mát hộp đựng tối tăm chuyên dụng, không gấp nếp nứt gãy cao su cao áp điện lực điện thế."
+            },
+            { id: 64, name: "[Sản phẩm chống cắt / chống giật trống 1]", price: null, category: "chong-cat-giat", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ điền dữ liệu sau này.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 65, name: "[Sản phẩm chống cắt / chống giật trống 2]", price: null, category: "chong-cat-giat", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ điền dữ liệu sau này.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 66, name: "[Sản phẩm chống cắt / chống giật trống 3]", price: null, category: "chong-cat-giat", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ điền dữ liệu sau này.", detailedDescription: "Trống chờ bổ sung." },
+            { id: 67, name: "[Sản phẩm chống cắt / chống giật trống 4]", price: null, category: "chong-cat-giat", stock: 0, image: "https://placehold.co/500x500/ccc/white?text=Trong", brand: "Đang cập nhật", standard: "Đang cập nhật", material: "Đang cập nhật", usage: "Đang cập nhật", description: "Trống chờ điền dữ liệu sau này.", detailedDescription: "Trống chờ bổ sung." }
+        ];
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let currentPage = 'home';
+
+        function displayPrice(price) { return price ? price.toLocaleString('vi-VN') + '₫' : 'Liên hệ để được báo giá'; }
+        function saveCart() { localStorage.setItem('cart', JSON.stringify(cart)); updateCartUI(); }
+        
+        function updateCartUI() { 
+            let count = cart.reduce((s, i) => s + i.quantity, 0);
+            if(document.getElementById('cartCountHeader')) document.getElementById('cartCountHeader').innerText = count;
+            renderCartItems();
+        }
+
+        function renderCartItems() {
+            const container = document.getElementById('cartItemsList');
+            if(!container) return;
+            if(cart.length === 0) { 
+                container.innerHTML = '<div class="text-center text-gray-500 py-8 text-base">Danh sách yêu cầu trống</div>'; 
+                document.getElementById('cartTotal').innerText = 'Liên hệ'; 
+                return; 
+            }
+            let html = '';
+            cart.forEach((item) => {
+                const prod = products.find(p => p.id === item.id);
+                if(!prod) return;
+                let detailsStr = item.weight ? `<p class="text-xs text-[#FF8C00] font-semibold">Trọng lượng: ${item.weight}</p>` : '';
+                html += `<div class="flex gap-3 border-b pb-3 items-center">
+                            <img src="${prod.image}" class="w-14 h-14 object-cover rounded">
+                            <div class="flex-1">
+                                <p class="font-semibold text-sm leading-tight">${prod.name}</p>
+                                ${detailsStr}
+                                <div class="flex items-center gap-2 mt-1">
+                                    <button class="cart-qty-minus bg-gray-200 px-2 rounded text-xs" data-unique="${item.uniqueId}">-</button>
+                                    <span class="text-xs font-bold">${item.quantity}</span>
+                                    <button class="cart-qty-plus bg-gray-200 px-2 rounded text-xs" data-unique="${item.uniqueId}">+</button>
+                                    <button class="text-red-500 text-xs ml-2 remove-item" data-unique="${item.uniqueId}"><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </div>
+                            <div class="text-xs text-right text-gray-500 font-medium">Yêu cầu báo giá</div>
+                        </div>`;
+            });
+            container.innerHTML = html;
+            document.getElementById('cartTotal').innerText = 'Liên hệ';
+            
+            document.querySelectorAll('.cart-qty-minus').forEach(btn => btn.addEventListener('click', () => { adjustQuantityUnique(btn.dataset.unique, -1); }));
+            document.querySelectorAll('.cart-qty-plus').forEach(btn => btn.addEventListener('click', () => { adjustQuantityUnique(btn.dataset.unique, 1); }));
+            document.querySelectorAll('.remove-item').forEach(btn => btn.addEventListener('click', () => { cart = cart.filter(i => i.uniqueId !== btn.dataset.unique); saveCart(); }));
+        }
+
+        function adjustQuantityUnique(uniqueId, delta) {
+            let idx = cart.findIndex(i => i.uniqueId === uniqueId);
+            if(idx !== -1) {
+                cart[idx].quantity += delta;
+                if(cart[idx].quantity <= 0) cart.splice(idx, 1);
+                saveCart();
+            }
+        }
+
+        function addToCartSpecial(id, weight = null, qty = 1) {
+            let uniqueId = id + (weight ? '-' + weight : '');
+            let existing = cart.find(i => i.uniqueId === uniqueId);
+            if(existing) {
+                existing.quantity += qty;
+            } else {
+                cart.push({ uniqueId, id, weight, quantity: qty });
+            }
+            saveCart();
+            showToast("✅ Đã thêm vào danh sách yêu cầu báo giá!");
+        }
+
+        function showToast(msg) { 
+            let toast = document.createElement('div'); 
+            toast.className = "fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-5 py-2 rounded-lg z-[1200] text-sm shadow-lg text-center min-w-[250px]"; 
+            toast.innerText = msg; 
+            document.body.appendChild(toast); 
+            setTimeout(()=>toast.remove(),2000); 
+        }
+
+        // ---------- TRANG CHỦ (HOME) ----------
+        function renderHome() {
+            const featured = products.filter(p => p.featured);
+            return `
+            <section class="hero-full bg-gradient-to-r from-[#0F4C81] to-[#0b3a62] text-white flex items-center">
+                <div class="container mx-auto px-4 py-12 md:py-0">
+                    <div class="flex flex-col md:flex-row items-center gap-12">
+                        <div class="md:w-1/2 text-center md:text-left">
+                            <h1 class="text-4xl md:text-6xl font-bold leading-tight">BAO TAY LEN BẢO HỘ LAO ĐỘNG</h1>
+                            <p class="text-2xl text-[#FF8C00] font-semibold mt-3">Chất lượng cao – Giá tận xưởng – Giao hàng toàn quốc</p>
+                            <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
+                                <a href="#" data-page="products" class="nav-link btn-cta text-white px-8 py-3 rounded-lg font-bold text-lg inline-block">Xem sản phẩm</a>
+                                <button id="getQuoteBtn" class="border-2 border-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-[#0F4C81] transition">Liên hệ báo giá</button>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2">
+                            <img src="https://placehold.co/600x500/FFFFFF/0F4C81?text=Găng+tay+Thùy+Dương" alt="Banner" class="rounded-2xl shadow-2xl w-full">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-col md:flex-row items-center gap-10">
+                        <div class="md:w-1/2">
+                            <img src="https://placehold.co/500x400/0F4C81/white?text=Nhà+máy+Thùy+Dương" alt="Công ty" class="rounded-2xl shadow-lg w-full">
+                        </div>
+                        <div class="md:w-1/2">
+                            <h2 class="text-3xl font-bold text-[#0F4C81]">CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</h2>
+                            <p class="mt-4 text-gray-700 text-lg">Chuyên sản xuất và phân phối bao tay len bảo hộ lao động phục vụ công trình, nhà máy và đại lý trên toàn quốc.</p>
+                            <p class="mt-3 text-gray-600"><i class="fas fa-map-marker-alt text-[#FF8C00] mr-2"></i> Số 68, tổ 4, Khu phố 4, Phường Trảng Dài, TP. Biên Hòa, Đồng Nai</p>
+                            <div class="mt-6">
+                                <a href="#" data-page="about" class="nav-link inline-block bg-[#0F4C81] text-white px-6 py-2 rounded-lg hover:bg-[#0a3a62]">Xem chi tiết →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16 bg-gray-50">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center text-[#0F4C81] mb-10">Danh mục sản phẩm</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-lg transition cursor-pointer filter-cat" data-cat="len"><img src="https://placehold.co/150x150/0F4C81/white?text=Len" class="mx-auto w-28 h-28 object-cover rounded-full"><h3 class="font-bold mt-3">Bao tay len</h3><p class="text-sm text-gray-500">Nhiều chủng loại dệt sỉ</p></div>
+                        <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-lg transition cursor-pointer filter-cat" data-cat="poly"><img src="https://placehold.co/150x150/FF8C00/white?text=Poly" class="mx-auto w-28 h-28 object-cover rounded-full"><h3 class="font-bold mt-3">Bao tay Poly</h3><p class="text-sm text-gray-500">Sợi vải mềm nhẹ chống bụi</p></div>
+                        <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-lg transition cursor-pointer filter-cat" data-cat="chong-cat-giat"><img src="https://placehold.co/150x150/d32f2f/white?text=Chong+Cat+Giat" class="mx-auto w-28 h-28 object-cover rounded-full"><h3 class="font-bold mt-3">Chống cắt / chống giật</h3><p class="text-sm text-gray-500">Kháng cơ học, cách điện an toàn</p></div>
+                        <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-lg transition cursor-pointer filter-cat" data-cat="phu-son"><img src="https://placehold.co/150x150/2e7d32/white?text=Phu+Son+PU" class="mx-auto w-28 h-28 object-cover rounded-full"><h3 class="font-bold mt-3">Phủ sơn / PU / Nitrile</h3><p class="text-sm text-gray-500">Chống trơn trượt dầu mỡ tốt</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="flex justify-between items-center mb-8"><h2 class="text-3xl font-bold text-[#0F4C81]">Sản phẩm nổi bật</h2><a href="#" data-page="products" class="nav-link text-[#FF8C00] text-lg">Xem tất cả →</a></div>
+                    <div class="swiper featuredSwiper overflow-hidden"><div class="swiper-wrapper">${featured.map(p => `<div class="swiper-slide"><div class="bg-gray-50 p-5 rounded-xl shadow text-center flex flex-col justify-between h-80"><img src="${p.image}" class="h-36 mx-auto object-cover rounded-lg"><h3 class="font-bold text-sm mt-3 line-clamp-1 text-gray-800">${p.name}</h3><p class="text-red-600 font-bold text-xs mt-1">${displayPrice(p.price)}</p><button class="view-detail-btn bg-[#0F4C81] text-white px-4 py-2 rounded-full mt-3 w-full text-xs hover:bg-opacity-90" data-id="${p.id}">Chi tiết / Báo giá</button></div></div>`).join('')}</div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+                </div>
+            </section>
+
+            <section class="py-16 bg-gray-900 text-white">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-3xl font-bold mb-6">Nhà máy sản xuất hiện đại</h2>
+                    <div class="max-w-4xl mx-auto">
+                        <iframe width="100%" height="450" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0" title="Nhà máy" frameborder="0" allowfullscreen class="rounded-2xl shadow-2xl"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="bg-gray-800 text-gray-300 py-10">
+                <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
+                    <div><h4 class="text-xl font-bold text-white mb-3">Bao Tay Thùy Dương</h4><p class="text-sm">Chuyên cung cấp găng tay bảo hộ lao động</p><p class="mt-2 text-sm"><i class="fas fa-phone-alt"></i> 033 444 9494</p><p class="text-sm"><i class="fab fa-zalo"></i> 0981 171 750</p></div>
+                    <div><h4 class="text-lg font-bold text-white mb-3">Danh mục</h4><ul class="space-y-1 text-sm"><li>Bao tay len</li><li>Bao tay Poly</li><li>Chống cắt / chống giật</li><li>Phủ sơn / PU</li></ul></div>
+                    <div><h4 class="text-lg font-bold text-white mb-3">Hỗ trợ</h4><div class="space-y-1 text-sm"><p>Chính sách bảo hành</p><p>Hướng dẫn đặt hàng</p></div></div>
+                    <div><iframe width="100%" height="150" style="border:0" loading="lazy" src="https://maps.google.com/maps?q=Biên+Hòa+Đồng+Nai&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe></div>
+                </div>
+                <div class="text-center text-sm border-t border-gray-700 pt-5 mt-5">© 2026 Bao Tay Thùy Dương - Bảo hộ lao động chuyên nghiệp</div>
+            </footer>`;
+        }
+
+        // ---------- TRANG GIỚI THIỆU (ABOUT) ----------
+        function renderAbout() {
+            return `<div class="about-banner bg-[#0F4C81] flex items-center justify-center" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1600x700/0F4C81/white?text=GIỚI+THIỆU+CÔNG+TY'); background-size: cover;"><div class="text-center text-white"><h1 class="text-5xl md:text-7xl font-bold">GIỚI THIỆU</h1><p class="text-xl md:text-2xl mt-3">Công ty TNHH Xuân Chương Gloves</p></div></div>
+            <section class="py-16 bg-white"><div class="container mx-auto px-4 max-w-5xl"><div class="flex flex-col md:flex-row gap-10 items-center"><div><h2 class="text-3xl font-bold text-[#0F4C81]">Công ty TNHH Xuân Chương Gloves</h2><p class="mt-4 text-gray-700 text-lg">Được thành lập năm 2018, chúng tôi tự hào là đơn vị sản xuất và phân phối bao tay bảo hộ lao động hàng đầu khu vực phía Nam. Với dây chuyền hiện đại sản xuất số lượng lớn, chúng tôi cam kết đáp ứng mọi nhu cầu sỉ trên toàn quốc.</p></div></div></div></section>`;
+        }
+
+        // ---------- TRANG SẢN PHẨM ----------
+        function renderProductsPage(){
+            return `<div class="container mx-auto px-4 py-10">
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/4 bg-white p-5 rounded-xl shadow h-fit">
+                                <h3 class="font-bold text-2xl mb-4">Bộ lọc</h3>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Danh mục</label>
+                                <select id="categoryFilter" class="w-full border p-3 rounded-lg mb-4 text-sm focus:outline-none focus:border-[#0F4C81]">
+                                    <option value="all">Tất cả sản phẩm</option>
+                                    <option value="len">Bao tay len</option>
+                                    <option value="poly">Bao tay Poly</option>
+                                    <option value="chong-cat-giat">Chống cắt / chống giật</option>
+                                    <option value="phu-son">Phủ sơn / PU / Nitrile</option>
+                                </select>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Từ khóa</label>
+                                <input type="text" id="searchInputFilter" placeholder="Tìm sản phẩm..." class="w-full border p-3 rounded-lg text-sm focus:outline-none focus:border-[#0F4C81]">
+                            </div>
+                            <div class="md:w-3/4">
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-6" id="productGridContainer"></div>
+                            </div>
+                        </div>
+                    </div>`;
+        }
+        
+        function renderProductList(filterCategory = "all", searchQuery = "") {
+            let filtered = products.filter(p => (filterCategory === "all" || p.category === filterCategory) && p.name.toLowerCase().includes(searchQuery.toLowerCase()));
+            const container = document.getElementById('productGridContainer');
+            if(!container) return;
+            if(filtered.length === 0) { 
+                container.innerHTML = '<div class="col-span-full text-center py-12 text-gray-500 text-lg">Không tìm thấy sản phẩm phù hợp</div>'; 
+                return;
+            }
+            
+            container.innerHTML = filtered.map(p => `
+                <div class="product-card bg-white rounded-xl shadow-md p-4 flex flex-col justify-between h-80" data-id="${p.id}">
+                    <div>
+                        <img src="${p.image}" class="card-main-img w-full h-44 object-cover rounded-lg mb-3">
+                        <h3 class="font-bold text-sm line-clamp-2 min-h-[2.5rem] text-gray-800 leading-tight">${p.name}</h3>
+                        <p class="text-red-600 font-bold text-xs mt-1">${displayPrice(p.price)}</p>
+                    </div>
+                    <div class="flex flex-col gap-2 mt-3">
+                        <button class="view-detail-btn bg-[#0F4C81] text-white px-3 py-2 rounded-full text-xs hover:bg-opacity-90 w-full">
+                            <i class="fas fa-layer-group mr-1"></i> Xem chi tiết & Tùy chọn
+                        </button>
+                    </div>
+                </div>`).join('');
+
+            attachProductEvents();
+        }
+
+        function attachProductEvents(){
+            document.querySelectorAll('.product-card').forEach(card => {
+                let id = parseInt(card.dataset.id);
+                card.querySelector('.view-detail-btn').addEventListener('click', () => { 
+                    showProductDetail(id); 
+                });
+            });
+        }
+
+        // TRANG CHI TIẾT SẢN PHẨM BUNG PHẲNG TRÊN TRANG CHỦ 100% ĐẦY ĐỦ THUỘC TÍNH
+        function showProductDetail(id){
+            const prod = products.find(p => p.id === id);
+            if(!prod) return;
+            
+            const relatedProducts = products.filter(p => p.category === prod.category && p.id !== prod.id).slice(0, 4);
+            const mainAppContent = document.getElementById('appContent');
+            if(!mainAppContent) return;
+
+            let modalActionContent = `
+                <div class="space-y-4">
+                    <div>
+                        <span class="block text-sm font-bold text-gray-700 mb-1.5">Chọn Trọng Lượng (Số Gam)</span>
+                        <div class="grid grid-cols-3 gap-2" id="general-weight-container">
+                            <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs active" data-weight="30g">30g</button>
+                            <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="40g">40g</button>
+                            <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="50g">50g</button>
+                            <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="60g">60g</button>
+                            <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="70g">70g</button>
+                            <button class="weight-btn border-2 border-gray-200 py-1.5 rounded-md font-semibold text-xs" data-weight="80g">80g</button>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap items-center gap-3">
+                        <div class="flex items-center border-2 border-gray-300 rounded-lg bg-white">
+                            <button id="modal-qty-minus" class="px-3 py-2 bg-gray-100 hover:bg-gray-200 font-bold text-sm rounded-l-md">-</button>
+                            <span id="modal-qty-value" class="px-4 font-bold text-sm">1</span>
+                            <button id="modal-qty-plus" class="px-3 py-2 bg-gray-100 hover:bg-gray-200 font-bold text-sm rounded-r-md">+</button>
+                        </div>
+                        <button id="btn-add-cart-main-modal" class="btn-cta text-white px-6 py-2.5 rounded-lg font-bold text-sm shadow-md flex-1 flex items-center justify-center gap-2">
+                            <i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ YÊU CẦU
+                        </button>
+                    </div>
+                </div>`;
+
+            let relatedHtml = '';
+            if(relatedProducts.length > 0) {
+                let relatedCards = relatedProducts.map(rp => `
+                    <div class="bg-white p-3 rounded-xl border border-gray-200 flex flex-col justify-between cursor-pointer hover:shadow-md transition item-related-click" data-id="${rp.id}">
+                        <img src="${rp.image}" class="w-full h-24 object-cover rounded-lg mb-2">
+                        <h5 class="text-xs font-bold text-gray-700 line-clamp-1">${rp.name}</h5>
+                        <p class="text-red-600 font-bold text-[11px] mt-0.5">${displayPrice(rp.price)}</p>
+                    </div>`).join('');
+                
+                relatedHtml = `
+                    <div class="pt-4 border-t">
+                        <h4 class="font-bold text-gray-800 mb-3 text-sm flex items-center gap-2 text-[#0F4C81]">
+                            <i class="fas fa-link"></i> Sản phẩm liên quan tương tự
+                        </h4>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            ${relatedCards}
+                        </div>
+                    </div>`;
+            }
+
+            mainAppContent.innerHTML = `
+                <div class="container mx-auto px-4 py-8 bg-white my-6 shadow-sm rounded-2xl border border-gray-100">
+                    
+                    <button id="btn-back-to-products" class="mb-6 flex items-center gap-2 text-sm font-semibold text-[#0F4C81] hover:text-[#FF8C00] transition">
+                        <i class="fas fa-arrow-left"></i> Quay lại danh sách sản phẩm
+                    </button>
+
+                    <div class="space-y-8">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                            
+                            <div class="md:col-span-5 w-full">
+                                <img id="detail-main-img" src="${prod.image}" class="w-full h-auto object-cover rounded-2xl border border-gray-100 shadow-sm mx-auto">
+                            </div>
+                            
+                            <div class="md:col-span-7 space-y-5">
+                                <h3 class="text-2xl md:text-3xl font-bold text-gray-800 leading-tight">${prod.name}</h3>
+                                
+                                <div class="text-2xl text-red-600 font-extrabold py-3.5 border-y border-gray-100 bg-gray-50 px-4 rounded-xl text-left">
+                                    ${displayPrice(prod.price)}
+                                </div>
+                                
+                                <div class="text-sm space-y-2 text-gray-600 pl-1">
+                                    <p><span class="text-[#FF8C00] mr-1.5">▪</span><strong class="text-gray-800">Thương hiệu:</strong> ${prod.brand || 'Thùy Dương'}</p>
+                                    <p><span class="text-[#FF8C00] mr-1.5">▪</span><strong class="text-gray-800">Tiêu chuẩn:</strong> ${prod.standard || 'Đạt tiêu chuẩn bảo hộ lao động'}</p>
+                                    <p><span class="text-[#FF8C00] mr-1.5">▪</span><strong class="text-gray-800">Chất liệu:</strong> ${prod.material || 'Chất lượng cao phục vụ xưởng sản xuất'}</p>
+                                    <p><span class="text-[#FF8C00] mr-1.5">▪</span><strong class="text-gray-800">Công dụng:</strong> ${prod.usage || 'An toàn lao động toàn diện'}</p>
+                                </div>
+
+                                <div class="pt-2 border-t border-dashed border-gray-200">
+                                    ${modalActionContent}
+                                </div>
+
+                                <div class="pt-3 border-t border-gray-100 flex items-center gap-3 text-sm text-gray-700 font-semibold justify-start">
+                                    <div class="w-9 h-9 rounded-full bg-red-600 text-white flex items-center justify-center animate-pulse flex-shrink-0">
+                                        <i class="fas fa-phone-alt text-sm"></i>
+                                    </div>
+                                    <span>Liên hệ để được báo giá chi tiết: <a href="tel:0981171750" class="text-red-600 text-base font-bold hover:underline">0981 171 750</a></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        ${relatedHtml}
+
+                        <div class="pt-4 border-t">
+                            <div class="flex border-b border-gray-200">
+                                <span class="bg-[#0F4C81] text-white px-5 py-2.5 rounded-t-lg font-bold text-sm tracking-wide inline-block">
+                                    MÔ TẢ CHI TIẾT SẢN PHẨM
+                                </span>
+                            </div>
+                            <div class="p-5 border border-t-0 border-gray-200 rounded-b-xl bg-white space-y-4 shadow-sm">
+                                <h4 class="font-bold text-gray-800 text-base">${prod.name}</h4>
+                                <p class="text-sm font-semibold text-gray-700">📌 THÔNG TIN SẢN PHẨM & ĐẶC ĐIỂM NỔI BẬT</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">${prod.description}</p>
+                                <p class="text-sm font-semibold text-gray-700">🔧 ỨNG DỤNG THỰC TẾ & HƯỚNG DẪN BẢO QUẢN THƯỜNG QUY</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">${prod.detailedDescription}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>`;
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Gắn sự kiện tương tác trang chi tiết
+            document.getElementById('btn-back-to-products').onclick = () => { loadPage('products'); };
+
+            document.querySelectorAll('.item-related-click').forEach(card => {
+                card.addEventListener('click', () => { showProductDetail(parseInt(card.dataset.id)); });
+            });
+
+            let currentQty = 1;
+            const qtyVal = document.getElementById('modal-qty-value');
+            document.getElementById('modal-qty-minus').onclick = () => { if(currentQty > 1) { currentQty--; qtyVal.innerText = currentQty; } };
+            document.getElementById('modal-qty-plus').onclick = () => { currentQty++; qtyVal.innerText = currentQty; };
+
+            let currentWeight = "30g";
+            document.querySelectorAll('.weight-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.weight-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentWeight = btn.dataset.weight;
+                });
+            });
+
+            document.getElementById('btn-add-cart-main-modal').onclick = () => {
+                addToCartSpecial(prod.id, currentWeight, currentQty);
+            };
+        }
+
+        function renderSimplePage(title, content) {
+            return `<div class="container mx-auto px-4 py-20 text-center"><h2 class="text-3xl font-bold text-[#0F4C81]">${title}</h2><p class="text-lg mt-4 text-gray-600">${content}</p><div class="mt-6"><a href="#" data-page="home" class="nav-link btn-cta text-white px-6 py-3 rounded-lg inline-block">Về trang chủ</a></div></div>`;
+        }
+
+        function attachFilterEvents(){
+            const catFilter = document.getElementById('categoryFilter');
+            const searchFilter = document.getElementById('searchInputFilter');
+            const refresh = () => renderProductList(catFilter?.value || 'all', searchFilter?.value || '');
+            if(catFilter) catFilter.addEventListener('change', refresh);
+            if(searchFilter) searchFilter.addEventListener('input', refresh);
+            refresh();
+        }
+
+        function attachHomeEvents() {
+            document.querySelectorAll('.filter-cat').forEach(el => el.addEventListener('click', () => { 
+                let cat = el.dataset.cat; 
+                loadPage('products'); 
+                setTimeout(()=>{ 
+                    const catFilter = document.getElementById('categoryFilter');
+                    if(catFilter) { catFilter.value = cat; renderProductList(cat, ''); }
+                }, 50); 
+            }));
+            document.querySelectorAll('.view-detail-btn').forEach(btn => btn.addEventListener('click', ()=>{ 
+                showProductDetail(parseInt(btn.dataset.id)); 
+            }));
+            document.getElementById('getQuoteBtn')?.addEventListener('click', () => showToast("Liên hệ báo giá sỉ: 033 444 9494 hoặc Zalo 0981 171 750"));
+        }
+
+        function initSwiper(){
+            if(document.querySelector('.featuredSwiper')) {
+                new Swiper('.featuredSwiper', { 
+                    slidesPerView: 2, 
+                    spaceBetween: 16, 
+                    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, 
+                    breakpoints: { 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } } 
+                });
+            }
+            if(document.querySelector('.testimonialSwiper')) {
+                new Swiper('.testimonialSwiper', { slidesPerView: 1, pagination: { el: '.swiper-pagination', clickable: true } });
+            }
+        }
+
+        function initHeaderSearch() {
+            const searchInput = document.getElementById('headerSearch');
+            const searchBtn = document.getElementById('headerSearchBtn');
+            const triggerSearch = () => {
+                let query = searchInput.value.trim();
+                loadPage('products');
+                setTimeout(() => {
+                    const searchFilter = document.getElementById('searchInputFilter');
+                    if(searchFilter) { searchFilter.value = query; renderProductList('all', query); }
+                }, 50);
+            };
+            searchBtn?.addEventListener('click', triggerSearch);
+            searchInput?.addEventListener('keypress', (e) => { if(e.key === 'Enter') triggerSearch(); });
+        }
+
+        function attachMegaMenuEvents() {
+            document.querySelectorAll('.filter-mega').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let cat = item.dataset.cat;
+                    loadPage('products');
+                    setTimeout(() => {
+                        const catFilter = document.getElementById('categoryFilter');
+                        if(catFilter) { catFilter.value = cat; renderProductList(cat, ''); }
+                    }, 50);
+                });
+            });
+
+            document.querySelectorAll('.click-mega-header').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let cat = btn.dataset.cat;
+                    loadPage('products');
+                    setTimeout(() => {
+                        const catFilter = document.getElementById('categoryFilter');
+                        if(catFilter) { catFilter.value = cat; renderProductList(cat, ''); }
+                    }, 50);
+                });
+            });
+        }
+
+        function loadPage(page) {
+            currentPage = page;
+            const main = document.getElementById('appContent');
+            if(!main) return;
+            
+            if(page === 'home') { main.innerHTML = renderHome(); attachHomeEvents(); initSwiper(); }
+            else if(page === 'about') { main.innerHTML = renderAbout(); }
+            else if(page === 'products') { main.innerHTML = renderProductsPage(); renderProductList('all',''); attachFilterEvents(); }
+            else if(page === 'quote') main.innerHTML = renderSimplePage("Báo giá sỉ", "Quý khách vui lòng liên hệ hotline 033 444 9494 hoặc Zalo 0981 171 750 để nhận báo giá tốt nhất.");
+            else if(page === 'news') main.innerHTML = renderSimplePage("Tin tức", "Cập nhật các bài viết về bảo hộ lao động sắp ra mắt.");
+            else if(page === 'contact') main.innerHTML = renderSimplePage("Liên hệ", "📞 033 444 9494 - 📱 Zalo 0981 171 750 - 📧 baotay@thuydung.com");
+            
+            bindMenuEvents();
+            window.scrollTo({ top: 0 });
+        }
+
+        function bindMenuEvents() {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.removeEventListener('click', handleNavClick);
+                link.addEventListener('click', handleNavClick);
+            });
+        }
+        
+        function handleNavClick(e) {
+            e.preventDefault();
+            const page = e.currentTarget.getAttribute('data-page');
+            if(page) loadPage(page);
+        }
+
+        document.getElementById('cartIconHeader')?.addEventListener('click', () => document.getElementById('cartDrawer')?.classList.remove('translate-x-full'));
+        document.getElementById('closeCartBtn')?.addEventListener('click', () => document.getElementById('cartDrawer')?.classList.add('translate-x-full'));
+        document.getElementById('checkoutBtn')?.addEventListener('click', () => {
+            if(cart.length === 0) { showToast("Vui lòng thêm sản phẩm cần báo giá vào danh sách!"); return; }
+            document.getElementById('checkoutModal').style.display = 'flex';
+        });
+        document.getElementById('closeCheckout')?.addEventListener('click', () => document.getElementById('checkoutModal').style.display = 'none');
+        document.getElementById('checkoutForm')?.addEventListener('submit', (e) => { 
+            e.preventDefault(); 
+            alert("✅ Gửi yêu cầu thành công! Chúng tôi sẽ tổng hợp danh sách mặt hàng và liên hệ báo giá sỉ sớm nhất."); 
+            cart = []; saveCart(); 
+            document.getElementById('checkoutModal').style.display = 'none'; 
+            document.getElementById('cartDrawer')?.classList.add('translate-x-full'); 
+            loadPage('products');
+        });
+
+        setTimeout(() => document.getElementById('discountPopup')?.classList.remove('hidden'), 5000);
+        document.getElementById('closePopup')?.addEventListener('click', () => document.getElementById('discountPopup')?.classList.add('hidden'));
+        document.getElementById('popupCta')?.addEventListener('click', () => { window.location.href = "tel:0334449494"; });
+
+        window.addEventListener('DOMContentLoaded', () => { 
+            loadPage('home'); 
+            updateCartUI(); 
+            initHeaderSearch();
+            attachMegaMenuEvents();
+        });
+    </script>
+</body>
+</html>
