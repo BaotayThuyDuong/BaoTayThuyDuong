@@ -23,22 +23,25 @@
         .product-card { transition: all 0.2s; border-radius: 20px; }
         .product-card:hover { box-shadow: 0 20px 25px -12px rgba(0,0,0,0.15); transform: translateY(-4px); }
         .cart-badge { top: -8px; right: -8px; }
+        .nav-link { cursor: pointer; transition: color 0.2s; }
+        .phone-item { white-space: nowrap; }
         @media (max-width: 768px) {
-            .header-main { flex-direction: column; text-align: center; }
+            .header-main { flex-direction: column; text-align: center; gap: 1rem; }
+            .phone-area { flex-direction: row !important; justify-content: center; gap: 1.5rem; }
             .menu-bar { flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
-            .phone-area { justify-content: center; }
+            .phone-item { white-space: normal; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER: Logo & Slogan căn giữa, Menu căn giữa, Số điện thoại bên phải -->
+    <!-- HEADER: Logo & Slogan căn giữa, Menu căn giữa, Số điện thoại bên phải (không xuống dòng) -->
     <header class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4">
-            <!-- Hàng trên: Logo trung tâm, số điện thoại bên phải -->
+            <!-- Hàng trên: Logo trung tâm, số điện thoại bên phải (không bị xuống dòng) -->
             <div class="header-main flex flex-wrap items-center justify-between gap-4">
-                <!-- Khoảng trống bên trái để cân bằng với số điện thoại -->
-                <div class="w-20 md:w-32"></div>
+                <!-- Khoảng trống bên trái để cân bằng -->
+                <div class="w-16 md:w-24"></div>
                 
                 <!-- Logo và slogan ở giữa -->
                 <div class="text-center flex-1">
@@ -49,13 +52,13 @@
                     <div class="text-lg md:text-xl text-gray-600 mt-2 font-medium">Bao Tay an toàn - Giá cả hợp lý</div>
                 </div>
 
-                <!-- 2 số điện thoại bên phải, mỗi số có icon phone + Zalo -->
-                <div class="phone-area flex flex-col items-end space-y-2 w-20 md:w-32">
-                    <div class="flex items-center gap-2">
+                <!-- 2 số điện thoại bên phải, mỗi số nằm trên 1 dòng nhưng không cách quá xa, có khoảng cách đều -->
+                <div class="phone-area flex flex-col items-end space-y-2 w-auto">
+                    <div class="phone-item flex items-center gap-2">
                         <a href="tel:0334449494" class="text-[#0F4C81] font-bold text-base md:text-lg"><i class="fas fa-phone-alt mr-1"></i> 033 444 9494</a>
                         <a href="https://zalo.me/0981171750" class="text-[#0068FF] text-xl"><i class="fab fa-zalo"></i></a>
                     </div>
-                    <div class="flex items-center gap-2">
+                    <div class="phone-item flex items-center gap-2">
                         <a href="tel:0981171750" class="text-[#0F4C81] font-bold text-base md:text-lg"><i class="fas fa-phone-alt mr-1"></i> 0981 171 750</a>
                         <a href="https://zalo.me/0981171750" class="text-[#0068FF] text-xl"><i class="fab fa-zalo"></i></a>
                     </div>
@@ -63,16 +66,16 @@
             </div>
         </div>
 
-        <!-- Thanh menu ngang căn giữa, chữ to -->
+        <!-- Thanh menu ngang căn giữa, chữ to, đã có cursor pointer và sự kiện -->
         <div class="bg-gray-50 border-t border-gray-200">
             <div class="container mx-auto px-4">
                 <nav class="menu-bar flex justify-center space-x-6 md:space-x-10 py-4 text-base md:text-lg font-semibold">
-                    <a href="#" data-page="home" class="nav-link text-gray-700 hover:text-[#FF8C00] transition">Trang chủ</a>
-                    <a href="#" data-page="products" class="nav-link text-gray-700 hover:text-[#FF8C00] transition">Sản phẩm</a>
-                    <a href="#" data-page="quote" class="nav-link text-gray-700 hover:text-[#FF8C00] transition">Báo giá sỉ</a>
-                    <a href="#" data-page="news" class="nav-link text-gray-700 hover:text-[#FF8C00] transition">Tin tức</a>
-                    <a href="#" data-page="about" class="nav-link text-gray-700 hover:text-[#FF8C00] transition">Giới thiệu</a>
-                    <a href="#" data-page="contact" class="nav-link text-gray-700 hover:text-[#FF8C00] transition">Liên hệ</a>
+                    <a href="#" data-page="home" class="nav-link text-gray-700 hover:text-[#FF8C00]">Trang chủ</a>
+                    <a href="#" data-page="products" class="nav-link text-gray-700 hover:text-[#FF8C00]">Sản phẩm</a>
+                    <a href="#" data-page="quote" class="nav-link text-gray-700 hover:text-[#FF8C00]">Báo giá sỉ</a>
+                    <a href="#" data-page="news" class="nav-link text-gray-700 hover:text-[#FF8C00]">Tin tức</a>
+                    <a href="#" data-page="about" class="nav-link text-gray-700 hover:text-[#FF8C00]">Giới thiệu</a>
+                    <a href="#" data-page="contact" class="nav-link text-gray-700 hover:text-[#FF8C00]">Liên hệ</a>
                 </nav>
             </div>
         </div>
@@ -109,6 +112,13 @@
                 </div>
             </form>
         </div>
+    </div>
+
+    <!-- Popup khuyến mãi -->
+    <div id="discountPopup" class="fixed bottom-5 left-5 bg-white p-4 rounded-xl shadow-2xl border-l-4 border-[#FF8C00] hidden z-[1100]">
+        <div class="flex justify-between"><span class="font-bold text-[#0F4C81] text-lg"><i class="fas fa-gift"></i> Giảm 10% đơn đầu</span><button id="closePopup" class="text-gray-400 text-xl">&times;</button></div>
+        <p class="text-sm mt-1">Nhập mã <span class="font-bold text-[#FF8C00]">THUYDUNG10</span> khi thanh toán.</p>
+        <button id="popupCta" class="mt-2 bg-[#FF8C00] text-white text-sm px-3 py-1 rounded">Nhận ngay</button>
     </div>
 
     <!-- Floating Zalo + Phone (bỏ Messenger) -->
@@ -254,17 +264,36 @@
             if(document.querySelector('.featuredSwiper')) new Swiper('.featuredSwiper', { slidesPerView: 2, spaceBetween: 20, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, breakpoints: { 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } } });
         }
 
-        // Sự kiện DOM
+        // Sự kiện DOM - ĐẢM BẢO MENU HOẠT ĐỘNG
+        function bindMenuEvents() {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.removeEventListener('click', handleNavClick);
+                link.addEventListener('click', handleNavClick);
+            });
+        }
+        function handleNavClick(e) {
+            e.preventDefault();
+            const page = e.currentTarget.getAttribute('data-page');
+            if(page) loadPage(page);
+        }
+        // Các sự kiện khác
         document.getElementById('cartIconHeader')?.addEventListener('click', () => document.getElementById('cartDrawer')?.classList.remove('translate-x-full'));
         document.getElementById('closeCartBtn')?.addEventListener('click', () => document.getElementById('cartDrawer')?.classList.add('translate-x-full'));
         document.getElementById('checkoutBtn')?.addEventListener('click', () => { document.getElementById('checkoutModal').style.display = 'flex'; });
         document.getElementById('closeCheckout')?.addEventListener('click', () => document.getElementById('checkoutModal').style.display = 'none');
         document.getElementById('checkoutForm')?.addEventListener('submit', (e) => { e.preventDefault(); alert("✅ Đặt hàng thành công! Chúng tôi sẽ liên hệ xác nhận trong ít phút."); cart = []; saveCart(); document.getElementById('checkoutModal').style.display = 'none'; document.getElementById('cartDrawer')?.classList.add('translate-x-full'); });
-        document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', (e) => { e.preventDefault(); let page = link.dataset.page; if(page) loadPage(page); }));
+        
+        // Popup
         setTimeout(() => { document.getElementById('discountPopup')?.classList.remove('hidden'); }, 5000);
         document.getElementById('closePopup')?.onclick = () => document.getElementById('discountPopup')?.classList.add('hidden');
         document.getElementById('popupCta')?.onclick = () => { document.getElementById('discountPopup')?.classList.add('hidden'); showToast("Mã THUYDUNG10: giảm 10% đơn hàng đầu"); };
-        window.addEventListener('load', () => { loadPage('home'); updateCartUI(); });
+        
+        // Khởi tạo
+        window.addEventListener('load', () => {
+            loadPage('home');
+            updateCartUI();
+            bindMenuEvents(); // gắn sự kiện cho menu sau khi load
+        });
     </script>
 </body>
 </html>
