@@ -539,8 +539,188 @@
         }
 
         function renderAbout() {
-            return `<div class="about-banner bg-[#0F4C81] flex items-center justify-center" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1600x700/0F4C81/white?text=GIỚI+THIỆU+CÔNG+TY'); background-size: cover;"><div class="text-center text-white"><h1 class="text-5xl md:text-7xl font-bold">GIỚI THIỆU</h1><p class="text-xl md:text-2xl mt-3">Công ty TNHH Xuân Chương Gloves</p></div></div>
-            <section class="py-16 bg-white"><div class="container mx-auto px-4 max-w-5xl"><div class="flex flex-col md:flex-row gap-10 items-center"><div><h2 class="text-3xl font-bold text-[#0F4C81]">Công ty TNHH Xuân Chương Gloves</h2><p class="mt-4 text-gray-700 text-lg">Được thành lập năm 2018, chúng tôi tự hào là đơn vị sản xuất và phân phối bao tay bảo hộ lao động hàng đầu khu vực phía Nam. Với dây chuyền hiện đại sản xuất số lượng lớn, chúng tôi cam kết đáp ứng mọi nhu cầu sỉ trên toàn quốc.</p></div></div></div></section>`;
+            return `
+            <!-- BANNER CHÍNH -->
+            <div class="about-banner bg-[#0F4C81] flex items-center justify-center relative py-20" style="background-image: linear-gradient(rgba(15, 76, 129, 0.85), rgba(11, 58, 98, 0.9)), url('https://placehold.co/1600x700/0F4C81/white?text=XUÂN+CHƯƠNG+GLOVES'); background-size: cover;">
+                <div class="text-center text-white max-w-4xl px-4">
+                    <h1 class="text-4xl md:text-6xl font-bold uppercase tracking-wider">GIỚI THIỆU</h1>
+                    <p class="text-xl md:text-2xl mt-4 font-semibold text-[#FF8C00]">CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</p>
+                    <p class="text-sm md:text-base mt-2 opacity-90">Đơn vị tiên phong trong lĩnh vực máy móc – nguyên liệu – bao tay bảo hộ cao cấp tại Việt Nam</p>
+                </div>
+            </div>
+
+            <!-- TỔNG QUAN CÔNG TY -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4 max-w-5xl">
+                    <div class="border-l-4 border-[#FF8C00] pl-4 mb-6">
+                        <h2 class="text-3xl font-bold text-[#0F4C81]">VỀ CHÚNG TÔI</h2>
+                    </div>
+                    <p class="text-gray-700 text-lg leading-8 mb-4 text-justify">
+                        Công ty TNHH Xuân Chương Gloves là doanh nghiệp hoạt động chuyên sâu trong lĩnh vực sản xuất, thương mại và nhập khẩu các sản phẩm phục vụ ngành bao tay bảo hộ lao động. Với định hướng phát triển bền vững, chuyên nghiệp và hiện đại, công ty không ngừng đầu tư công nghệ, mở rộng quy mô hoạt động và nâng cao chất lượng dịch vụ nhằm đáp ứng nhu cầu ngày càng cao của thị trường trong nước và quốc tế.
+                    </p>
+                    <p class="text-gray-700 text-lg leading-8 mb-8 text-justify">
+                        Xuân Chương Gloves tự hào là đối tác uy tín của nhiều doanh nghiệp, xưởng sản xuất, nhà máy và đại lý trên toàn quốc với phương châm: <strong class="text-[#FF8C00]">“Chất lượng tạo uy tín – Uy tín tạo thành công”</strong>. Chúng tôi luôn đặt lợi ích khách hàng lên hàng đầu, cam kết mang đến sản phẩm chất lượng cao, giá thành cạnh tranh và dịch vụ hỗ trợ chuyên nghiệp nhất.
+                    </p>
+                </div>
+            </section>
+
+            <!-- LĨNH VỰC HOẠT ĐỘNG -->
+            <section class="py-16 bg-gray-50 border-t border-b border-gray-100">
+                <div class="container mx-auto px-4 max-w-5xl">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-[#0F4C81] uppercase tracking-wide">LĨNH VỰC HOẠT ĐỘNG CỐT LÕI</h2>
+                        <div class="h-1 w-20 bg-[#FF8C00] mx-auto mt-3"></div>
+                    </div>
+
+                    <div class="space-y-12">
+                        <!-- 1. MÁY DỆT -->
+                        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 grid md:grid-cols-12 gap-6 items-center">
+                            <div class="md:col-span-7">
+                                <span class="text-xs font-bold text-[#FF8C00] tracking-wider uppercase">01. CÔNG NGHỆ & THIẾT BỊ</span>
+                                <h3 class="text-xl font-bold text-[#0F4C81] mt-1 mb-3">BUÔN BÁN MÁY DỆT BAO TAY CÔNG NGHIỆP</h3>
+                                <p class="text-sm text-gray-600 mb-4">Chuyên cung cấp các dòng máy dệt bao tay hiện đại với công nghệ tiên tiến, đáp ứng nhu cầu sản xuất từ quy mô nhỏ đến nhà máy công nghiệp lớn:</p>
+                                <ul class="text-sm text-gray-700 space-y-1.5 pl-4 list-disc mb-4">
+                                    <li>Máy dệt bao tay 7 kim, 10 kim dày dặn, mịn đẹp</li>
+                                    <li>Máy dệt tự động tốc độ cao, thế hệ điện tử mới</li>
+                                    <li>Hệ thống dây chuyền sản xuất hoàn chỉnh: Hoạt động ổn định, tiết kiệm điện, năng suất cao</li>
+                                </ul>
+                                <p class="text-xs text-[#0F4C81] font-semibold"><i class="fas fa-check-circle text-[#FF8C00] mr-1"></i> Hỗ trợ: Lắp đặt tận nơi, chuyển giao kỹ thuật, bảo trì sửa chữa & cung cấp linh kiện thay thế.</p>
+                            </div>
+                            <div class="md:col-span-5">
+                                <img src="https://placehold.co/500x350/0F4C81/white?text=May+Det+Bao+Tay" class="w-full h-48 object-cover rounded-xl shadow-sm">
+                            </div>
+                        </div>
+
+                        <!-- 2. MÁY ĐÓNG GÓI -->
+                        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 grid md:grid-cols-12 gap-6 items-center">
+                            <div class="md:col-span-7 md:order-2">
+                                <span class="text-xs font-bold text-[#FF8C00] tracking-wider uppercase">02. TỰ ĐỘNG HÓA</span>
+                                <h3 class="text-xl font-bold text-[#0F4C81] mt-1 mb-3">CUNG CẤP MÁY ĐÓNG GÓI TỰ ĐỘNG</h3>
+                                <p class="text-sm text-gray-600 mb-4">Cung cấp các dòng máy đóng gói hiện đại giúp tối ưu hóa nhân công và tăng tính chuyên nghiệp cho thành phẩm cuối cùng:</p>
+                                <ul class="text-sm text-gray-700 space-y-1.5 pl-4 list-disc mb-4">
+                                    <li>Máy đóng gói bao tay tự động tốc độ cao</li>
+                                    <li>Máy ép miệng túi, máy hút chân không</li>
+                                    <li>Máy in date tích hợp trên hệ thống đóng gói công nghiệp</li>
+                                </ul>
+                                <p class="text-xs text-[#0F4C81] font-semibold"><i class="fas fa-check-circle text-[#FF8C00] mr-1"></i> Ưu điểm: Tốc độ đóng gói nhanh, hoạt động chính xác, tiết kiệm chi phí vận hành.</p>
+                            </div>
+                            <div class="md:col-span-5 md:order-1">
+                                <img src="https://placehold.co/500x350/FF8C00/white?text=May+Dong+Goi+Tu+Dong" class="w-full h-48 object-cover rounded-xl shadow-sm">
+                            </div>
+                        </div>
+
+                        <!-- 3. NGUYÊN LIỆU SỢI -->
+                        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 grid md:grid-cols-12 gap-6 items-center">
+                            <div class="md:col-span-7">
+                                <span class="text-xs font-bold text-[#FF8C00] tracking-wider uppercase">03. NGUYÊN LIỆU ĐẦU VÀO</span>
+                                <h3 class="text-xl font-bold text-[#0F4C81] mt-1 mb-3">MUA BÁN CÁC LOẠI SỢI NGÀNH DỆT</h3>
+                                <p class="text-sm text-gray-600 mb-4">Phân phối đa dạng các loại sợi ngành dệt may và dệt găng tay bảo hộ. Nguồn hàng ổn định lâu dài, chất lượng đạt tiêu chuẩn khắt khe:</p>
+                                <ul class="text-sm text-gray-700 space-y-1.5 pl-4 list-disc mb-4">
+                                    <li>Sợi Cotton tự nhiên, sợi Poly, sợi TC co giãn</li>
+                                    <li>Sợi PE công nghiệp, sợi chống cắt chuyên dụng, sợi phủ cao cấp</li>
+                                </ul>
+                                <p class="text-xs text-[#0F4C81] font-semibold"><i class="fas fa-check-circle text-[#FF8C00] mr-1"></i> Cam kết: Giá thành cạnh tranh, cung ứng liên tục và hỗ trợ kỹ thuật chọn nguyên liệu phù hợp.</p>
+                            </div>
+                            <div class="md:col-span-5">
+                                <img src="https://placehold.co/500x350/555555/white?text=Nguyen+Lieu+Soi+Det" class="w-full h-48 object-cover rounded-xl shadow-sm">
+                            </div>
+                        </div>
+
+                        <!-- 4. BAO TAY BẢO HỘ -->
+                        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 grid md:grid-cols-12 gap-6 items-center">
+                            <div class="md:col-span-7 md:order-2">
+                                <span class="text-xs font-bold text-[#FF8C00] tracking-wider uppercase">04. THÀNH PHẨM PHÂN PHỐI</span>
+                                <h3 class="text-xl font-bold text-[#0F4C81] mt-1 mb-3">MUA BÁN CÁC LOẠI BAO TAY BẢO HỘ</h3>
+                                <p class="text-sm text-gray-600 mb-4">Sản xuất và cung ứng các giải pháp bảo vệ đôi tay cho người lao động trong mọi ngành nghề (Cơ khí, xây dựng, điện tử, logistics, nông nghiệp...):</p>
+                                <ul class="text-sm text-gray-700 space-y-1.5 pl-4 list-disc mb-4">
+                                    <li>Bao tay len tiêu chuẩn, bao tay phủ PU lòng bàn tay</li>
+                                    <li>Bao tay phủ cao su, phủ sơn nhám chống trơn</li>
+                                    <li>Bao tay phòng sạch, bao tay y tế và các dòng đạt tiêu chuẩn xuất khẩu</li>
+                                </ul>
+                                <p class="text-xs text-[#0F4C81] font-semibold"><i class="fas fa-check-circle text-[#FF8C00] mr-1"></i> Chất lượng: Độ bền cao, ôm sát dẻo dai, bảo đảm an toàn tuyệt đối khi làm việc.</p>
+                            </div>
+                            <div class="md:col-span-5 md:order-1">
+                                <img src="https://placehold.co/500x350/1B5E20/white?text=Bao+Tay+Bao+Ho" class="w-full h-48 object-cover rounded-xl shadow-sm">
+                            </div>
+                        </div>
+
+                        <!-- 5. NHẬP KHẨU CAO CẤP -->
+                        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 grid md:grid-cols-12 gap-6 items-center">
+                            <div class="md:col-span-7">
+                                <span class="text-xs font-bold text-[#FF8C00] tracking-wider uppercase">05. THƯƠNG MẠI QUỐC TẾ</span>
+                                <h3 class="text-xl font-bold text-[#0F4C81] mt-1 mb-3">NHẬP KHẨU CÁC LOẠI BAO TAY CAO CẤP</h3>
+                                <p class="text-sm text-gray-600 mb-4">Trực tiếp tuyển chọn và nhập khẩu chính ngạch các dòng găng tay đặc thù kỹ thuật cao từ những thị trường uy tín hàng đầu:</p>
+                                <ul class="text-sm text-gray-700 space-y-1.5 pl-4 list-disc mb-4">
+                                    <li>Hàn Quốc, Nhật Bản, Đài Loan</li>
+                                    <li>Trung Quốc, Malaysia (chuyên dòng cao su/Latex)</li>
+                                </ul>
+                                <p class="text-xs text-[#0F4C81] font-semibold"><i class="fas fa-check-circle text-[#FF8C00] mr-1"></i> Đảm bảo: Đầy đủ chứng nhận an toàn quốc tế, độ bền vượt trội cho công nghiệp nặng.</p>
+                            </div>
+                            <div class="md:col-span-5">
+                                <img src="https://placehold.co/500x350/b71c1c/white?text=Bao+Tay+Nhap+Khau" class="w-full h-48 object-cover rounded-xl shadow-sm">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TẦM NHÌN - SỨ MỆNH -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4 max-w-5xl">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-slate-50 p-6 rounded-2xl border-t-4 border-[#0F4C81]">
+                            <h4 class="font-bold text-lg text-[#0F4C81] mb-3"><i class="fas fa-eye mr-2 text-[#FF8C00]"></i> TẦM NHÌN</h4>
+                            <p class="text-sm text-gray-600 leading-6 text-justify">Trở thành một trong những doanh nghiệp hàng đầu Việt Nam trong lĩnh vực cung cấp máy móc, nguyên liệu và giải pháp bao tay bảo hộ lao động trọn gói, từng bước hướng tới thị trường quốc tế bằng chất lượng bền vững.</p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-2xl border-t-4 border-[#0F4C81]">
+                            <h4 class="font-bold text-lg text-[#0F4C81] mb-3"><i class="fas fa-bullseye mr-2 text-[#FF8C00]"></i> SỨ MỆNH</h4>
+                            <ul class="text-sm text-gray-600 space-y-2 list-none">
+                                <li><i class="fas fa-angle-right mr-1.5 text-[#FF8C00]"></i> Mang đến giải pháp sản xuất tự động hóa hiệu quả cao cho đối tác.</li>
+                                <li><i class="fas fa-angle-right mr-1.5 text-[#FF8C00]"></i> Cung cấp sản phẩm an toàn chất lượng với giá gốc xưởng tốt nhất.</li>
+                                <li><i class="fas fa-angle-right mr-1.5 text-[#FF8C00]"></i> Đồng hành, góp phần nâng cao ý thức bảo hộ lao động toàn quốc.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- CAM KẾT & THÔNG ĐIỆP -->
+                    <div class="mt-12 bg-gradient-to-r from-[#0F4C81] to-[#1565C0] text-white p-8 rounded-2xl text-center shadow-md">
+                        <h4 class="font-bold text-xl uppercase tracking-wide mb-6">CAM KẾT CỦA XUÂN CHƯƠNG GLOVES</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm font-medium mb-6">
+                            <div class="flex items-center justify-center gap-2"><i class="fas fa-check-circle text-[#FF8C00]"></i> Sản phẩm chất lượng cao</div>
+                            <div class="flex items-center justify-center gap-2"><i class="fas fa-check-circle text-[#FF8C00]"></i> Giá thành tốt tận gốc</div>
+                            <div class="flex items-center justify-center gap-2"><i class="fas fa-check-circle text-[#FF8C00]"></i> Nguồn hàng ổn định sỉ</div>
+                            <div class="flex items-center justify-center gap-2"><i class="fas fa-check-circle text-[#FF8C00]"></i> Kỹ thuật hỗ trợ 24/7</div>
+                            <div class="flex items-center justify-center gap-2"><i class="fas fa-check-circle text-[#FF8C00]"></i> Giao hàng toàn quốc nhanh</div>
+                            <div class="flex items-center justify-center gap-2"><i class="fas fa-check-circle text-[#FF8C00]"></i> Hậu mãi đại lý chu đáo</div>
+                        </div>
+                        <p class="italic text-[#FF8C00] font-bold text-base md:text-lg border-t border-blue-400 pt-4 mt-2">"Xuân Chương Gloves – Kết nối công nghệ, nâng tầm chất lượng, đồng hành cùng phát triển."</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LIÊN HỆ CHI TIẾT -->
+            <section class="py-16 bg-slate-900 text-gray-300">
+                <div class="container mx-auto px-4 max-w-5xl">
+                    <div class="text-center mb-10">
+                        <h2 class="text-2xl md:text-3xl font-bold text-white uppercase">THÔNG TIN LIÊN HỆ CHÍNH THỨC</h2>
+                        <div class="h-0.5 w-16 bg-[#FF8C00] mx-auto mt-2"></div>
+                    </div>
+                    <div class="grid md:grid-cols-12 gap-8 items-start">
+                        <div class="md:col-span-6 space-y-4 text-sm md:text-base">
+                            <h3 class="text-lg font-bold text-white mb-2 uppercase tracking-wide">CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</h3>
+                            <p class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-[#FF8C00] mt-1 flex-shrink-0"></i> <span><strong>Địa chỉ:</strong> Số 68, tổ 4, Khu phố 4, Phường Trảng Dài, Thành phố Biên Hòa, Tỉnh Đồng Nai, Việt Nam</span></p>
+                            <p class="flex items-center gap-3"><i class="fas fa-phone-alt text-[#FF8C00] flex-shrink-0"></i> <span><strong>Hotline tư vấn sỉ:</strong> 033 444 9494</span></p>
+                            <p class="flex items-center gap-3"><i class="fab fa-zalo text-[#FF8C00] flex-shrink-0"></i> <span><strong>Zalo nhà máy:</strong> 0981 171 750</span></p>
+                            <p class="flex items-center gap-3"><i class="fas fa-envelope text-[#FF8C00] flex-shrink-0"></i> <span><strong>Email:</strong> baotay@thuydung.com</span></p>
+                            <p class="flex items-center gap-3"><i class="fas fa-globe text-[#FF8C00] flex-shrink-0"></i> <span><strong>Website:</strong> https://baotaythuyduong.github.io/BaoTayThuyDuong/</span></p>
+                        </div>
+                        <div class="md:col-span-6">
+                            <iframe width="100%" height="220" style="border:0" class="rounded-xl shadow-lg opacity-80" loading="lazy" src="https://maps.google.com/maps?q=Trảng+Dài+Biên+Hòa+Đồng+Nai&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            `;
         }
 
         function renderProductsPage() {
